@@ -1,0 +1,109 @@
+body {
+  background-color: #fff;
+  color: #000;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.navbar, footer {
+  background-color: #231F20;
+}
+
+.navbar-brand, .nav-link, .gold-text, footer {
+  color: #c59d00 !important;
+}
+
+.section-title {
+  color: #c59d00;
+  margin-bottom: 1rem;
+}
+
+.btn-gold {
+  background-color: #c59d00;
+  color: #fff;
+}
+
+.gradient-gold {
+  background: linear-gradient(90deg, #FFD700 0%, #FFF8DC 40%, #FFA500 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Hamburger menü */
+.navbar-toggler {
+  border-color: #c59d00;
+}
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(245,197,24,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* Navigációs link stílus */
+.nav-link {
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1rem;
+}
+.nav-link:hover {
+  color: #ffd700 !important;
+  text-shadow: 0 0 5px #c59d00;
+  background-color: rgba(255, 215, 0, 0.1);
+  border-radius: 4px;
+}
+.nav-link.active {
+  border-bottom: 2px solid #c59d00 !important;
+}
+
+/* Árlista táblázat igazítása */
+#arlista td:first-child {
+  width: 75%;
+}
+
+/* Képgaléria egységes mérete */
+.gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Telefon link stílus */
+.phone-link {
+  color: #0d6efd; 
+  text-decoration: none;
+  font-weight: 600;
+}
+.phone-link:hover {
+  text-decoration: underline;
+}
+
+/* Developer infó */
+.developer {
+  font-size: 0.85rem;
+  color: #666;
+  margin-left: 1rem;
+}
+
+/* rendelo.png stílus */
+#fade {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 150px;
+    background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, white 100%);
+}
+.header-image {
+  width: 100%;
+  max-width: 600px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (max-width: 768px) {
+  .header-image {
+    max-width: 100%;
+    width: 100vw;
+  }
+}
