@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  fetch("assets/arlista.csv")
+  fetch("assets/pricelist.csv")
     .then((response) => response.text())
     .then((data) => parseCSVtoTables(data, "price-tables"));
 });
