@@ -32,7 +32,7 @@ function parseCSVtoTables(csv, containerId) {
 
     const table = document.createElement("table");
     table.classList.add("table", "table-striped");
-    table.innerHTML = "<thead><tr><th>Szolgáltatás</th><th>Ár (Ft)</th></tr></thead>";
+    table.innerHTML = "<thead><tr><th>Szolgáltatás</th><th>Ár</th></tr></thead>";
 
     const tbody = document.createElement("tbody");
     categories[category].forEach(({ service, price }) => {
