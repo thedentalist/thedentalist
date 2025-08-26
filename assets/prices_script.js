@@ -51,6 +51,6 @@ function formatCategory(category) {
   const match = category.match(/^([^(]+)\s*(\([^)]+\))?/);
   if (!match) return category;
   const main = match[1].trim();
-  const paren = match[2] ? `<br><span style="font-size: 0.6em; color: #666;">${match[2].slice(1, -1)}</span>` : '';
+  const paren = match[2] ? `<br><span style="font-size: 0.6em;">${match[2].slice(1, -1)}</span>` : '';
   return main + paren;
 }
