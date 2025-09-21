@@ -5,7 +5,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kezelések - The Dentalist</title>
+  <title data-i18n="treatments-title">Kezelések - The Dentalist</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/style.css" rel="stylesheet">
   <link rel="icon" href="assets/logo.png" type="image/png">
@@ -24,11 +24,16 @@
       </button>
       <div class="collapse navbar-collapse" id="mainNavbar">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Főoldal</a></li>
-          <li class="nav-item"><a class="nav-link active" href="treatments.html">Kezelések</a></li>
-          <li class="nav-item"><a class="nav-link" href="prices.html">Árlista</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Kapcsolat</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html" data-i18n="menu-home">Főoldal</a></li>
+          <li class="nav-item"><a class="nav-link active" href="treatments.html"
+              data-i18n="menu-treatments">Kezelések</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="prices.html" data-i18n="menu-prices">Árlista</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html" data-i18n="menu-contact">Kapcsolat</a></li>
         </ul>
+        <div class="d-flex ms-3">
+          <button id="lang-toggle" class="btn btn-outline-secondary lang-btn"></button>
+        </div>
       </div>
     </div>
   </nav>
@@ -42,59 +47,62 @@
 
   <section class="py-3">
     <div class="container">
-      <h4 class="gold-text mt-4">Diagnosztikai vizsgálatok és konzultációk</h4>
-      <p>
+      <h4 class="gold-text mt-4" data-i18n="treatments-diagnosis-title">Diagnosztikai vizsgálatok és konzultációk</h4>
+      <p data-i18n="treatments-diagnosis-text">
         A szájüreg általános állapotának felmérésével kezdjük a vizsgálatot, majd különös figyelmet fordítunk a
         lehetséges külső és belső elváltozásokra (például szuvasodás, gyulladás). Modern technológia segítségével
-        részletes, teljes körű diagnózist készítek a páciens fogászati állapotáról, vizsgálat után személyre szabott
-        kezelési és költségtervet készítek.
+        részletes, teljes körű diagnózist készítünk a páciensek fogászati állapotáról, a vizsgálat után pedig személyre
+        szabott
+        kezelési és költségtervet állítunk össze.
       </p>
 
-      <h4 class="gold-text mt-4">Szájhigiéniai kezelések</h4>
-      <p>
-        Az íny és a fogak egészségének megőrzése érdekében rendszeresen végzek fogkőeltávolítást, fluoridos kezelést,
+      <h4 class="gold-text mt-4" data-i18n="treatments-hygiene-title">Szájhigiéniai kezelések</h4>
+      <p data-i18n="treatments-hygiene-text">
+        Az íny és a fogak egészségének megőrzése érdekében rendszeresen végzünk fogkőeltávolítást, fluoridos kezelést,
         homokfúvásos tisztítást (Air Flow) és polírozást. Szükség esetén mélytisztítást, nyitott és zárt küretet,
-        valamint fogfehérítést is biztosítok pácienseim számára.
+        valamint fogfehérítést is biztosítunk pácienseink számára.
       </p>
 
-      <h4 class="gold-text mt-4">Konzerváló fogászat</h4>
-      <p>
-        Mindennapos feladatom a tömések készítése, legyen szó kisebb szuvasodásról vagy komplexebb helyreállításról.
-        Inlay és onlay betéteket is készítek különböző anyagokból, mindig a hosszú távú, esztétikus és természetes
+      <h4 class="gold-text mt-4" data-i18n="treatments-conservative-title">Konzerváló fogászat</h4>
+      <p data-i18n="treatments-conservative-text">
+        Mindennapos feladatunk a tömések készítése, legyen szó kisebb szuvasodásról vagy komplexebb helyreállításról.
+        Inlay és onlay betéteket is készítünk különböző anyagokból, mindig a hosszú távú, esztétikus és természetes
         eredményt szem előtt tartva.
       </p>
 
-      <h4 class="gold-text mt-4">Fogpótlások</h4>
-      <p>
-        Több éves tapasztalattal rendelkezem és számos esettel foglalkoztam már fogpótlások terén. Különös figyelmet
-        fordítok a fogpótlások megtervezésére és elkészítésére. Rögzített pótlásokkal, – mint a koronák, hidak és
-        foghéjak – dolgozom, valamint fogat csonkfelépítéssel is újraépítek. A kivehető fogpótlások esetén pedig
-        figyelembe veszem az anatómiai adottságokat és az anyagi lehetőségeket. Teljes körű megoldásokat kínálok, egy
+      <h4 class="gold-text mt-4" data-i18n="treatments-prosthetics-title">Fogpótlások</h4>
+      <p data-i18n="treatments-prosthetics-text">
+        Több éves tapasztalattal rendelkezünk és számos esettel foglalkoztunk már fogpótlások terén. Különös figyelmet
+        fordítunk a fogpótlások megtervezésére és elkészítésére. Rögzített pótlásokkal – mint a koronák, hidak és
+        foghéjak – dolgozunk, valamint fogakat csonkfelépítéssel is újraépítünk. A kivehető fogpótlások esetén pedig
+        figyelembe vesszük az anatómiai adottságokat és az anyagi lehetőségeket. Teljes körű megoldásokat kínálunk, egy
         fog hiányától egészen a teljes foghiányig, a maximális stabilitás és kényelem biztosítása mellett.
       </p>
 
-      <h4 class="gold-text mt-4">Gyökérkezelés</h4>
-      <p>
-        Gyökérkezelés során gyakran találkozom bonyolultabb esetekkel, mint például hajlott vagy szűk csatornák, illetve
-        akár öt gyökércsatornával rendelkező fogak. Precíz munkámat endomotor és szükség esetén CBCT képalkotás segíti,
+      <h4 class="gold-text mt-4" data-i18n="treatments-endodontics-title">Gyökérkezelés</h4>
+      <p data-i18n="treatments-endodontics-text">
+        Gyökérkezelés során gyakran találkozunk bonyolultabb esetekkel, mint például hajlott vagy szűk csatornák,
+        illetve
+        akár öt gyökércsatornával rendelkező fogak. Precíz munkánkat endomotor és szükség esetén CBCT képalkotás segíti,
         hogy a kezelés megbízható, hatékony és sikeres legyen.
       </p>
 
-      <h4 class="gold-text mt-4">Szájsebészet</h4>
-      <p>
-        Fontosnak tartom a fájdalommentes ellátást és a gyors gyógyulást. Végzek bonyolultabb szájsebészeti
+      <h4 class="gold-text mt-4" data-i18n="treatments-surgery-title">Szájsebészet</h4>
+      <p data-i18n="treatments-surgery-text">
+        Fontosnak tartjuk a fájdalommentes ellátást és a gyors gyógyulást. Végzünk bonyolultabb szájsebészeti
         beavatkozásokat is, mint például a bölcsességfogak vagy rendellenesen álló fogak eltávolítása, tályog vagy
         ciszták kezelése, valamint a fogínyből kiálló csont formázása.
       </p>
-      <p><strong>Mindezt fájdalommentesen.</strong></p>
+      <p><strong data-i18n="treatments-surgery-note">Mindezt fájdalommentesen.</strong></p>
     </div>
   </section>
 
   <footer class="text-center py-3">
-    <p class="mb-0">&copy; 2025 The Dentalist Dr. Morhaf Kft. Minden jog fenntartva.</p>
+    <p class="mb-0" data-i18n="footer-text">&copy; 2025 The Dentalist Dr. Morhaf Kft. Minden jog fenntartva.</p>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/index_script.js"></script>
 </body>
 
 </html>

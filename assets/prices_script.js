@@ -1,20 +1,28 @@
-document.addEventListener("DOMContentLoaded", () => {
-  fetch("assets/pricelist.csv")
+// Load and display prices from CSV based on selected language
+function loadPrices(lang) {
+  const csvFile = lang === "en" ? "assets/pricelist_en.csv" : "assets/pricelist_hu.csv";
+  fetch(csvFile)
     .then((response) => response.text())
-    .then((data) => parseCSVtoTables(data, "price-tables"));
-});
+    .then((data) => {
+      document.getElementById("price-tables").innerHTML = "";
+      parseCSVtoTables(data, "price-tables");
+    });
+}
 
+// Parse CSV and generate HTML tables
 function parseCSVtoTables(csv, containerId) {
   const lines = csv.trim().split("\n");
   const headers = lines.shift().split(";");
   const rows = lines.map(line => {
     const cells = line.split(";");
+    if (cells.length < 3) return null;
     return {
       category: cells[0].trim(),
       service: cells[1].trim(),
       price: cells[2].trim()
     };
-  });
+  })
+    .filter(Boolean);
 
   const container = document.getElementById(containerId);
   const categories = {};
@@ -27,12 +35,12 @@ function parseCSVtoTables(csv, containerId) {
     const section = document.createElement("section");
     const heading = document.createElement("h4");
     heading.classList.add("section-title", "pt-3");
-    heading.innerHTML = formatCategory(category); // <-- EZ A JAVÍTÁS!
+    heading.innerHTML = formatCategory(category); 
     section.appendChild(heading);
 
     const table = document.createElement("table");
     table.classList.add("table", "table-striped");
-    table.innerHTML = "<thead><tr><th>Szolgáltatás</th><th>Ár</th></tr></thead>";
+    table.innerHTML = `<thead><tr><th>${headers[1]}</th><th>${headers[2]}</th></tr></thead>`;
 
     const tbody = document.createElement("tbody");
     categories[category].forEach(({ service, price }) => {
@@ -46,8 +54,8 @@ function parseCSVtoTables(csv, containerId) {
   });
 }
 
+// Format category with optional parentheses on new line
 function formatCategory(category) {
-  // Keresd meg a zárójeles részt
   const match = category.match(/^([^(]+)\s*(\([^)]+\))?/);
   if (!match) return category;
   const main = match[1].trim();

@@ -5,7 +5,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Árlista - The Dentalist</title>
+  <title data-i18n="prices-title">Árlista - The Dentalist</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/style.css" rel="stylesheet">
   <link rel="icon" href="assets/logo.png" type="image/png">
@@ -24,32 +24,39 @@
       </button>
       <div class="collapse navbar-collapse" id="mainNavbar">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Főoldal</a></li>
-          <li class="nav-item"><a class="nav-link" href="treatments.html">Kezelések</a></li>
-          <li class="nav-item"><a class="nav-link active" href="prices.html">Árlista</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Kapcsolat</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html" data-i18n="menu-home">Főoldal</a></li>
+          <li class="nav-item"><a class="nav-link" href="treatments.html" data-i18n="menu-treatments">Kezelések</a>
+          </li>
+          <li class="nav-item"><a class="nav-link active" href="prices.html" data-i18n="menu-prices">Árlista</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="contact.html" data-i18n="menu-contact">Kapcsolat</a></li>
         </ul>
+        <div class="d-flex ms-3">
+          <button id="lang-toggle" class="btn btn-outline-secondary lang-btn"></button>
+        </div>
       </div>
     </div>
   </nav>
 
-  <section class="py-5">
-    <div class="container" id="arlista">
-      <h2 class="section-title">Szolgáltatási Árlista</h2>
-      <p class="mb-4">📌 Az árak tájékoztató jellegűek, a végső összeg az alkalmazott technikától és anyagválasztástól
+  <section class="py-3">
+    <div class="container" id="pricelist">
+      <h2 class="section-title" data-i18n="prices-header">Árlista</h2>
+      <p data-i18n="prices-note">
+        📌 Az árak tájékoztató jellegűek, a végső összeg az alkalmazott technikától és anyagválasztástól
         függően változhat. Komplex kezelések vagy több fogat érintő rehabilitáció esetén egyéni kezelési terv és
-        kedvezőbb, személyre szabott árak készülnek.</p>
-
+        kedvezőbb, személyre szabott árak készülnek.
+      </p>
       <div id="price-tables"></div>
     </div>
   </section>
 
   <footer class="text-center py-3">
-    <p class="mb-0">&copy; 2025 The Dentalist Dr. Morhaf Kft. Minden jog fenntartva.</p>
+    <p class="mb-0" data-i18n="footer-text">&copy; 2025 The Dentalist Dr. Morhaf Kft. Minden jog fenntartva.</p>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="assets/prices_script.js"></script>
+  <script src="assets/index_script.js"></script>
 </body>
 
 </html>
