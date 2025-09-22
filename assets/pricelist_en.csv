@@ -1,15 +1,15 @@
 Category;Service;Price (HUF)
-1. Advanced X-rays & Examinations (Carestream 2025 system: precise imaging, minimal radiation);Small X-ray (bitewing);5,000
-1. Advanced X-rays & Examinations (Carestream 2025 system: precise imaging, minimal radiation);Panoramic X-ray;8,000
-1. Advanced X-rays & Examinations (Carestream 2025 system: precise imaging, minimal radiation);CT scan of 1 tooth;20,000
-1. Advanced X-rays & Examinations (Carestream 2025 system: precise imaging, minimal radiation);CT scan of 4–8 teeth;25,000
-1. Advanced X-rays & Examinations (Carestream 2025 system: precise imaging, minimal radiation);CT scan of teeth and temporomandibular joints;35,000
-1. Advanced X-rays & Examinations (Carestream 2025 system: precise imaging, minimal radiation);Full CT of upper and lower teeth;30,000
-1. Advanced X-rays & Examinations (Carestream 2025 system: precise imaging, minimal radiation);Sinus CT (without teeth);20,000
-2. Consultations;Consultation, detailed examination, individualized treatment and cost plan;15,000
-2. Consultations;Follow-up examination;5,000
-2. Consultations;Focus search (requires CT scan);5,000
-2. Consultations;Screening examination for pregnant women;10,000
+1. Consultations;Consultation, detailed examination, individualized treatment and cost plan;15,000
+1. Consultations;Follow-up examination;5,000
+1. Consultations;Focal disease screening (requires CT scan);5,000
+1. Consultations;Screening examination for pregnant women;10,000
+2. Advanced X-rays & Examinations (Carestream 2025 system: precise imaging, minimal radiation);Small X-ray (bitewing);5,000
+2. Advanced X-rays & Examinations (Carestream 2025 system: precise imaging, minimal radiation);Panoramic X-ray;8,000
+2. Advanced X-rays & Examinations (Carestream 2025 system: precise imaging, minimal radiation);CT scan of 1 tooth;20,000
+2. Advanced X-rays & Examinations (Carestream 2025 system: precise imaging, minimal radiation);CT scan of 4–8 teeth;25,000
+2. Advanced X-rays & Examinations (Carestream 2025 system: precise imaging, minimal radiation);CT scan of teeth and temporomandibular joints;35,000
+2. Advanced X-rays & Examinations (Carestream 2025 system: precise imaging, minimal radiation);Full CT of upper and lower teeth;30,000
+2. Advanced X-rays & Examinations (Carestream 2025 system: precise imaging, minimal radiation);Sinus CT (without teeth);20,000
 3. Oral Hygiene Treatments and Periodontal Therapy;Ultrasonic tartar removal and polishing (per jaw);8,000
 3. Oral Hygiene Treatments and Periodontal Therapy;Air polishing (Air Flow) stain removal (per jaw);10,000
 3. Oral Hygiene Treatments and Periodontal Therapy;Closed curettage (per quadrant);25,000–40,000
@@ -18,7 +18,7 @@ Category;Service;Price (HUF)
 3. Oral Hygiene Treatments and Periodontal Therapy;Periodontal assessment;15,000
 3. Oral Hygiene Treatments and Periodontal Therapy;Gingival reshaping, soft tissue surgery (gingivectomy, plastic surgery);20,000–50,000
 3. Oral Hygiene Treatments and Periodontal Therapy;Crown lengthening procedure;30,000–50,000
-3. Oral Hygiene Treatments and Periodontal Therapy;Night bite splint (for bruxism);20,000
+3. Oral Hygiene Treatments and Periodontal Therapy;Night guard (for bruxism);20,000
 3. Oral Hygiene Treatments and Periodontal Therapy;Custom tray fabrication for at-home whitening;20,000
 4. Conservative and Aesthetic Treatments (Premium Tokuyama and Gradia materials for a natural look);Simple filling (front/premolar);18,000–25,000
 4. Conservative and Aesthetic Treatments (Premium Tokuyama and Gradia materials for a natural look);Simple filling (molar);25,000
@@ -58,7 +58,7 @@ Category;Service;Price (HUF)
 7. Fixed Prosthetics;Core build-up with composite;35,000
 7. Fixed Prosthetics;Metal mesh integrated into acrylic denture;20,000
 8. Removable Prosthetics;1-tooth removable prosthesis (clip);40,000
-8. Removable Prosthetics;4-tooth removable prosthesis (clip);70,000
+8. Removable Prosthetics;4-teeth removable prosthesis (clip);70,000
 8. Removable Prosthetics;Full removable acrylic denture;200,000
 8. Removable Prosthetics;Flexible removable denture;300,000
 8. Removable Prosthetics;Metal framework removable denture;230,000
