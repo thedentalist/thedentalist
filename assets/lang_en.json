@@ -37,12 +37,16 @@
     "contact-email-label": "📧 Email:",
     "contact-hours-title": "Opening Hours",
     "contact-hours-intro": "Below you can see our office hours. Please book an appointment by phone in advance.",
-    "contact-hours-monwed": "Monday, Wednesday",
-    "contact-hours-monwed-time": "11:30 – 19:30",
-    "contact-hours-tuethu": "Tuesday, Thursday",
-    "contact-hours-tuethu-time": "8:00 – 15:00",
-    "contact-hours-fri": "Friday",
-    "contact-hours-fri-time": "By prior arrangement",
+
+    "contact-hours-monwed": "Monday – Friday",
+    "contact-hours-monwed-time": "8:30 – 20:00",
+
+    "contact-hours-tuethu": "Saturday – Sunday",
+    "contact-hours-tuethu-time": "10:00 – 18:00",
+
+    "contact-hours-fri": "",
+    "contact-hours-fri-time": "",
+
     "contact-map-title": "Map",
     "contact-company-title": "Company Info",
     "contact-company-name-label": "Name:",
