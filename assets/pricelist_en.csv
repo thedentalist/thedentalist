@@ -1,74 +1,77 @@
 Category;Service;Price (HUF)
-1. Consultations;Consultation, detailed examination, individualized treatment and cost plan;12,000
-1. Consultations;Follow-up examination;5,000
-1. Consultations;Focal disease screening (requires CT scan);5,000
-1. Consultations;Screening examination for pregnant women;10,000
-2. Advanced X-rays & Examinations (Carestream 2025 system: precise imaging, minimal radiation);Small X-ray (bitewing);5,000
-2. Advanced X-rays & Examinations (Carestream 2025 system: precise imaging, minimal radiation);Panoramic X-ray;7,000
-2. Advanced X-rays & Examinations (Carestream 2025 system: precise imaging, minimal radiation);CT scan of 1 tooth;18,000
-2. Advanced X-rays & Examinations (Carestream 2025 system: precise imaging, minimal radiation);CT scan of 4–8 teeth;20,000
-2. Advanced X-rays & Examinations (Carestream 2025 system: precise imaging, minimal radiation);CT scan of teeth and temporomandibular joints;20,000
-2. Advanced X-rays & Examinations (Carestream 2025 system: precise imaging, minimal radiation);Full CT of upper and lower teeth;23,000
-2. Advanced X-rays & Examinations (Carestream 2025 system: precise imaging, minimal radiation);Sinus CT (without teeth);15,000
-3. Oral Hygiene Treatments and Periodontal Therapy;Ultrasonic tartar removal and polishing ;16,000
-3. Oral Hygiene Treatments and Periodontal Therapy;Air polishing (Air Flow) stain removal (per jaw);8,000
-3. Oral Hygiene Treatments and Periodontal Therapy;Closed curettage (per tooth);20,000
-3. Oral Hygiene Treatments and Periodontal Therapy;Tooth stabilization with splint (per tooth);15,000
-3. Oral Hygiene Treatments and Periodontal Therapy;Periodontal assessment;15,000
-3. Oral Hygiene Treatments and Periodontal Therapy;Gingival reshaping, soft tissue surgery (gingivectomy, plastic surgery);20,000–50,000
-3. Oral Hygiene Treatments and Periodontal Therapy;Crown lengthening procedure;30,000–50,000
-3. Oral Hygiene Treatments and Periodontal Therapy;Night guard (for bruxism);20,000
-3. Oral Hygiene Treatments and Periodontal Therapy;Custom tray fabrication for at-home whitening;20,000
-4. Conservative and Aesthetic Treatments (Premium Tokuyama and Gradia materials for a natural look);Simple filling (front/premolar);18,000–25,000
-4. Conservative and Aesthetic Treatments (Premium Tokuyama and Gradia materials for a natural look);Simple filling (molar);25,000
-4. Conservative and Aesthetic Treatments (Premium Tokuyama and Gradia materials for a natural look);Two-surface filling (premolar/molar);25,000–28,000
-4. Conservative and Aesthetic Treatments (Premium Tokuyama and Gradia materials for a natural look);Three-surface filling (premolar/molar);28,000–30,000
-4. Conservative and Aesthetic Treatments (Premium Tokuyama and Gradia materials for a natural look);Anterior tooth edge restoration;22,000
-4. Conservative and Aesthetic Treatments (Premium Tokuyama and Gradia materials for a natural look);Fissure sealing;10,000
-4. Conservative and Aesthetic Treatments (Premium Tokuyama and Gradia materials for a natural look);Temporary filling (short/long term);3,000–10,000
-4. Conservative and Aesthetic Treatments (Premium Tokuyama and Gradia materials for a natural look);Filling lining / pulp capping;5,000–10,000
-4. Conservative and Aesthetic Treatments (Premium Tokuyama and Gradia materials for a natural look);Aesthetic direct veneer (composite);70,000
-4. Conservative and Aesthetic Treatments (Premium Tokuyama and Gradia materials for a natural look);Internal tooth whitening (per session);20,000
-4. Conservative and Aesthetic Treatments (Premium Tokuyama and Gradia materials for a natural look);Professional in-office tooth whitening;50,000
-4. Conservative and Aesthetic Treatments (Premium Tokuyama and Gradia materials for a natural look);Composite inlay (in-office dental onlay);50,000
-5. Pediatric Dentistry;Examination and oral care advice for children;15,000
-5. Pediatric Dentistry;Filling or fissure sealing of baby teeth;12,000
-5. Pediatric Dentistry;Baby tooth extraction;10,000
-5. Pediatric Dentistry;Baby tooth brushing and smoothing;5,000
-5. Pediatric Dentistry;Baby tooth opening (to reduce inflammation);5,000
-6. Root Canal Treatment (Digitally assisted root canal treatment: CBCT + Endomotor);Tooth opening (trepanation);10,000
-6. Root Canal Treatment (Digitally assisted root canal treatment: CBCT + Endomotor);Mechanical widening of canals;10,000 / canal
-6. Root Canal Treatment (Digitally assisted root canal treatment: CBCT + Endomotor);Temporary root filling (Ca(OH)₂ based);5,000 / canal
-6. Root Canal Treatment (Digitally assisted root canal treatment: CBCT + Endomotor);Permanent root filling;10,000 / canal
-6. Root Canal Treatment (Digitally assisted root canal treatment: CBCT + Endomotor);Root filling removal (revision);10,000 / canal
-6. Root Canal Treatment (Digitally assisted root canal treatment: CBCT + Endomotor);Post removal;15,000
-6. Root Canal Treatment (Digitally assisted root canal treatment: CBCT + Endomotor);Short custom fiber post (SFRC);40,000
-6. Root Canal Treatment (Digitally assisted root canal treatment: CBCT + Endomotor);Fiber post;30,000
-6. Root Canal Treatment (Digitally assisted root canal treatment: CBCT + Endomotor);Bioblock-type root post;40,000–45,000
-7. Fixed Prosthetics;Metal-ceramic crown;70,000
-7. Fixed Prosthetics;Zirconia ceramic crown;90,000
-7. Fixed Prosthetics;Monolithic zirconia crown;90,000
-7. Fixed Prosthetics;Pressed ceramic crown (e.max);110,000
-7. Fixed Prosthetics;Pressed ceramic veneer (e.max);120,000
-7. Fixed Prosthetics;Inlay (e.max);80,000
-7. Fixed Prosthetics;Onlay (e.max);90,000
-7. Fixed Prosthetics;Temporary crown (laboratory-made);15,000
-7. Fixed Prosthetics;Removal of old crown;5,000
-7. Fixed Prosthetics;Core build-up with composite;35,000
-7. Fixed Prosthetics;Metal mesh integrated into acrylic denture;20,000
-8. Removable Prosthetics;1-tooth removable prosthesis (clip);40,000
-8. Removable Prosthetics;4-teeth removable prosthesis (clip);70,000
-8. Removable Prosthetics;Full removable acrylic denture;200,000
-8. Removable Prosthetics;Flexible removable denture;300,000
-8. Removable Prosthetics;Metal framework removable denture;230,000
-8. Removable Prosthetics;Sliding attachment system;Case-dependent
-8. Removable Prosthetics;Temporary acrylic prosthesis with clasps;30,000–80,000
-8. Removable Prosthetics;Relining of dentures;30,000
-8. Removable Prosthetics;Repair of removable prostheses;30,000
-9. Oral Surgical Procedures;Simple tooth extraction (1 root-2-3);15,000–25,000
-9. Oral Surgical Procedures;Wisdom tooth extraction (without surgery);20,000–30,000
-9. Oral Surgical Procedures;Surgical tooth extraction;40,000–60,000
-9. Oral Surgical Procedures;Sinus closure, cyst removal;30,000–50,000
-9. Oral Surgical Procedures;Abscess drainage, tissue removal;30,000
-9. Oral Surgical Procedures;Treatment of pericoronitis (wisdom tooth inflammation reduction);15,000
-9. Oral Surgical Procedures;Post-operative treatment of inflamed wound;15,000
+1;Consultations;Detailed examination, consultation, treatment plan and expected costs;10,000
+1;Consultations;Follow-up examination (recommended every 6 months);5,000
+1;Consultations;Focal disease screening (CT required);5,000
+1;Consultations;Screening examination for pregnant women;10,000
+1;Consultations;Panoramic X-ray;8,000
+1;Consultations;Intraoral / small X-ray;2,000 – 5,000
+1;Consultations;CBCT (3D imaging);20,000 – 30,000
+2;Oral Hygiene and Periodontal Therapy;Ultrasonic tartar removal and polishing (per jaw);8,000
+2;Oral Hygiene and Periodontal Therapy;Air-flow stain removal (per jaw);10,000
+2;Oral Hygiene and Periodontal Therapy;Closed curettage (per quadrant);25,000 – 40,000
+2;Oral Hygiene and Periodontal Therapy;Tooth splinting if mobile (per tooth);15,000
+2;Oral Hygiene and Periodontal Therapy;Periodontal assessment;15,000
+2;Oral Hygiene and Periodontal Therapy;Gingival reshaping / soft tissue surgery (gingivectomy, plastic surgery);15,000 – 50,000
+2;Oral Hygiene and Periodontal Therapy;Crown lengthening;30,000 – 50,000
+3;Conservative and Aesthetic Treatments;1-surface filling front;18,000
+3;Conservative and Aesthetic Treatments;1-surface filling premolar;22,000
+3;Conservative and Aesthetic Treatments;1-surface filling molar;25,000
+3;Conservative and Aesthetic Treatments;2-surface filling front;22,000
+3;Conservative and Aesthetic Treatments;2-surface filling premolar;26,000
+3;Conservative and Aesthetic Treatments;2-surface filling molar;28,000
+3;Conservative and Aesthetic Treatments;3-surface filling front;25,000
+3;Conservative and Aesthetic Treatments;3-surface filling premolar;28,000
+3;Conservative and Aesthetic Treatments;3-surface filling molar;30,000
+3;Conservative and Aesthetic Treatments;4 or more surfaces;35,000
+3;Conservative and Aesthetic Treatments;Composite build-up;40,000
+3;Conservative and Aesthetic Treatments;Post build-up;55,000
+3;Conservative and Aesthetic Treatments;Anterior tooth edge restoration;20,000
+3;Conservative and Aesthetic Treatments;Fissure sealing;6,000
+3;Conservative and Aesthetic Treatments;Temporary filling (short/long term);2,000 – 10,000
+3;Conservative and Aesthetic Treatments;Pulp capping / lining;5,000 – 10,000
+3;Conservative and Aesthetic Treatments;Aesthetic veneer (composite);70,000
+3;Conservative and Aesthetic Treatments;Composite inlay;85,000
+3;Conservative and Aesthetic Treatments;E.max pressed inlay;95,000
+3;Conservative and Aesthetic Treatments;Fiber reinforcement;20,000
+3;Conservative and Aesthetic Treatments;Bioblock-type root post;40,000 – 45,000
+3;Conservative and Aesthetic Treatments;Internal tooth whitening (per session);15,000 – 20,000
+3;Conservative and Aesthetic Treatments;Professional whitening;40,000 – 80,000
+4;Pediatric Dentistry;Filling or fissure sealing of baby tooth;10,000
+4;Pediatric Dentistry;Baby tooth extraction;5,000
+4;Pediatric Dentistry;Baby tooth brushing / smoothing;3,000
+4;Pediatric Dentistry;Baby tooth opening;5,000
+5;Root Canal Treatment;Tooth opening (trepanation);10,000
+5;Root Canal Treatment;Mechanical widening of canals (1-3 canals);15,000 – 25,000
+5;Root Canal Treatment;Temporary root filling (Ca(OH)₂ based);12,000 – 16,000
+5;Root Canal Treatment;Permanent root filling;15,000 – 30,000
+5;Root Canal Treatment;Root filling removal (revision);10,000 / canal
+5;Root Canal Treatment;Post removal;15,000
+5;Root Canal Treatment;Short custom fiber post (SFRC);40,000
+6;Fixed Prosthetics;Metal-ceramic crown;70,000 – 80,000
+6;Fixed Prosthetics;Zirconia crown;85,000 – 100,000
+6;Fixed Prosthetics;E.max pressed crown;110,000
+6;Fixed Prosthetics;Full ceramic veneer;150,000 – 160,000
+6;Fixed Prosthetics;Gradia / Solidex crown or inlay;15,000 – 20,000
+6;Fixed Prosthetics;Temporary crown (clinic / lab);8,000 / 3,000
+6;Fixed Prosthetics;Old crown removal;5,000
+6;Fixed Prosthetics;Core build-up with composite;40,000
+6;Fixed Prosthetics;Telescopic crown system;18,000
+6;Fixed Prosthetics;Metal mesh integrated in acrylic denture;16,000
+6;Fixed Prosthetics;Digital try-in on model;5,000 / tooth
+7;Removable Prosthetics;Full acrylic denture;150,000 – 600,000
+7;Removable Prosthetics;Flexible denture (Valplast system);50,000 – 450,000
+7;Removable Prosthetics;Metal framework removable denture;130,000 – 300,000
+7;Removable Prosthetics;Temporary acrylic prosthesis with clasps;25,000 – 100,000
+7;Removable Prosthetics;Relining of dentures;12,000 – 28,000
+7;Removable Prosthetics;Repair of dentures;3,000 – 22,000
+7;Removable Prosthetics;Transparent clasp (per tooth);3,000
+8;Oral Surgical Procedures;Simple tooth extraction (1 root);18,000
+8;Oral Surgical Procedures;Simple tooth extraction (2 roots);20,000
+8;Oral Surgical Procedures;Simple tooth extraction (3 roots);25,000
+8;Oral Surgical Procedures;Complicated extraction;40,000
+8;Oral Surgical Procedures;Wisdom tooth extraction (non-surgical);20,000 – 30,000
+8;Oral Surgical Procedures;Surgical tooth extraction;40,000 – 60,000
+8;Oral Surgical Procedures;Abscess drainage / tissue removal;30,000
+8;Oral Surgical Procedures;Sinus closure / cyst removal;30,000
+8;Oral Surgical Procedures;Treatment of pericoronitis;15,000
+8;Oral Surgical Procedures;Post-operative treatment of inflamed wound;15,000
