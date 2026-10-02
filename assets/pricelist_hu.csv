@@ -1,7 +1,7 @@
 Kategória;Szolgáltatás;Ár (Ft)
 1. Diagnosztikai vizsgálatok és konzultációk;Részletes állapotfelmérés, konzultáció, kezelési terv és várható költségek felmérése;12.000
 1. Diagnosztikai vizsgálatok és konzultációk;Kontrollvizsgálat (félévente ajánlott);5.000
-1. Diagnosztikai vizsgálatok és konzultációk;Góckutatás (CT felvétel szükséges hozzá);5.000
+1. Diagnosztikai vizsgálatok és konzultációk;Góckutatás (Röntgenfelvétel szükséges);5.000
 1. Diagnosztikai vizsgálatok és konzultációk;Kismamák részére végzett szűrővizsgálat;10.000
 1. Diagnosztikai vizsgálatok és konzultációk;Panoráma röntgen;8.000
 1. Diagnosztikai vizsgálatok és konzultációk;Intraorális / kis röntgenfelvétel;2.000 – 5.000
@@ -9,8 +9,8 @@ Kategória;Szolgáltatás;Ár (Ft)
 2. Szájhigiéniai kezelések és fogágyterápia;Ultrahangos fogkő-eltávolítás és polírozás (állcsontonként);8.000
 2. Szájhigiéniai kezelések és fogágyterápia;Homokfúvásos elszíneződés-eltávolítás (állcsontonként);10.000
 2. Szájhigiéniai kezelések és fogágyterápia;Parodontális állapotfelmérés;15.000
-2. Szájhigiéniai kezelések és fogágyterápia;Zárt kürett (kvadráns szerint);25.000 – 40.000
-2. Szájhigiéniai kezelések és fogágyterápia;Fogak sínezése mozgathatóság esetén (foganként);15.000
+2. Szájhigiéniai kezelések és fogágyterápia;Zárt kürett;15.000 – 20.000 / fog
+2. Szájhigiéniai kezelések és fogágyterápia;Fogak sínezése mozgathatóság esetén;15.000 / fog
 2. Szájhigiéniai kezelések és fogágyterápia;Ínyformázás, lágyrészsebészet (gingivectomia, plastika);15.000 – 50.000
 2. Szájhigiéniai kezelések és fogágyterápia;Koronahosszabbító beavatkozás;30.000 – 50.000
 3. Konzerváló és esztétikai fogászati kezelések;1 felszínű tömés – Front;18.000
@@ -26,8 +26,8 @@ Kategória;Szolgáltatás;Ár (Ft)
 3. Konzerváló és esztétikai fogászati kezelések;Fogfelépítés (kompozit);40.000
 3. Konzerváló és esztétikai fogászati kezelések;Fogfelépítés csappal;55.000
 3. Konzerváló és esztétikai fogászati kezelések;Barázdazárás;6.000
-3. Konzerváló és esztétikai fogászati kezelések;Ideiglenes tömések (rövid vagy hosszú távra);2.000 – 10.000
-3. Konzerváló és esztétikai fogászati kezelések;Pulpasapkázás / tömés alábélelése;5.000 – 10.000
+3. Konzerváló és esztétikai fogászati kezelések;Ideiglenes tömések (rövid vagy hosszú távra);5.000 – 10.000
+3. Konzerváló és esztétikai fogászati kezelések;Pulpasapkázás / tömés alábélelése;7.000 – 10.000
 3. Konzerváló és esztétikai fogászati kezelések;Esztétikai héj (kompozit anyagból);70.000
 3. Konzerváló és esztétikai fogászati kezelések;Fogászati betét – kompozit;85.000
 3. Konzerváló és esztétikai fogászati kezelések;Fogászati betét – E.max préskerámia;95.000
@@ -40,7 +40,8 @@ Kategória;Szolgáltatás;Ár (Ft)
 4. Gyermekfogászat;Tejfog ecsetelése, simítása;3.000
 4. Gyermekfogászat;Tejfog megnyitása;5.000
 5. Gyökérkezelés (Endodoncia);Fog megnyitása (trepanálás);10.000
-5. Gyökérkezelés (Endodoncia);Csatornák gépi feltágítása(1-3 cs);15.000 – 25.000
+5. Gyökérkezelés (Endodoncia);Gyökércsatorna átöblítése;4.000 / csatorna
+5. Gyökérkezelés (Endodoncia);Csatornák gépi feltágítása (1-3 cs);15.000 – 25.000
 5. Gyökérkezelés (Endodoncia);Ideiglenes gyökértömés (Ca(OH)₂ alapú);12.000 – 16.000
 5. Gyökérkezelés (Endodoncia);Végleges gyökértömés;15.000 – 30.000
 5. Gyökérkezelés (Endodoncia);Gyökértömés eltávolítása (revízió);10.000 / csatorna
@@ -62,13 +63,13 @@ Kategória;Szolgáltatás;Ár (Ft)
 7. Kivehető fogpótlások;Fémlemezes kivehető fogsor;130.000 – 300.000
 7. Kivehető fogpótlások;Ideiglenes akril pótlás kapcsokkal;25.000 – 100.000
 7. Kivehető fogpótlások;Fogsor alábélelése;12.000 – 28.000
-7. Kivehető fogpótlások;Fogsor javítás;3.000 – 22.000
+7. Kivehető fogpótlások;Fogsor javítás;10.000 – 22.000
 7. Kivehető fogpótlások;Átlátszó kapocs (foganként);3.000
 8. Szájsebészeti beavatkozások;Egygyökerű fog eltávolítása;18.000
 8. Szájsebészeti beavatkozások;Kétgyökerű fog eltávolítása;20.000
 8. Szájsebészeti beavatkozások;Háromgyökerű fog eltávolítása;25.000
 8. Szájsebészeti beavatkozások;Fogeltávolítás – Bonyolult eset;40.000
-8. Szájsebészeti beavatkozások;Bölcsességfog eltávolítása (nem műtéti úton);20.000 – 30.000
+8. Szájsebészeti beavatkozások;Bölcsességfog eltávolítása (nem műtéti úton);30.000 – 40.000
 8. Szájsebészeti beavatkozások;Tályog megnyitása (incisio), szövetszaporulat eltávolítása;30.000
 8. Szájsebészeti beavatkozások;Varratszedés;5.000
 8. Szájsebészeti beavatkozások;Pericoronitis kezelése (gyulladáscsökkentés);15.000
