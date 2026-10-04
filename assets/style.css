@@ -186,6 +186,7 @@ footer {
 }
 
 .review-author {
+  width: fit-content;
   font-weight: 600;
 }
 
