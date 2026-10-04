@@ -7,6 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title data-i18n="prices-title">Árlista - The Dentalist</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link href="assets/style.css" rel="stylesheet">
   <link rel="icon" href="assets/logo.png" type="image/png">
 </head>
@@ -41,11 +44,12 @@
   <section class="py-3">
     <div class="container" id="pricelist">
       <h2 class="section-title" data-i18n="prices-header">Árlista</h2>
-      <p data-i18n="prices-note">
-        📌 Az árak tájékoztató jellegűek, a végső összeg az alkalmazott technikától és anyagválasztástól
-        függően változhat. Komplex kezelések vagy több fogat érintő rehabilitáció esetén egyéni kezelési terv és
-        kedvezőbb, személyre szabott árak készülnek.
-      </p>
+      <div class="prices-note">
+        <svg class="prices-note-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+          <path d="M12 3.5c-1.2 0-2.2.7-3.4.7-1.8 0-3.1-1.1-4.2.2-1.7 2-.6 6.3.4 8.9.9 2.3 1.8 6.4 3.5 7.1 1.9.8 1.7-5.5 3.7-5.5s1.8 6.3 3.7 5.5c1.7-.7 2.6-4.8 3.5-7.1 1-2.6 2.1-6.9.4-8.9-1.1-1.3-2.4-.2-4.2-.2-1.2 0-2.2-.7-3.4-.7Z" />
+        </svg>
+        <p class="mb-0" data-i18n="prices-note"></p>
+      </div>
       <div id="price-tables"></div>
     </div>
   </section>

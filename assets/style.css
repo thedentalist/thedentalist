@@ -1,20 +1,66 @@
 body {
-  background-color: #fff;
-  color: #000;
-  font-family: 'Segoe UI', sans-serif;
+  background-color: #000;
+  color: #f5f5f5;
+  font-family: 'Montserrat', 'Segoe UI', sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6,
+.section-title,
+.navbar-brand,
+.nav-link {
+  font-family: 'Cinzel', Georgia, serif;
+  font-weight: 500;
+}
+
+.nav-link {
+  font-size: 1rem;
+}
+
+.bg-light {
+  --bs-light-rgb: 0, 0, 0;
+  color: #f5f5f5;
 }
 
 .navbar, footer {
   background-color: #000000;
 }
 
-.navbar-brand, .nav-link, .gold-text, footer {
-  color: #c59d00 !important;
+.gradient-gold,
+.navbar-brand,
+.nav-link,
+.gold-text,
+.section-title,
+footer {
+  background-image: linear-gradient(90deg, #D9A900 0%, #FFF1A8 45%, #FFF1A8 55%, #D9A900 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-variant: normal;
+  text-transform: none;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent !important;
 }
 
 .section-title {
-  color: #c59d00;
   margin-bottom: 1rem;
+}
+
+[data-i18n="index-intro-title"] {
+  font-family: 'Cinzel', Georgia, serif;
+  font-variant: normal;
+  font-feature-settings: normal;
+  text-transform: none;
+}
+
+.category-subtitle {
+  font-family: 'Montserrat', 'Segoe UI', sans-serif;
+  font-size: 0.6em;
+  font-variant: normal;
+  text-transform: none;
 }
 
 .btn-gold {
@@ -22,12 +68,12 @@ body {
   color: #fff;
 }
 
-.gradient-gold {
-  background: linear-gradient(90deg, #FFD700 0%, #FFF8DC 40%, #FFA500 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
+.btn-gold:hover,
+.btn-gold:focus-visible {
+  background-color: #e0b900;
+  background-image: linear-gradient(90deg, #D9A900 0%, #FFF1A8 50%, #D9A900 100%);
+  border-color: #e0b900;
+  color: #1a1400;
 }
 
 /* Hamburger menü */
@@ -46,8 +92,6 @@ body {
   padding: 0.5rem 1rem;
 }
 .nav-link:hover {
-  color: #ffd700 !important;
-  text-shadow: 0 0 5px #c59d00;
   background-color: rgba(255, 215, 0, 0.1);
   border-radius: 4px;
 }
@@ -60,12 +104,54 @@ body {
   width: 75%;
 }
 
+.prices-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  margin-bottom: 1rem;
+}
+
+.prices-note-icon {
+  width: 1.4rem;
+  height: 1.4rem;
+  flex: 0 0 auto;
+  margin-top: 0.15rem;
+  stroke: #c9a94d;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.table {
+  --bs-table-color: #f5f5f5;
+  --bs-table-bg: #111;
+  --bs-table-border-color: #555;
+  --bs-table-striped-color: #f5f5f5;
+  --bs-table-striped-bg: #1b1b1b;
+}
+
 /* Képgaléria egységes mérete */
 .gallery-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
+}
+
+.doctor-portrait {
+  display: block;
+  width: 100%;
+  height: 16rem;
+  object-fit: cover;
+  object-position: center 35%;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.75rem 2rem rgba(0, 0, 0, 0.12);
+}
+
+@media (max-width: 575.98px) {
+  .doctor-portrait {
+    height: 9rem;
+  }
 }
 
 /* Telefon link stílus */
@@ -78,10 +164,63 @@ body {
   text-decoration: underline;
 }
 
+.call-icon {
+  width: 1.4rem;
+  height: 1.4rem;
+  margin-right: 0.4rem;
+  color: currentColor;
+  vertical-align: -0.35em;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.contact-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.4rem;
+  color: #c9a94d;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vertical-align: -0.25em;
+}
+
+.contact-icon-phone {
+  position: relative;
+  left: -0.2rem;
+  width: 1.8rem;
+  height: 1.8rem;
+  vertical-align: -0.4em;
+}
+
+.contact-details p {
+  display: grid;
+  grid-template-columns: 2rem 9rem minmax(0, 1fr);
+  column-gap: 0.4rem;
+  align-items: start;
+}
+
+.contact-details .contact-icon {
+  grid-column: 1;
+  margin-right: 0;
+}
+
+.contact-details strong {
+  grid-column: 2;
+}
+
+.contact-details p > a,
+.contact-details p > span {
+  grid-column: 3;
+}
+
 /* Developer infó */
 .developer {
   font-size: 0.85rem;
-  color: #666;
+  color: #bbb;
   margin-left: 1rem;
 }
 
@@ -92,7 +231,7 @@ body {
     left: 0;
     right: 0;
     height: 150px;
-    background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, white 100%);
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, #000 100%);
 }
 .header-image {
   width: 100%;

@@ -59,6 +59,9 @@ function formatCategory(category) {
   const match = category.match(/^([^(]+)\s*(\([^)]+\))?/);
   if (!match) return category;
   const main = match[1].trim();
-  const paren = match[2] ? `<br><span style="font-size: 0.6em;">${match[2].slice(1, -1)}</span>` : '';
+  const subtitle = match[2]?.slice(1, -1)
+    .replace(/^crowns,\s*bridges$/i, "Crowns and Bridges")
+    .replace(/^koronák,\s*hidak$/i, "Koronák és Hidak");
+  const paren = subtitle ? `<br><span class="category-subtitle">${subtitle}</span>` : '';
   return main + paren;
 }
