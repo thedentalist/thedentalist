@@ -209,16 +209,22 @@ footer {
 }
 
 .btn-gold {
-  background-color: #c59d00;
-  color: #fff;
+  background-color: #e0b900;
+  background-image: linear-gradient(90deg, #D9A900 0%, #FFF1A8 50%, #D9A900 100%);
+  border-color: #d9a900;
+  color: #1a1400;
+  font-weight: 600;
+  transition: filter 0.2s ease, box-shadow 0.2s ease;
 }
 
 .btn-gold:hover,
 .btn-gold:focus-visible {
   background-color: #e0b900;
-  background-image: linear-gradient(90deg, #D9A900 0%, #FFF1A8 50%, #D9A900 100%);
+  background-image: linear-gradient(90deg, #E7B900 0%, #FFF6D0 50%, #E7B900 100%);
   border-color: #e0b900;
   color: #1a1400;
+  filter: brightness(1.04);
+  box-shadow: 0 0.25rem 1rem rgba(217, 169, 0, 0.24);
 }
 
 /* Hamburger menü */
