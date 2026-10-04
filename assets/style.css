@@ -72,7 +72,7 @@ h1, h2, h3, h4, h5, h6,
   letter-spacing: clamp(0.12em, 0.38vw, 0.32em);
   line-height: 1;
   white-space: nowrap;
-  filter: drop-shadow(0 1px 0 rgba(255, 241, 168, 0.3)) drop-shadow(0 -1px 0 rgba(95, 57, 0, 0.4));
+  filter: drop-shadow(-1px -1px 0 rgba(95, 57, 0, 0.8)) drop-shadow(1px 1px 0 rgba(255, 241, 168, 0.55)) drop-shadow(0 1px 2px rgba(0, 0, 0, 0.65));
 }
 
 @media (max-width: 575.98px) {
