@@ -395,6 +395,35 @@ footer {
   font-weight: 600;
 }
 
+.contact-social-link {
+  display: inline-grid;
+  width: 3rem;
+  height: 3rem;
+  padding: 0.7rem;
+  place-items: center;
+  border-radius: 50%;
+}
+
+.contact-social-link svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+.contact-social-link[aria-label="Facebook"] svg {
+  fill: currentColor;
+  stroke: none;
+}
+
+.contact-social-icon-dot {
+  fill: currentColor;
+  stroke: none;
+}
+
 /* Developer infó */
 .developer {
   font-size: 0.85rem;
