@@ -113,6 +113,15 @@ footer {
   margin-bottom: 1rem;
 }
 
+.gold-text {
+  width: fit-content;
+  max-width: 100%;
+}
+
+.gold-text.text-center {
+  margin-inline: auto;
+}
+
 .reviews-section {
   background: linear-gradient(180deg, #090909 0%, #111 50%, #090909 100%);
   border-top: 1px solid rgba(201, 169, 77, 0.2);
@@ -249,6 +258,11 @@ footer {
 /* Árlista táblázat igazítása */
 #pricelist td:first-child {
   width: 75%;
+}
+
+#pricelist .section-title {
+  width: fit-content;
+  max-width: 100%;
 }
 
 .prices-note {
