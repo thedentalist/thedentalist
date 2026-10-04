@@ -378,6 +378,23 @@ footer {
   grid-column: 3;
 }
 
+.contact-social-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 1.25rem;
+}
+
+.contact-social-title {
+  width: 100%;
+  margin: 0;
+  color: #f5f5f5;
+  font-family: 'Montserrat', 'Segoe UI', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
 /* Developer infó */
 .developer {
   font-size: 0.85rem;
