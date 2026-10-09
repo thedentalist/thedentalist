@@ -75,6 +75,27 @@ h1, h2, h3, h4, h5, h6,
   filter: drop-shadow(0 1px 0 rgba(255, 241, 168, 0.3)) drop-shadow(0 -1px 0 rgba(95, 57, 0, 0.4));
 }
 
+.accent-a {
+  position: relative;
+}
+
+.accent-a::after {
+  content: "´";
+  position: absolute;
+  top: -0.05em;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.25em;
+  line-height: 1;
+  background-image: linear-gradient(90deg, #D9A900 0%, #FFF1A8 45%, #FFF1A8 55%, #D9A900 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
 @media (max-width: 575.98px) {
   .hero-brand-title {
     font-size: clamp(1.4rem, 6vw, 1.65rem);
