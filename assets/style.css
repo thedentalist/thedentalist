@@ -80,15 +80,17 @@ h1, h2, h3, h4, h5, h6,
   display: inline-block;
 }
 
-.acute-accent {
+.accented-a::after {
+  content: "";
   position: absolute;
-  top: -0.25em;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 1.35em;
-  line-height: 1;
-  color: #FFF1A8 !important;
-  -webkit-text-fill-color: #FFF1A8;
+  top: -0.48em;
+  left: 55%;
+  width: max(2px, 0.12em);
+  height: 0.55em;
+  transform: translateX(-50%) rotate(28deg);
+  border-radius: 1px;
+  background: #FFF1A8;
+  pointer-events: none;
 }
 
 @media (max-width: 575.98px) {
