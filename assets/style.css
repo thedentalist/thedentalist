@@ -136,6 +136,17 @@ footer {
   column-gap: 0.65rem;
 }
 
+@media (min-width: 992px) {
+  .navbar-nav {
+    flex: 1;
+    justify-content: space-evenly;
+  }
+
+  .navbar-nav.ms-auto {
+    margin-left: 0 !important;
+  }
+}
+
 .nav-link {
   white-space: nowrap;
 }
