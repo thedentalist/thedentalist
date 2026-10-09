@@ -398,15 +398,15 @@ h4.section-title {
 /* Navigációs link stílus */
 .nav-link {
   font-weight: 500;
-  letter-spacing: 0.2px;
+  letter-spacing: 0.6px;
   line-height: 1.2;
   transition: all 0.3s ease;
   padding: 0.08rem 0.42rem;
-  font-size: 0.88rem;
+  font-size: 1rem;
 }
 
 .navbar.is-compact .nav-link {
-  font-size: 0.82rem;
+  font-size: 0.92rem;
 }
 
 @media (max-width: 575.98px) {
