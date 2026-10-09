@@ -39,15 +39,15 @@ h1, h2, h3, h4, h5, h6,
   top: 0;
   left: 50%;
   display: block;
-  width: 112%;
-  max-width: none;
+  width: 75%;
+  max-width: 100%;
   height: auto;
   transform: translateX(-50%);
 }
 
 .hero-brand-wordmark {
   position: absolute;
-  top: 69%;
+  top: 46%;
   left: 15%;
   display: flex;
   width: 70%;
@@ -138,12 +138,23 @@ footer {
 
 @media (min-width: 992px) {
   .navbar-nav {
-    flex: 1;
-    justify-content: space-evenly;
+    flex: 0 0 auto;
+    justify-content: flex-end;
+    column-gap: 1.25rem;
   }
 
   .navbar-nav.ms-auto {
-    margin-left: 0 !important;
+    margin-left: auto !important;
+  }
+
+  .nav-link {
+    padding-inline: 0.6rem;
+    font-size: 1.15rem;
+    letter-spacing: 1px;
+  }
+
+  .navbar.is-compact .nav-link {
+    font-size: 1.05rem;
   }
 }
 
