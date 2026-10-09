@@ -83,11 +83,13 @@ h1, h2, h3, h4, h5, h6,
 .accented-a::after {
   content: "";
   position: absolute;
-  top: -0.35em;
-  left: 30%;
-  width: 0.05em;
-  height: 0.34em;
-  transform: translateX(-50%) rotate(28deg);
+  top: -0.18em;
+  left: 29%;
+  width: 0.04em;
+  height: 0.18em;
+  -webkit-transform: translateX(-50%) rotate(26deg);
+  transform: translateX(-50%) rotate(26deg);
+  transform-origin: center bottom;
   border-radius: 1em;
   background: #FFF1A8;
   pointer-events: none;
