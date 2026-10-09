@@ -3,6 +3,16 @@ if (window.location.pathname === "/index.html") {
   window.location.replace("/");
 }
 
+const navbar = document.querySelector(".navbar");
+if (navbar) {
+  const updateNavbar = () => {
+    navbar.classList.toggle("is-compact", window.scrollY > 40);
+  };
+
+  window.addEventListener("scroll", updateNavbar, { passive: true });
+  updateNavbar();
+}
+
 // Language loading and switching
 window.loadLanguage = function (lang) {
   fetch(`assets/lang_${lang}.json`)
