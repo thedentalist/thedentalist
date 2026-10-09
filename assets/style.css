@@ -79,8 +79,8 @@ h1, h2, h3, h4, h5, h6,
   position: relative;
   display: inline-block;
   background: none;
-  color: #FFF1A8 !important;
-  -webkit-text-fill-color: #FFF1A8;
+  color: #E6C34B !important;
+  -webkit-text-fill-color: #E6C34B;
 }
 
 .accented-a::after {
@@ -88,8 +88,8 @@ h1, h2, h3, h4, h5, h6,
   position: absolute;
   top: -0.4em;
   left: 55%;
-  width: max(1px, 0.07em);
-  height: 0.42em;
+  width: 0.05em;
+  height: 0.34em;
   transform: translateX(-50%) rotate(28deg);
   border-radius: 1em;
   background: #FFF1A8;
@@ -206,6 +206,16 @@ footer {
 .gradient-gold.hero-brand-caption {
   font-family: 'Poppins', 'Segoe UI', sans-serif;
   font-weight: 400;
+}
+
+.gradient-gold.hero-brand-caption .accented-a {
+  background-image: linear-gradient(90deg, #D9A900 0%, #FFF1A8 45%, #FFF1A8 55%, #D9A900 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent !important;
 }
 
 .section-title {
