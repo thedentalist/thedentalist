@@ -83,7 +83,7 @@ h1, h2, h3, h4, h5, h6,
 .accented-a::after {
   content: "";
   position: absolute;
-  top: -0.4em;
+  top: -0.35em;
   left: 30%;
   width: 0.05em;
   height: 0.34em;
@@ -97,6 +97,12 @@ h1, h2, h3, h4, h5, h6,
   .hero-brand-title {
     font-size: clamp(1.4rem, 6vw, 1.65rem);
     letter-spacing: 0.12em;
+  }
+
+  .gradient-gold.hero-brand-caption .accented-a {
+    background-image: none;
+    -webkit-text-fill-color: #F5DE7C;
+    color: #F5DE7C !important;
   }
 }
 
