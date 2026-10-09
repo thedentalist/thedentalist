@@ -78,16 +78,13 @@ h1, h2, h3, h4, h5, h6,
 .accented-a {
   position: relative;
   display: inline-block;
-  background: none;
-  color: #E6C34B !important;
-  -webkit-text-fill-color: #E6C34B;
 }
 
 .accented-a::after {
   content: "";
   position: absolute;
   top: -0.4em;
-  left: 55%;
+  left: 30%;
   width: 0.05em;
   height: 0.34em;
   transform: translateX(-50%) rotate(28deg);
@@ -206,16 +203,6 @@ footer {
 .gradient-gold.hero-brand-caption {
   font-family: 'Poppins', 'Segoe UI', sans-serif;
   font-weight: 400;
-}
-
-.gradient-gold.hero-brand-caption .accented-a {
-  background-image: linear-gradient(90deg, #D9A900 0%, #FFF1A8 45%, #FFF1A8 55%, #D9A900 100%);
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent !important;
 }
 
 .section-title {
