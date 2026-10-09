@@ -35,7 +35,7 @@ function parseCSVtoTables(csv, containerId) {
     const section = document.createElement("section");
     const heading = document.createElement("h4");
     heading.classList.add("section-title", "pt-3");
-    heading.innerHTML = formatCategory(category); 
+    heading.innerHTML = `${formatCategory(category)}:`;
     section.appendChild(heading);
 
     const table = document.createElement("table");
