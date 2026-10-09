@@ -78,17 +78,20 @@ h1, h2, h3, h4, h5, h6,
 .accented-a {
   position: relative;
   display: inline-block;
+  background: none;
+  color: #FFF1A8 !important;
+  -webkit-text-fill-color: #FFF1A8;
 }
 
 .accented-a::after {
   content: "";
   position: absolute;
-  top: -0.48em;
+  top: -0.4em;
   left: 55%;
-  width: max(2px, 0.12em);
-  height: 0.55em;
+  width: max(1px, 0.07em);
+  height: 0.42em;
   transform: translateX(-50%) rotate(28deg);
-  border-radius: 1px;
+  border-radius: 1em;
   background: #FFF1A8;
   pointer-events: none;
 }
