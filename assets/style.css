@@ -37,7 +37,7 @@ h1, h2, h3, h4, h5, h6,
 .hero-brand > img {
   position: absolute;
   top: 0;
-  left: 50%;
+  left: 40%;
   display: block;
   width: 75%;
   max-width: 100%;
@@ -73,26 +73,6 @@ h1, h2, h3, h4, h5, h6,
   line-height: 1;
   white-space: nowrap;
   filter: drop-shadow(0 1px 0 rgba(255, 241, 168, 0.3)) drop-shadow(0 -1px 0 rgba(95, 57, 0, 0.4));
-}
-
-.accented-a {
-  position: relative;
-  display: inline-block;
-}
-
-.accented-a::after {
-  content: "";
-  position: absolute;
-  top: -0.27em;
-  left: 36%;
-  width: 0.04em;
-  height: 0.20em;
-  -webkit-transform: translateX(-50%) rotate(26deg);
-  transform: translateX(-50%) rotate(26deg);
-  transform-origin: center bottom;
-  border-radius: 1em;
-  background: #FFF1A8;
-  pointer-events: none;
 }
 
 @media (max-width: 575.98px) {
