@@ -51,6 +51,11 @@ function updateLangToggle() {
   }
   btn.onclick = function () {
     const newLang = lang === 'hu' ? 'en' : 'hu';
+    const alt = document.querySelector(`link[rel="alternate"][hreflang="${newLang}"]`);
+    if (alt && /^https?:$/.test(window.location.protocol)) {
+      window.location.assign(new URL(alt.href).pathname);
+      return;
+    }
     const pathParts = window.location.pathname.split("/");
     const englishIndex = pathParts.indexOf("en");
     if (newLang === "hu" && englishIndex !== -1) {
