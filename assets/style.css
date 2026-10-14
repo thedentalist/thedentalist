@@ -60,6 +60,7 @@ h1, h2, h3, h4, h5, h6,
 }
 
 .hero-brand-title {
+  margin: 0;
   font-size: clamp(1.65rem, 4.1vw, 3.5rem);
   letter-spacing: clamp(0.16em, 0.52vw, 0.46em);
   line-height: 1;
@@ -208,6 +209,14 @@ h4.gold-text {
 }
 
 h4.section-title {
+  font-size: 1.2rem;
+}
+
+h2.prices-category-title {
+  font-size: 1.2rem;
+}
+
+.treatments-section-title {
   font-size: 1.2rem;
 }
 

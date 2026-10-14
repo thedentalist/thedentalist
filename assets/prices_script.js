@@ -1,6 +1,7 @@
 // Load and display prices from CSV based on selected language
 function loadPrices(lang) {
-  const csvFile = lang === "en" ? "assets/pricelist_en.csv" : "assets/pricelist_hu.csv";
+  const assetsPath = /\/en\//.test(window.location.pathname) ? "../assets" : "assets";
+  const csvFile = `${assetsPath}/pricelist_${lang}.csv`;
   fetch(csvFile)
     .then((response) => response.text())
     .then((data) => {
@@ -33,8 +34,8 @@ function parseCSVtoTables(csv, containerId) {
 
   Object.keys(categories).forEach(category => {
     const section = document.createElement("section");
-    const heading = document.createElement("h4");
-    heading.classList.add("section-title", "pt-3");
+    const heading = document.createElement("h2");
+    heading.classList.add("section-title", "pt-3", "prices-category-title");
     heading.innerHTML = `${formatCategory(category)}:`;
     section.appendChild(heading);
 
