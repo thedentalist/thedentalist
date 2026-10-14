@@ -1,6 +1,8 @@
 // Redirect from /index.html to /
 if (window.location.pathname === "/index.html") {
   window.location.replace("/");
+} else if (window.location.pathname === "/en/index.html") {
+  window.location.replace("/en/");
 }
 
 const navbar = document.querySelector(".navbar");
