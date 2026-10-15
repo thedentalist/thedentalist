@@ -209,6 +209,13 @@ footer {
   text-decoration: none;
 }
 
+h2.service-heading {
+  background: none;
+  -webkit-text-fill-color: #e0b900;
+  color: #e0b900;
+  filter: none;
+}
+
 .service-links a:hover {
   text-decoration: underline;
 }
@@ -243,9 +250,9 @@ h2.prices-category-title {
 
 .treatments-instagram-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.75rem;
-  max-width: 1200px;
+  max-width: 1400px;
   margin-inline: auto;
 }
 
@@ -269,8 +276,8 @@ h2.prices-category-title {
   }
 
   .treatments-instagram-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 0.25rem;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.5rem;
   }
 }
 
@@ -476,9 +483,67 @@ h2.prices-category-title {
   border-bottom: 2px solid #c59d00 !important;
 }
 
+/* Kezelések legördülő menü */
+.nav-treatments > .dropdown-toggle::after {
+  display: none;
+}
+
+.nav-treatments .dropdown-menu {
+  background: #0b0b0b;
+  border: 1px solid rgba(201, 169, 77, 0.45);
+  border-radius: 6px;
+  padding: 0.25rem 0;
+  margin-top: 0;
+  min-width: 0;
+  z-index: 1050;
+}
+
+.nav-treatments .dropdown-item {
+  color: #e0b900;
+  font-size: 0.85rem;
+  padding: 0.25rem 0.8rem;
+  white-space: nowrap;
+}
+
+.nav-treatments .dropdown-item:hover,
+.nav-treatments .dropdown-item:focus {
+  background-image: linear-gradient(90deg, #D9A900 0%, #FFF1A8 50%, #D9A900 100%);
+  color: #1a1400;
+}
+
+@media (hover: hover) {
+  .nav-treatments:hover > .dropdown-menu {
+    display: block;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .nav-treatments .dropdown-menu {
+    min-width: 0;
+  }
+
+  .nav-treatments .dropdown-item {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.6rem;
+  }
+}
+
 /* Árlista táblázat igazítása */
-#pricelist td:first-child {
+#pricelist td:first-child,
+.service-prices td:first-child {
   width: 75%;
+}
+
+.service-prices .prices-note {
+  margin-top: 0.5rem;
+}
+
+.service-prices {
+  margin-top: 1.5rem;
+}
+
+.service-prices h2.prices-category-title {
+  margin-top: 0.5rem;
 }
 
 #pricelist .section-title {
@@ -510,6 +575,10 @@ h2.prices-category-title {
   --bs-table-border-color: #555;
   --bs-table-striped-color: #f5f5f5;
   --bs-table-striped-bg: #1b1b1b;
+}
+
+.table thead th {
+  color: #e0b900;
 }
 
 /* Képgaléria egységes mérete */
@@ -706,4 +775,16 @@ h2.prices-category-title {
     width: 17px;
     height: 12px;
   }
+}
+
+/* Menüpontok egyenletesen elosztva a logó és a zászló között */
+.navbar-collapse {
+  flex: 1 1 auto;
+}
+
+.navbar-nav,
+.navbar-nav.ms-auto {
+  flex: 1 1 auto;
+  justify-content: space-evenly;
+  margin-left: 0 !important;
 }

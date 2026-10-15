@@ -1,6 +1,6 @@
 {
     "menu-home": "Főoldal",
-    "menu-treatments": "Kezelések",
+    "menu-treatments": "Kezelések és árak",
     "menu-prices": "Árlista",
     "menu-contact": "Kapcsolat",
     "footer-text": "© 2025 The Dentalist Dr. Morhaf Kft. Minden jog fenntartva.",
@@ -34,7 +34,7 @@
     "treatments-surgery-note": "Mindezt fájdalommentesen.",
     "prices-title": "Fogászati árlista Budapesten | The Dentalist",
     "prices-header": "Szolgáltatási Árlista:",
-    "prices-note": "Az árak tájékoztató jellegűek, a végső összeg az alkalmazott technikától és anyagválasztástól függően változhat. Komplex kezelések vagy több fogat érintő rehabilitáció esetén egyéni kezelési terv és kedvezőbb, személyre szabott árak készülnek.",
+    "prices-note": "Komplex kezeléseknél egyéni kezelési terv és kedvezőbb árak készülnek.",
     "contact-title": "Kapcsolat és időpontfoglalás | The Dentalist Budapest",
     "contact-intro": "Kérdése van, időpontot foglalna, vagy visszahívást kérne? Vegye fel velünk a kapcsolatot az alábbi elérhetőségeken!",
     "contact-booking-title": "Bejelentkezés:",

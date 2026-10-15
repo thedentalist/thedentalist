@@ -26,8 +26,10 @@ function parseCSVtoTables(csv, containerId) {
     .filter(Boolean);
 
   const container = document.getElementById(containerId);
+  const wanted = (container.dataset.priceCats || "").split(",").map(s => s.trim()).filter(Boolean);
   const categories = {};
   rows.forEach(({ category, service, price }) => {
+    if (wanted.length && !wanted.includes(category.split(".")[0])) return;
     if (!categories[category]) categories[category] = [];
     categories[category].push({ service, price });
   });
@@ -36,7 +38,7 @@ function parseCSVtoTables(csv, containerId) {
     const section = document.createElement("section");
     const heading = document.createElement("h2");
     heading.classList.add("section-title", "pt-3", "prices-category-title");
-    heading.innerHTML = `${formatCategory(category)}:`;
+    heading.innerHTML = `${formatCategory(category.replace(/^\d+\.\s*/, ""))}:`;
     section.appendChild(heading);
 
     const table = document.createElement("table");

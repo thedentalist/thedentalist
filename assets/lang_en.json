@@ -1,6 +1,6 @@
 {
     "menu-home": "Home",
-    "menu-treatments": "Treatments",
+    "menu-treatments": "Treatments & Prices",
     "menu-prices": "Prices",
     "menu-contact": "Contact",
     "footer-text": "© 2025 The Dentalist Dr. Morhaf Kft. All rights reserved.",
@@ -34,7 +34,7 @@
     "treatments-surgery-note": "All procedures are performed painlessly.",
     "prices-title": "Dental Price List | The Dentalist Budapest",
     "prices-header": "Service Prices:",
-    "prices-note": "The prices are indicative and may vary depending on the techniques and materials used. For complex treatments or rehabilitations involving multiple teeth, an individual treatment plan and more favorable, personalized pricing will be provided.",
+    "prices-note": "For complex treatments, we prepare an individual plan with more favorable pricing.",
     "contact-title": "Contact & Appointments | The Dentalist Budapest",
     "contact-intro": "Do you have questions, want to book an appointment, or request a callback? Get in touch with us using the details below!",
     "contact-booking-title": "Booking:",

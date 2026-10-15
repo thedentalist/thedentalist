@@ -8,18 +8,18 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://thedentalist.hu/"/>
   </url>
   <url>
-    <loc>https://thedentalist.hu/treatments.html</loc>
+    <loc>https://thedentalist.hu/gallery.html</loc>
     <lastmod>2026-10-15</lastmod>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://thedentalist.hu/treatments.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://thedentalist.hu/en/treatments.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://thedentalist.hu/treatments.html"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://thedentalist.hu/gallery.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thedentalist.hu/en/gallery.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://thedentalist.hu/gallery.html"/>
   </url>
   <url>
-    <loc>https://thedentalist.hu/prices.html</loc>
+    <loc>https://thedentalist.hu/gyermekfogaszat.html</loc>
     <lastmod>2026-10-15</lastmod>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://thedentalist.hu/prices.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://thedentalist.hu/en/prices.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://thedentalist.hu/prices.html"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://thedentalist.hu/gyermekfogaszat.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thedentalist.hu/en/pediatric-dentistry.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://thedentalist.hu/gyermekfogaszat.html"/>
   </url>
   <url>
     <loc>https://thedentalist.hu/contact.html</loc>
@@ -36,18 +36,18 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://thedentalist.hu/"/>
   </url>
   <url>
-    <loc>https://thedentalist.hu/en/treatments.html</loc>
+    <loc>https://thedentalist.hu/en/gallery.html</loc>
     <lastmod>2026-10-15</lastmod>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://thedentalist.hu/treatments.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://thedentalist.hu/en/treatments.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://thedentalist.hu/treatments.html"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://thedentalist.hu/gallery.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thedentalist.hu/en/gallery.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://thedentalist.hu/gallery.html"/>
   </url>
   <url>
-    <loc>https://thedentalist.hu/en/prices.html</loc>
+    <loc>https://thedentalist.hu/en/pediatric-dentistry.html</loc>
     <lastmod>2026-10-15</lastmod>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://thedentalist.hu/prices.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://thedentalist.hu/en/prices.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://thedentalist.hu/prices.html"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://thedentalist.hu/gyermekfogaszat.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thedentalist.hu/en/pediatric-dentistry.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://thedentalist.hu/gyermekfogaszat.html"/>
   </url>
   <url>
     <loc>https://thedentalist.hu/en/contact.html</loc>
@@ -56,6 +56,10 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://thedentalist.hu/en/contact.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://thedentalist.hu/contact.html"/>
   </url>
+  <url><loc>https://thedentalist.hu/diagnosztika.html</loc><lastmod>2026-10-15</lastmod><xhtml:link rel="alternate" hreflang="hu" href="https://thedentalist.hu/diagnosztika.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thedentalist.hu/en/diagnostics.html"/><xhtml:link rel="alternate" hreflang="x-default" href="https://thedentalist.hu/diagnosztika.html"/></url>
+  <url><loc>https://thedentalist.hu/en/diagnostics.html</loc><lastmod>2026-10-15</lastmod><xhtml:link rel="alternate" hreflang="hu" href="https://thedentalist.hu/diagnosztika.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thedentalist.hu/en/diagnostics.html"/><xhtml:link rel="alternate" hreflang="x-default" href="https://thedentalist.hu/diagnosztika.html"/></url>
+  <url><loc>https://thedentalist.hu/konzervalo-fogaszat.html</loc><lastmod>2026-10-15</lastmod><xhtml:link rel="alternate" hreflang="hu" href="https://thedentalist.hu/konzervalo-fogaszat.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thedentalist.hu/en/conservative-dentistry.html"/><xhtml:link rel="alternate" hreflang="x-default" href="https://thedentalist.hu/konzervalo-fogaszat.html"/></url>
+  <url><loc>https://thedentalist.hu/en/conservative-dentistry.html</loc><lastmod>2026-10-15</lastmod><xhtml:link rel="alternate" hreflang="hu" href="https://thedentalist.hu/konzervalo-fogaszat.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thedentalist.hu/en/conservative-dentistry.html"/><xhtml:link rel="alternate" hreflang="x-default" href="https://thedentalist.hu/konzervalo-fogaszat.html"/></url>
   <url><loc>https://thedentalist.hu/gyokerkezeles.html</loc><lastmod>2026-10-15</lastmod><xhtml:link rel="alternate" hreflang="hu" href="https://thedentalist.hu/gyokerkezeles.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thedentalist.hu/en/root-canal-treatment.html"/><xhtml:link rel="alternate" hreflang="x-default" href="https://thedentalist.hu/gyokerkezeles.html"/></url>
   <url><loc>https://thedentalist.hu/szajsebeszet.html</loc><lastmod>2026-10-15</lastmod><xhtml:link rel="alternate" hreflang="hu" href="https://thedentalist.hu/szajsebeszet.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thedentalist.hu/en/oral-surgery.html"/><xhtml:link rel="alternate" hreflang="x-default" href="https://thedentalist.hu/szajsebeszet.html"/></url>
   <url><loc>https://thedentalist.hu/szajhigienia.html</loc><lastmod>2026-10-15</lastmod><xhtml:link rel="alternate" hreflang="hu" href="https://thedentalist.hu/szajhigienia.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thedentalist.hu/en/oral-hygiene.html"/><xhtml:link rel="alternate" hreflang="x-default" href="https://thedentalist.hu/szajhigienia.html"/></url>
