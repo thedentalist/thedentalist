@@ -245,39 +245,277 @@ h2.prices-category-title {
 }
 
 .treatments-instagram-gallery {
-  padding: 1rem 1rem 0;
+  padding: 1.5rem 1rem 2rem;
 }
 
 .treatments-instagram-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.75rem;
-  max-width: 900px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  max-width: 1120px;
   margin-inline: auto;
 }
 
-.treatments-instagram-grid a {
+.gallery-results {
+  max-width: 920px;
+  margin: 3rem auto 0;
+}
+
+.gallery-results h2,
+.gallery-results h1 {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  color: #f3ecdc;
+  font-size: clamp(0.95rem, 1.6vw, 1.2rem);
+  font-weight: 300;
+  letter-spacing: 0.38em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.gallery-results h2::before,
+.gallery-results h2::after,
+.gallery-results h1::before,
+.gallery-results h1::after {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201, 169, 77, 0.8));
+  content: "";
+}
+
+.gallery-results h2::after,
+.gallery-results h1::after {
+  background: linear-gradient(270deg, transparent, rgba(201, 169, 77, 0.8));
+}
+
+/* Fill each clinic card edge to edge so all photos share the same symmetrical frame */
+.gallery-results-note {
+  max-width: 560px;
+  margin: -0.6rem auto 1.5rem;
+  color: rgba(243, 236, 220, 0.6);
+  font-size: 0.72rem;
+  font-style: italic;
+  letter-spacing: 0.03em;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.before-after-link {
+  display: block;
+  width: fit-content;
+  margin: 1.1rem auto 0;
+  padding: 0.55rem 1.4rem;
+  border: 1px solid rgba(201, 169, 77, 0.6);
+  border-radius: 0.2rem;
+  color: #e4c86e;
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background-color 180ms ease, color 180ms ease;
+}
+
+.before-after-link::after {
+  margin-left: 0.5em;
+  content: "\2197";
+}
+
+.before-after-link:hover,
+.before-after-link:focus-visible {
+  background: #c9a94d;
+  color: #111;
+}
+
+.treatments-before-after-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  max-width: 780px;
+}
+
+.before-after-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  aspect-ratio: 128 / 139;
+  border: 1px solid rgba(201, 169, 77, 0.7);
+  border-radius: 0.35rem;
+  background: linear-gradient(145deg, #171717, #080808);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35), inset 0 0 0 3px rgba(201, 169, 77, 0.12);
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+.before-after-card::after {
+  position: absolute;
+  inset: 5px;
+  border: 1px solid rgba(201, 169, 77, 0.3);
+  border-radius: 0.15rem;
+  content: "";
+  pointer-events: none;
+}
+
+.before-after-card:hover,
+.before-after-card:focus-within {
+  z-index: 1;
+  transform: translateY(-4px);
+  border-color: #c9a94d;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.48), 0 0 18px rgba(201, 169, 77, 0.18);
+}
+
+.before-after-media {
+  position: absolute;
+  inset: 0;
+  display: block;
+  overflow: hidden;
+}
+
+/* Zoom past the frame baked into the Instagram images so only the outer card frame remains */
+.before-after-card img {
+  transform: scale(1.15);
+}
+
+.before-after-card:hover img {
+  transform: scale(1.19);
+}
+
+.before-after-label {
+  position: absolute;
+  z-index: 2;
+  left: 5%;
+  padding: 0.35rem 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.45);
+  color: #fff;
+  font-size: 0.55rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  line-height: 1.2;
+  text-decoration: none;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.9), 0 0 8px rgba(0, 0, 0, 0.7);
+  text-transform: uppercase;
+  transition: color 180ms ease, border-color 180ms ease;
+}
+
+.before-after-label::after {
+  margin-left: 0.4em;
+  content: "\2197";
+  opacity: 0.75;
+}
+
+.before-after-label:hover,
+.before-after-label:focus-visible {
+  border-bottom-color: #e4c86e;
+  color: #e4c86e;
+}
+
+.before-after-label:focus-visible {
+  outline: 2px solid #e4c86e;
+  outline-offset: 2px;
+}
+
+.before-after-label--before {
+  top: 40%;
+}
+
+.before-after-label--after {
+  top: 89%;
+}
+
+.before-after-card--split .before-after-label--before {
+  top: 89%;
+  left: 5%;
+}
+
+.before-after-card--split .before-after-label--after {
+  top: 89%;
+  left: 54%;
+}
+
+.ba-soon {
+  margin: 2.5rem 0 0;
+  background: linear-gradient(90deg, #c9a94d, #f3e2a0 50%, #c9a94d);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-size: clamp(1rem, 2.4vw, 1.35rem);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-align: center;
+}
+
+@media (max-width: 575.98px) {
+  .treatments-before-after-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.85rem;
+  }
+}
+
+.treatments-instagram-grid > a {
+  position: relative;
   display: block;
   overflow: hidden;
   aspect-ratio: 128 / 139;
-  background: #111;
+  border: 1px solid rgba(201, 169, 77, 0.7);
+  border-radius: 0.35rem;
+  background: linear-gradient(145deg, #171717, #080808);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35), inset 0 0 0 3px rgba(201, 169, 77, 0.12);
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+.treatments-instagram-grid > a::after {
+  position: absolute;
+  inset: 5px;
+  border: 1px solid rgba(201, 169, 77, 0.3);
+  border-radius: 0.15rem;
+  content: "";
+  pointer-events: none;
+}
+
+.treatments-instagram-grid > a:hover,
+.treatments-instagram-grid > a:focus-visible {
+  z-index: 1;
+  transform: translateY(-4px);
+  border-color: #c9a94d;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.48), 0 0 18px rgba(201, 169, 77, 0.18);
+}
+
+.treatments-instagram-grid > a:focus-visible {
+  outline: 2px solid #e4c86e;
+  outline-offset: 3px;
 }
 
 .treatments-instagram-grid img {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
+  transition: transform 250ms ease;
+}
+
+.treatments-instagram-grid > a:hover img,
+.treatments-instagram-grid > a:focus-visible img {
+  transform: scale(1.035);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .treatments-instagram-grid > a,
+  .treatments-instagram-grid img {
+    transition: none;
+  }
 }
 
 @media (max-width: 575.98px) {
   .treatments-instagram-gallery {
-    padding-inline: 0.25rem;
+    padding: 1rem 0.5rem 1.5rem;
   }
 
   .treatments-instagram-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.5rem;
+    gap: 0.65rem;
+  }
+
+  .gallery-results {
+    margin-top: 2.25rem;
   }
 }
 
