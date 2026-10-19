@@ -5,33 +5,30 @@ Category;Service;Price (HUF)
 1. Consultations;Screening examination for pregnant women;10.000
 1. Consultations;Panoramic X-ray;8.000
 1. Consultations;Intraoral / small X-ray;2.000 – 5.000
-1. Consultations;CBCT (3D imaging);20.000 – 30.000
-2. Oral Hygiene and Periodontal Therapy;Ultrasonic tartar removal and polishing (both jaws);16.000
-2. Oral Hygiene and Periodontal Therapy;Air-flow stain removal (both jaws);16.000
+1. Consultations;CBCT (3D imaging);25.000
+2. Oral Hygiene and Periodontal Therapy;Ultrasonic tartar removal and polishing (both jaws);20.000
+2. Oral Hygiene and Periodontal Therapy;Air-flow stain removal (both jaws);20.000
 2. Oral Hygiene and Periodontal Therapy;Periodontal assessment;15.000
-2. Oral Hygiene and Periodontal Therapy;Closed curettage;15.000 - 20.000 / tooth
+2. Oral Hygiene and Periodontal Therapy;Closed curettage;15.000 / tooth
 2. Oral Hygiene and Periodontal Therapy;Tooth splinting if mobile (per tooth);15.000
-2. Oral Hygiene and Periodontal Therapy;Gingival reshaping / soft tissue surgery (gingivectomy, plastic surgery);15.000 – 50.000
 2. Oral Hygiene and Periodontal Therapy;Crown lengthening;30.000 – 50.000
 3. Fillings & Tooth Build-ups;1-surface filling incisor;18.000
 3. Fillings & Tooth Build-ups;1-surface filling premolar;22.000
 3. Fillings & Tooth Build-ups;1-surface filling molar;25.000
-3. Fillings & Tooth Build-ups;2-surface filling incisor;22.000
-3. Fillings & Tooth Build-ups;2-surface filling premolar;26.000
+3. Fillings & Tooth Build-ups;2-surface filling incisor;23.000
+3. Fillings & Tooth Build-ups;2-surface filling premolar;27.000
 3. Fillings & Tooth Build-ups;2-surface filling molar;28.000
-3. Fillings & Tooth Build-ups;3-surface filling incisor;25.000
-3. Fillings & Tooth Build-ups;3-surface filling premolar;28.000
+3. Fillings & Tooth Build-ups;3-surface filling incisor;28.000
+3. Fillings & Tooth Build-ups;3-surface filling premolar;29.000
 3. Fillings & Tooth Build-ups;3-surface filling molar;30.000
-3. Fillings & Tooth Build-ups;4 or more surfaces;35.000
-3. Fillings & Tooth Build-ups;Composite build-up;40.000
+3. Fillings & Tooth Build-ups;4 or more surfaces / composite build-up;35.000
 3. Fillings & Tooth Build-ups;Post build-up;55.000
 3. Fillings & Tooth Build-ups;Incisor edge restoration;25.000
 3. Fillings & Tooth Build-ups;Fissure sealing;10.000
-3. Fillings & Tooth Build-ups;Temporary filling (short/long term);5.000 – 10.000
-3. Fillings & Tooth Build-ups;Pulp capping / lining;7.000 – 10.000
+3. Fillings & Tooth Build-ups;Temporary filling;7.000
+3. Fillings & Tooth Build-ups;Pulp capping;7.000 – 10.000
+3. Fillings & Tooth Build-ups;Cavity lining;7.000 – 10.000
 3. Fillings & Tooth Build-ups;Aesthetic veneer (composite);70.000
-3. Fillings & Tooth Build-ups;Composite inlay;85.000
-3. Fillings & Tooth Build-ups;E.max pressed inlay;95.000
 3. Fillings & Tooth Build-ups;Bioblock-type root post;40.000 – 45.000
 3. Fillings & Tooth Build-ups;Internal tooth whitening (per session);15.000 – 20.000
 3. Fillings & Tooth Build-ups;Professional whitening;40.000
@@ -48,6 +45,8 @@ Category;Service;Price (HUF)
 6. Fixed Prosthetics (crowns, bridges);Metal-ceramic crown;70.000 – 80.000
 6. Fixed Prosthetics (crowns, bridges);Zirconia crown;85.000 – 100.000
 6. Fixed Prosthetics (crowns, bridges);E.max pressed crown;110.000
+6. Fixed Prosthetics (crowns, bridges);Onlay;78.000
+6. Fixed Prosthetics (crowns, bridges);Overlay;85.000
 6. Fixed Prosthetics (crowns, bridges);Full ceramic veneer;150.000 – 160.000
 6. Fixed Prosthetics (crowns, bridges);Gradia / Solidex crown or inlay;15.000 – 20.000
 6. Fixed Prosthetics (crowns, bridges);Temporary crown (clinic / lab);8.000 / 3.000
