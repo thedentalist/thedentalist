@@ -448,7 +448,8 @@ h2.prices-category-title {
   }
 }
 
-.treatments-instagram-grid > a {
+.treatments-instagram-grid > a,
+.treatments-instagram-grid > .gallery-item {
   position: relative;
   display: block;
   overflow: hidden;
@@ -460,7 +461,8 @@ h2.prices-category-title {
   transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
 }
 
-.treatments-instagram-grid > a::after {
+.treatments-instagram-grid > a::after,
+.treatments-instagram-grid > .gallery-item::after {
   position: absolute;
   inset: 5px;
   border: 1px solid rgba(201, 169, 77, 0.3);
@@ -480,6 +482,11 @@ h2.prices-category-title {
 .treatments-instagram-grid > a:focus-visible {
   outline: 2px solid #e4c86e;
   outline-offset: 3px;
+}
+
+.treatments-instagram-grid .gallery-item img {
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .treatments-instagram-grid img {
