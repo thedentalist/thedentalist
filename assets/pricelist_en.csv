@@ -8,6 +8,7 @@ Category;Service;Price (HUF)
 1. Consultations;CBCT (3D imaging);25.000
 2. Oral Hygiene and Periodontal Therapy;Ultrasonic tartar removal and polishing (both jaws);20.000
 2. Oral Hygiene and Periodontal Therapy;Air-flow stain removal (both jaws);20.000
+2. Oral Hygiene and Periodontal Therapy;Professional whitening;40.000
 2. Oral Hygiene and Periodontal Therapy;Periodontal assessment;15.000
 2. Oral Hygiene and Periodontal Therapy;Closed curettage;15.000 / tooth
 2. Oral Hygiene and Periodontal Therapy;Tooth splinting if mobile (per tooth);15.000
@@ -24,40 +25,39 @@ Category;Service;Price (HUF)
 3. Fillings & Tooth Build-ups;3-surface filling molar;30.000
 3. Fillings & Tooth Build-ups;4 or more surfaces / composite build-up;35.000
 3. Fillings & Tooth Build-ups;Post build-up;65.000
+3. Fillings & Tooth Build-ups;Bioblock-type root post;40.000 – 45.000
+3. Fillings & Tooth Build-ups;Short custom fiber post (SFRC);40.000
 3. Fillings & Tooth Build-ups;Incisor edge restoration;25.000
 3. Fillings & Tooth Build-ups;Temporary filling;7.000
 3. Fillings & Tooth Build-ups;Pulp capping;10.000
 3. Fillings & Tooth Build-ups;Cavity lining;10.000
 3. Fillings & Tooth Build-ups;Aesthetic veneer (composite);70.000
-3. Fillings & Tooth Build-ups;Bioblock-type root post;40.000 – 45.000
-3. Fillings & Tooth Build-ups;Internal tooth whitening (per session);15.000 – 20.000
-3. Fillings & Tooth Build-ups;Professional whitening;40.000
 4. Pediatric Dentistry;Filling or fissure sealing of baby tooth;15.000
 4. Pediatric Dentistry;Baby tooth extraction;15.000
 4. Pediatric Dentistry;Baby tooth brushing / smoothing;8.000
 4. Pediatric Dentistry;Baby tooth opening;15.000
-5. Root Canal Treatment (Endodontics);Root canal treatment – 1 canal tooth;35.000
-5. Root Canal Treatment (Endodontics);Root canal treatment – 2 canal tooth;50.000
-5. Root Canal Treatment (Endodontics);Root canal treatment – 3 or more canals;70.000
+5. Root Canal Treatment (Endodontics);Root canal treatment – 1 canal tooth;38.000
+5. Root Canal Treatment (Endodontics);Root canal treatment – 2 canal tooth;55.000
+5. Root Canal Treatment (Endodontics);Root canal treatment – 3 or more canals;75.000
 5. Root Canal Treatment (Endodontics);Root filling removal (revision);10.000 / canal
 5. Root Canal Treatment (Endodontics);Post removal;15.000
-5. Root Canal Treatment (Endodontics);Short custom fiber post (SFRC);40.000
-6. Fixed Prosthetics (crowns, bridges);Metal-ceramic crown;70.000 – 80.000
-6. Fixed Prosthetics (crowns, bridges);Zirconia crown;85.000 – 100.000
+5. Root Canal Treatment (Endodontics);Internal tooth whitening (per session);15.000 – 20.000
+6. Fixed Prosthetics (crowns, bridges);Metal-ceramic crown;80.000
+6. Fixed Prosthetics (crowns, bridges);Zirconia crown;100.000
 6. Fixed Prosthetics (crowns, bridges);E.max pressed crown;110.000
-6. Fixed Prosthetics (crowns, bridges);Onlay;78.000
-6. Fixed Prosthetics (crowns, bridges);Overlay;85.000
-6. Fixed Prosthetics (crowns, bridges);Full ceramic veneer;150.000 – 160.000
-6. Fixed Prosthetics (crowns, bridges);Gradia / Solidex crown or inlay;15.000 – 20.000
-6. Fixed Prosthetics (crowns, bridges);Temporary crown (clinic / lab);8.000 / 3.000
-6. Fixed Prosthetics (crowns, bridges);Old crown removal;5.000
+6. Fixed Prosthetics (crowns, bridges);Onlay (dental insert);78.000
+6. Fixed Prosthetics (crowns, bridges);Overlay (dental insert);85.000
+6. Fixed Prosthetics (crowns, bridges);Full ceramic veneer;110.000
+6. Fixed Prosthetics (crowns, bridges);Composite crown or inlay;40.000
+6. Fixed Prosthetics (crowns, bridges);Temporary crown;8.000
+6. Fixed Prosthetics (crowns, bridges);Old crown removal;7.000
 6. Fixed Prosthetics (crowns, bridges);Core build-up with composite;40.000
-6. Fixed Prosthetics (crowns, bridges);Telescopic crown system;18.000
 6. Fixed Prosthetics (crowns, bridges);Metal mesh integrated in acrylic denture;16.000
 6. Fixed Prosthetics (crowns, bridges);Digital try-in on model;5.000 / tooth
 7. Removable Prosthetics;Full acrylic denture;150.000 – 600.000
 7. Removable Prosthetics;Flexible denture (Valplast system);50.000 – 450.000
 7. Removable Prosthetics;Metal framework removable denture;130.000 – 300.000
+7. Removable Prosthetics;Telescopic crown system;70.000
 7. Removable Prosthetics;Temporary acrylic prosthesis with clasps;25.000 – 100.000
 7. Removable Prosthetics;Relining of dentures;12.000 – 28.000
 7. Removable Prosthetics;Repair of dentures;10.000 – 30.000

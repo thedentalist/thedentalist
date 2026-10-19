@@ -8,6 +8,7 @@ Kategória;Szolgáltatás;Ár (Ft)
 1. Diagnosztikai vizsgálatok és konzultációk;CBCT (3D képalkotás);25.000
 2. Szájhigiéniai kezelések és fogágyterápia;Ultrahangos fogkő-eltávolítás és polírozás (mindkét állcsont);20.000
 2. Szájhigiéniai kezelések és fogágyterápia;Homokfúvásos elszíneződés-eltávolítás (mindkét állcsont);20.000
+2. Szájhigiéniai kezelések és fogágyterápia;Professzionális fogfehérítés;40.000
 2. Szájhigiéniai kezelések és fogágyterápia;Parodontális állapotfelmérés;15.000
 2. Szájhigiéniai kezelések és fogágyterápia;Zárt kürett;15.000 / fog
 2. Szájhigiéniai kezelések és fogágyterápia;Fogak sínezése mozgathatóság esetén;15.000 / fog
@@ -25,39 +26,38 @@ Kategória;Szolgáltatás;Ár (Ft)
 3. Tömések és fogfelépítés;4 vagy több felszínű tömés / kompozit fogfelépítés;35.000
 3. Tömések és fogfelépítés;Metszőfog él restauráció;25.000
 3. Tömések és fogfelépítés;Fogfelépítés csappal;65.000
+3. Tömések és fogfelépítés;Bioblock típusú gyökércsap;40.000 – 45.000
+3. Tömések és fogfelépítés;Rövid üvegszálas egyedi csap (SFRC);40.000
 3. Tömések és fogfelépítés;Ideiglenes tömés;7.000
 3. Tömések és fogfelépítés;Pulpasapkázás;10.000
 3. Tömések és fogfelépítés;Tömés alábélelése;10.000
 3. Tömések és fogfelépítés;Esztétikai héj (kompozit anyagból);70.000
-3. Tömések és fogfelépítés;Bioblock típusú gyökércsap;40.000 – 45.000
-3. Tömések és fogfelépítés;Belső fogfehérítés (alkalmanként);15.000 – 20.000
-3. Tömések és fogfelépítés;Professzionális fogfehérítés;40.000
 4. Gyermekfogászat;Tejfog tömése vagy barázdazárása;15.000
 4. Gyermekfogászat;Tejfog eltávolítása;15.000
 4. Gyermekfogászat;Tejfog ecsetelése, simítása;8.000
 4. Gyermekfogászat;Tejfog megnyitása;15.000
-5. Gyökérkezelés (Endodoncia);Gyökérkezelés – 1 csatornás fog;35.000
-5. Gyökérkezelés (Endodoncia);Gyökérkezelés – 2 csatornás fog;50.000
-5. Gyökérkezelés (Endodoncia);Gyökérkezelés – 3 vagy több csatornás fog;70.000
+5. Gyökérkezelés (Endodoncia);Gyökérkezelés – 1 csatornás fog;38.000
+5. Gyökérkezelés (Endodoncia);Gyökérkezelés – 2 csatornás fog;55.000
+5. Gyökérkezelés (Endodoncia);Gyökérkezelés – 3 vagy több csatornás fog;75.000
 5. Gyökérkezelés (Endodoncia);Gyökértömés eltávolítása (revízió);10.000 / csatorna
 5. Gyökérkezelés (Endodoncia);Csap eltávolítása;15.000
-5. Gyökérkezelés (Endodoncia);Rövid üvegszálas egyedi csap (SFRC);40.000
-6. Rögzített fogpótlások (koronák, hidak);Fémkerámia korona;70.000 – 80.000
-6. Rögzített fogpótlások (koronák, hidak);Cirkónium korona;85.000 – 100.000
+5. Gyökérkezelés (Endodoncia);Belső fogfehérítés (alkalmanként);15.000 – 20.000
+6. Rögzített fogpótlások (koronák, hidak);Fémkerámia korona;80.000
+6. Rögzített fogpótlások (koronák, hidak);Cirkónium korona;100.000
 6. Rögzített fogpótlások (koronák, hidak);E.max préskerámia korona;110.000
-6. Rögzített fogpótlások (koronák, hidak);Onlay;78.000
-6. Rögzített fogpótlások (koronák, hidak);Overlay;85.000
-6. Rögzített fogpótlások (koronák, hidak);Teljes kerámia héj;150.000 – 160.000
-6. Rögzített fogpótlások (koronák, hidak);Gradia / Solidex korona vagy inlay;15.000 – 20.000
-6. Rögzített fogpótlások (koronák, hidak);Ideiglenes korona (rendelői / labor);8.000 / 3.000
-6. Rögzített fogpótlások (koronák, hidak);Régi korona eltávolítása;5.000
+6. Rögzített fogpótlások (koronák, hidak);Onlay (fogbetét);78.000
+6. Rögzített fogpótlások (koronák, hidak);Overlay (fogbetét);85.000
+6. Rögzített fogpótlások (koronák, hidak);Teljes kerámia héj;110.000
+6. Rögzített fogpótlások (koronák, hidak);Kompozit korona vagy inlay;40.000
+6. Rögzített fogpótlások (koronák, hidak);Ideiglenes korona;8.000
+6. Rögzített fogpótlások (koronák, hidak);Régi korona eltávolítása;7.000
 6. Rögzített fogpótlások (koronák, hidak);Csonkfelépítés kompozittal;40.000
-6. Rögzített fogpótlások (koronák, hidak);Teleszkópos koronarendszer;18.000
 6. Rögzített fogpótlások (koronák, hidak);Akril fogsorba integrált arany vagy fémháló;16.000
 6. Rögzített fogpótlások (koronák, hidak);Digitális próbapótlás modellen;5.000 / fog
 7. Kivehető fogpótlások;Teljes akril fogsor;150.000 – 600.000
 7. Kivehető fogpótlások;Rugalmas fogsor (Valplast rendszer);50.000 – 450.000
 7. Kivehető fogpótlások;Fémlemezes kivehető fogsor;130.000 – 300.000
+7. Kivehető fogpótlások;Teleszkópos koronarendszer;70.000
 7. Kivehető fogpótlások;Ideiglenes akril pótlás kapcsokkal;25.000 – 100.000
 7. Kivehető fogpótlások;Fogsor alábélelése;12.000 – 28.000
 7. Kivehető fogpótlások;Fogsor javítás;10.000 – 30.000
