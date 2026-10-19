@@ -20,7 +20,7 @@ const assetPath = () => isEnglishPage() ? "../assets/" : "assets/";
 
 // Language loading and switching
 window.loadLanguage = function (lang) {
-  fetch(`${assetPath()}lang_${lang}.json`)
+  fetch(`${assetPath()}lang_${lang}.json`, { cache: "no-cache" })
     .then(response => response.json())
     .then(translations => {
       document.documentElement.lang = lang;

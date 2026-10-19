@@ -2,7 +2,7 @@
 function loadPrices(lang) {
   const assetsPath = /\/en\//.test(window.location.pathname) ? "../assets" : "assets";
   const csvFile = `${assetsPath}/pricelist_${lang}.csv`;
-  fetch(csvFile)
+  fetch(csvFile, { cache: "no-cache" })
     .then((response) => response.text())
     .then((data) => {
       document.getElementById("price-tables").innerHTML = "";
