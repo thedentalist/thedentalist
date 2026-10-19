@@ -450,6 +450,7 @@ h2.prices-category-title {
 
 .treatments-instagram-grid > a,
 .treatments-instagram-grid > .gallery-item {
+  cursor: default;
   position: relative;
   display: block;
   overflow: hidden;
@@ -472,7 +473,8 @@ h2.prices-category-title {
 }
 
 .treatments-instagram-grid > a:hover,
-.treatments-instagram-grid > a:focus-visible {
+.treatments-instagram-grid > a:focus-visible,
+.treatments-instagram-grid > .gallery-item:hover {
   z-index: 1;
   transform: translateY(-4px);
   border-color: #c9a94d;
@@ -498,7 +500,8 @@ h2.prices-category-title {
 }
 
 .treatments-instagram-grid > a:hover img,
-.treatments-instagram-grid > a:focus-visible img {
+.treatments-instagram-grid > a:focus-visible img,
+.treatments-instagram-grid > .gallery-item:hover img {
   transform: scale(1.035);
 }
 
