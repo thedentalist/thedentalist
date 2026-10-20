@@ -212,8 +212,8 @@ footer {
 }
 
 footer .footer-legal a {
-  color: #E2BB54;
-  -webkit-text-fill-color: #E2BB54;
+  color: inherit;
+  -webkit-text-fill-color: inherit;
   text-decoration: none;
   margin: 0 0.6rem;
 }
