@@ -49,6 +49,34 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://thedentalist.hu/contact.html"/>
   </url>
   <url>
+    <loc>https://thedentalist.hu/impresszum.html</loc>
+    <lastmod>2026-10-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://thedentalist.hu/impresszum.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thedentalist.hu/en/legal-notice.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://thedentalist.hu/impresszum.html"/>
+  </url>
+  <url>
+    <loc>https://thedentalist.hu/en/legal-notice.html</loc>
+    <lastmod>2026-10-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://thedentalist.hu/impresszum.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thedentalist.hu/en/legal-notice.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://thedentalist.hu/impresszum.html"/>
+  </url>
+  <url>
+    <loc>https://thedentalist.hu/adatkezelesi-tajekoztato.html</loc>
+    <lastmod>2026-10-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://thedentalist.hu/adatkezelesi-tajekoztato.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thedentalist.hu/en/privacy-notice.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://thedentalist.hu/adatkezelesi-tajekoztato.html"/>
+  </url>
+  <url>
+    <loc>https://thedentalist.hu/en/privacy-notice.html</loc>
+    <lastmod>2026-10-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://thedentalist.hu/adatkezelesi-tajekoztato.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thedentalist.hu/en/privacy-notice.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://thedentalist.hu/adatkezelesi-tajekoztato.html"/>
+  </url>
+  <url>
     <loc>https://thedentalist.hu/en/</loc>
     <lastmod>2026-10-19</lastmod>
     <xhtml:link rel="alternate" hreflang="hu" href="https://thedentalist.hu/"/>

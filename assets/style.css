@@ -211,6 +211,17 @@ footer {
   background-color: #000000;
 }
 
+footer .footer-legal a {
+  color: #E2BB54;
+  -webkit-text-fill-color: #E2BB54;
+  text-decoration: none;
+  margin: 0 0.6rem;
+}
+
+footer .footer-legal a:hover {
+  text-decoration: underline;
+}
+
 .navbar {
   position: sticky;
   top: 0;
