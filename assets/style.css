@@ -285,10 +285,12 @@ footer .footer-legal a:hover {
 }
 
 .gradient-gold,
+h1, h2, h3, h4, h5, h6,
 .navbar-brand,
 .nav-link,
 .gold-text,
 .section-title,
+.treatment-list > li > a,
 .reviews-eyebrow,
 .reviews-rating-score,
 .reviews-stars,
@@ -332,15 +334,84 @@ footer {
   text-decoration: none;
 }
 
-h2.service-heading {
-  background: none;
-  -webkit-text-fill-color: #e0b900;
-  color: #e0b900;
-  filter: none;
-}
-
 .service-links a:hover {
   text-decoration: underline;
+}
+
+.treatment-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 0;
+}
+
+.treatment-list li {
+  padding: 0.9rem 0;
+  border-bottom: 1px solid rgba(201, 169, 77, 0.3);
+}
+
+.treatment-list a {
+  color: #e0b900;
+  font-size: 1.15rem;
+  text-decoration: none;
+}
+
+.treatment-list a:hover {
+  text-decoration: underline;
+}
+
+.treatment-list p {
+  margin: 0.3rem 0 0;
+}
+
+.treatment-list > li > .treatment-details {
+  margin: 0.3rem 0 0;
+  padding-left: 1rem;
+  list-style: none;
+}
+
+.treatment-list > li > .treatment-details li {
+  position: relative;
+  padding: 0.1rem 0 0.1rem 0.3rem;
+  border: 0;
+}
+
+.treatment-list > li > .treatment-details li::before {
+  position: absolute;
+  top: 0.72em;
+  left: -0.8rem;
+  width: 0.4rem;
+  height: 0.4rem;
+  border: 1px solid #d9a900;
+  border-radius: 50%;
+  background-color: rgba(217, 169, 0, 0.7);
+  box-shadow: 0 0 7px rgba(217, 169, 0, 0.35);
+  content: "";
+}
+
+.treatment-list > li > a.treatment-price-link {
+  display: inline-block;
+  margin-top: 0.35rem;
+  padding: 0.1rem 0.5rem;
+  border: 1px solid rgba(201, 169, 77, 0.55);
+  border-radius: 999px;
+  background: none;
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+  -webkit-text-fill-color: #d8cdb4;
+  color: #d8cdb4 !important;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  transition: background-color 150ms ease, color 150ms ease;
+}
+
+.treatment-list > li > a.treatment-price-link:hover,
+.treatment-list > li > a.treatment-price-link:focus-visible {
+  background-color: rgba(217, 169, 0, 0.18);
+  -webkit-text-fill-color: #fff1a8;
+  color: #fff1a8 !important;
+  text-decoration: none;
 }
 
 h4.gold-text {
@@ -850,51 +921,6 @@ h2.prices-category-title {
 }
 .nav-link.active {
   border-bottom: 2px solid #c59d00 !important;
-}
-
-/* Kezelések legördülő menü */
-.nav-treatments > .dropdown-toggle::after {
-  display: none;
-}
-
-.nav-treatments .dropdown-menu {
-  background: #0b0b0b;
-  border: 1px solid rgba(201, 169, 77, 0.45);
-  border-radius: 6px;
-  padding: 0.25rem 0;
-  margin-top: 0;
-  min-width: 0;
-  z-index: 1050;
-}
-
-.nav-treatments .dropdown-item {
-  color: #e0b900;
-  font-size: 0.85rem;
-  padding: 0.25rem 0.8rem;
-  white-space: nowrap;
-}
-
-.nav-treatments .dropdown-item:hover,
-.nav-treatments .dropdown-item:focus {
-  background-image: linear-gradient(90deg, #D9A900 0%, #FFF1A8 50%, #D9A900 100%);
-  color: #1a1400;
-}
-
-@media (hover: hover) {
-  .nav-treatments:hover > .dropdown-menu {
-    display: block;
-  }
-}
-
-@media (max-width: 575.98px) {
-  .nav-treatments .dropdown-menu {
-    min-width: 0;
-  }
-
-  .nav-treatments .dropdown-item {
-    font-size: 0.75rem;
-    padding: 0.25rem 0.6rem;
-  }
 }
 
 /* Árlista táblázat igazítása */
