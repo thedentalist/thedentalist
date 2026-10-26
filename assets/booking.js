@@ -19,7 +19,7 @@
   const T = {
     hu: {
       title: "Online időpontkérés",
-      intro: "Válassza ki a szolgáltatást, majd egy szabad 1 órás időpontot. A foglalás csak kérés: az időpont akkor válik érvényessé, ha rendelőnk telefonon vagy e-mailben visszaigazolja.",
+      intro: "Válassza ki a szolgáltatást, majd egy szabad 1 órás időpontot. A foglalás csak kérés: az időpont akkor válik érvényessé, ha rendelőnk telefonon vagy e-mailben visszaigazolja. Munkatársunk legfeljebb 24 órán belül válaszol.",
       step1: "1. Mire szeretne időpontot?",
       panorama: "Panoráma röntgen",
       ct3d: "3D CT röntgen",
@@ -51,7 +51,7 @@
       errConsent: "A küldéshez meg kell erősítenie, hogy megismerte az adatkezelési tájékoztatót.",
       errSlot: "Kérjük, válasszon napot és időpontot.",
       okTitle: "Köszönjük, az időpontkérést megkaptuk!",
-      okText: "Az időpont még NINCS megerősítve. Munkatársunk felveszi Önnel a kapcsolatot, és visszaigazolja vagy módosítja az időpontot.",
+      okText: "Az időpont még NINCS megerősítve. Munkatársunk legfeljebb 24 órán belül felveszi Önnel a kapcsolatot, hogy visszaigazolja vagy módosítsa az időpontot.",
       mailText: "Az e-mail program megnyílt. Kérjük, küldje el a kész üzenetet, hogy a kérés megérkezzen hozzánk. Az időpont még NINCS megerősítve; visszaigazolás után válik érvényessé.",
       sendError: "A küldés nem sikerült. Kérjük, próbálja újra, vagy hívjon minket: +36 30 252 5092.",
       sending: "Küldés…",
@@ -63,7 +63,7 @@
     },
     en: {
       title: "Online appointment request",
-      intro: "Choose a service and a free 1-hour slot. This is a request only: the appointment becomes valid once our clinic confirms it by phone or e-mail.",
+      intro: "Choose a service and a free 1-hour slot. This is a request only: the appointment becomes valid once our clinic confirms it by phone or e-mail. Our team will reply within 24 hours at the latest.",
       step1: "1. What would you like to book?",
       panorama: "Panorama X-ray",
       ct3d: "3D CT X-ray",
@@ -95,7 +95,7 @@
       errConsent: "Please confirm that you have read the Privacy Notice to submit.",
       errSlot: "Please choose a day and a time.",
       okTitle: "Thank you, we received your request!",
-      okText: "Your appointment is NOT yet confirmed. Our team will contact you to confirm or adjust the time.",
+      okText: "Your appointment is NOT yet confirmed. Our team will reply within 24 hours at the latest to confirm or adjust the time.",
       mailText: "Your e-mail app has opened. Please send the prepared message so that the request reaches us. Your appointment is NOT confirmed until we confirm it.",
       sendError: "Sending failed. Please try again or call us: +36 30 252 5092.",
       sending: "Sending…",
