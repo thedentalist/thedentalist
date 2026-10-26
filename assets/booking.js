@@ -19,23 +19,12 @@
   const T = {
     hu: {
       title: "Online időpontkérés",
-      intro: "Válassza ki a szolgáltatást, majd egy szabad 1 órás időpontot. A foglalás csak kérés: az időpont akkor válik érvényessé, ha rendelőnk telefonon vagy e-mailben visszaigazolja. Munkatársunk legfeljebb 24 órán belül válaszol.",
-      step1: "1. Mire szeretne időpontot?",
-      panorama: "Panoráma röntgen",
-      ct3d: "3D CT röntgen",
-      consultation: "Konzultáció",
-      treatmentContinuation: "Kezelés folytatása",
-      types: {
-        panorama: "Panoráma röntgen",
-        ct3d: "3D CT röntgen",
-        consultation: "Konzultáció",
-        treatment_continuation: "Kezelés folytatása"
-      },
-      step2: "2. Válasszon napot",
-      step3: "3. Válasszon időpontot (1 óra)",
+      intro: "Válasszon egy szabad 1 órás időpontot, majd adja meg elérhetőségét. A foglalás csak kérés: az időpont akkor válik érvényessé, ha rendelőnk telefonon vagy e-mailben visszaigazolja. Munkatársunk legfeljebb 24 órán belül válaszol, és ekkor egyeztetjük a vizsgálat vagy kezelés részleteit is.",
+      step2: "1. Válasszon napot",
+      step3: "2. Válasszon időpontot (1 óra)",
       pickDay: "Először válasszon napot.",
       noSlots: "Ezen a napon már nincs szabad időpont.",
-      step4: "4. Adatok",
+      step4: "3. Adatok",
       name: "Teljes név",
       phone: "Telefonszám",
       email: "E-mail-cím",
@@ -63,23 +52,12 @@
     },
     en: {
       title: "Online appointment request",
-      intro: "Choose a service and a free 1-hour slot. This is a request only: the appointment becomes valid once our clinic confirms it by phone or e-mail. Our team will reply within 24 hours at the latest.",
-      step1: "1. What would you like to book?",
-      panorama: "Panorama X-ray",
-      ct3d: "3D CT X-ray",
-      consultation: "Consultation",
-      treatmentContinuation: "Treatment continuation",
-      types: {
-        panorama: "Panorama X-ray",
-        ct3d: "3D CT X-ray",
-        consultation: "Consultation",
-        treatment_continuation: "Treatment continuation"
-      },
-      step2: "2. Choose a day",
-      step3: "3. Choose a time (1 hour)",
+      intro: "Choose a free 1-hour slot and enter your contact details. This is a request only: the appointment becomes valid once our clinic confirms it by phone or e-mail. Our team will reply within 24 hours at the latest and will then agree the details of your examination or treatment with you.",
+      step2: "1. Choose a day",
+      step3: "2. Choose a time (1 hour)",
       pickDay: "Please choose a day first.",
       noSlots: "No free slots left on this day.",
-      step4: "4. Your details",
+      step4: "3. Your details",
       name: "Full name",
       phone: "Phone number",
       email: "Email address",
@@ -112,7 +90,7 @@
   const isoDate = d => `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
   const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 
-  const state = { type: "consultation", date: null, start: null };
+  const state = { date: null, start: null };
 
   function slotsFor(date) {
     const [open, close] = HOURS[date.getDay()];
@@ -145,15 +123,6 @@
     <h2 class="section-title gold-text">${T.title}</h2>
     <p>${T.intro}</p>
     <form id="booking-form" novalidate>
-      <fieldset class="booking-block">
-        <legend>${T.step1}</legend>
-        <div class="booking-types">
-          <label class="booking-type"><input type="radio" name="type" value="panorama"><span>${T.panorama}</span></label>
-          <label class="booking-type"><input type="radio" name="type" value="ct3d"><span>${T.ct3d}</span></label>
-          <label class="booking-type"><input type="radio" name="type" value="consultation" checked><span>${T.consultation}</span></label>
-          <label class="booking-type"><input type="radio" name="type" value="treatment_continuation"><span>${T.treatmentContinuation}</span></label>
-        </div>
-      </fieldset>
       <div class="booking-block">
         <h3 class="booking-legend">${T.step2}</h3>
         <div class="booking-days" id="booking-days" role="group"></div>
@@ -221,7 +190,7 @@
   function renderSummary() {
     if (!state.date || state.start === null) { summaryEl.hidden = true; return; }
     summaryEl.hidden = false;
-    summaryEl.innerHTML = `<strong>${T.summary}:</strong> ${esc(T.fmtDate(state.date, T))}, ${fmtTime(state.start)} – ${fmtTime(state.start + SLOT_MINUTES)} (${esc(T.types[state.type])})<br><span class="booking-pending">${T.pending}</span>`;
+    summaryEl.innerHTML = `<strong>${T.summary}:</strong> ${esc(T.fmtDate(state.date, T))}, ${fmtTime(state.start)} – ${fmtTime(state.start + SLOT_MINUTES)}<br><span class="booking-pending">${T.pending}</span>`;
   }
 
   daysEl.addEventListener("click", e => {
@@ -244,10 +213,6 @@
     renderSummary();
   });
 
-  form.addEventListener("change", e => {
-    if (e.target.name === "type") { state.type = e.target.value; renderSummary(); }
-  });
-
   function validate() {
     let ok = true;
     ["name", "phone", "email", "consent", "slot"].forEach(k => setErr(k));
@@ -263,7 +228,6 @@
 
   function buildPayload() {
     return {
-      type: T.types[state.type],
       date: isoDate(state.date),
       start: fmtTime(state.start),
       end: fmtTime(state.start + SLOT_MINUTES),
@@ -295,7 +259,7 @@
 
     if (!ENDPOINT) {
       const body = [
-        `Type: ${p.type}`, `Date: ${p.date}`, `Time: ${p.start} - ${p.end}`,
+        `Date: ${p.date}`, `Time: ${p.start} - ${p.end}`,
         `Full name: ${p.name}`, `Phone: ${p.phone}`, `Email: ${p.email || "Not provided"}`,
         `Status: ${p.status}`
       ].join("\r\n");
@@ -315,7 +279,7 @@
       });
       if (!res.ok) throw new Error(res.status);
       form.reset();
-      state.date = null; state.start = null; state.type = "consultation";
+      state.date = null; state.start = null;
       daysEl.querySelectorAll(".booking-day").forEach(b => b.setAttribute("aria-pressed", "false"));
       renderSlots();
       renderSummary();
