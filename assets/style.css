@@ -1184,6 +1184,99 @@ h2.prices-category-title {
   margin-left: 0 !important;
 }
 
+/* Clinic map picture with enlarge-on-click */
+.clinic-map {
+  text-align: center;
+}
+
+.clinic-map .map-zoom {
+  display: block;
+  border: 1px solid #555;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background: #0b0b0b;
+  cursor: zoom-in;
+}
+
+.clinic-map .map-zoom img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.clinic-map .map-hint {
+  margin: 0.5rem 0 1rem;
+  font-size: 0.85rem;
+  color: #c8c4b8;
+}
+
+.clinic-map .map-notice {
+  max-width: 40rem;
+  margin: 0.75rem auto 0;
+  font-size: 0.8rem;
+  color: #c8c4b8;
+}
+
+.map-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(0, 0, 0, 0.94);
+}
+
+.map-lightbox-view {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.map-lightbox-view img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  cursor: zoom-in;
+}
+
+.map-lightbox.is-zoomed .map-lightbox-view {
+  display: block;
+}
+
+.map-lightbox.is-zoomed .map-lightbox-view img {
+  max-width: none;
+  max-height: none;
+  cursor: zoom-out;
+}
+
+.map-lightbox-close {
+  position: fixed;
+  top: 0.6rem;
+  right: 0.9rem;
+  width: 2.4rem;
+  height: 2.4rem;
+  border: 1px solid #d9a900;
+  border-radius: 50%;
+  background: #111;
+  color: #f5de7c;
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.map-lightbox-hint {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0.6rem;
+  margin: 0;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #c8c4b8;
+  pointer-events: none;
+}
+
 /* Online booking */
 #booking {
   max-width: 40rem;
