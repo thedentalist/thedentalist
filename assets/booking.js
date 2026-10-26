@@ -19,7 +19,7 @@
   const T = {
     hu: {
       title: "Online időpontkérés",
-      intro: "Válasszon egy szabad 1 órás időpontot, majd adja meg elérhetőségét. A foglalás csak kérés: az időpont akkor válik érvényessé, ha rendelőnk telefonon vagy e-mailben visszaigazolja. Munkatársunk legfeljebb 24 órán belül válaszol, és ekkor egyeztetjük a vizsgálat vagy kezelés részleteit is.",
+      intro: "Válasszon egy szabad 1 órás időpontot, majd adja meg elérhetőségét. A foglalás csak kérés: az időpont akkor válik érvényessé, ha rendelőnk telefonon vagy e-mailben visszaigazolja. Munkatársunk legfeljebb 24 órán belül válaszol.",
       step2: "1. Válasszon napot",
       step3: "2. Válasszon időpontot (1 óra)",
       pickDay: "Először válasszon napot.",
@@ -52,7 +52,7 @@
     },
     en: {
       title: "Online appointment request",
-      intro: "Choose a free 1-hour slot and enter your contact details. This is a request only: the appointment becomes valid once our clinic confirms it by phone or e-mail. Our team will reply within 24 hours at the latest and will then agree the details of your examination or treatment with you.",
+      intro: "Choose a free 1-hour slot and enter your contact details. This is a request only: the appointment becomes valid once our clinic confirms it by phone or e-mail. Our team will reply within 24 hours at the latest.",
       step2: "1. Choose a day",
       step3: "2. Choose a time (1 hour)",
       pickDay: "Please choose a day first.",
