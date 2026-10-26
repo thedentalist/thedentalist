@@ -1226,44 +1226,55 @@ h2.prices-category-title {
 }
 
 .map-lightbox-view {
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  touch-action: none;
+  cursor: grab;
+}
+
+.map-lightbox-view.is-dragging {
+  cursor: grabbing;
 }
 
 .map-lightbox-view img {
+  position: absolute;
+  top: 0;
+  left: 0;
   display: block;
-  max-width: 100%;
-  max-height: 100%;
-  cursor: zoom-in;
-}
-
-.map-lightbox.is-zoomed .map-lightbox-view {
-  display: block;
-}
-
-.map-lightbox.is-zoomed .map-lightbox-view img {
   max-width: none;
   max-height: none;
-  cursor: zoom-out;
+  transform-origin: 0 0;
+  will-change: transform;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
-.map-lightbox-close {
+.map-lightbox-tools {
   position: fixed;
   top: 0.6rem;
   right: 0.9rem;
+  display: flex;
+  gap: 0.4rem;
+}
+
+.map-lightbox-tools button {
   width: 2.4rem;
   height: 2.4rem;
   border: 1px solid #d9a900;
   border-radius: 50%;
   background: #111;
   color: #f5de7c;
-  font-size: 1.6rem;
+  font-size: 1.35rem;
   line-height: 1;
   cursor: pointer;
+}
+
+.map-lightbox-tools button:hover,
+.map-lightbox-tools button:focus-visible {
+  background: #d9a900;
+  color: #111;
 }
 
 .map-lightbox-hint {
