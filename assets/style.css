@@ -1081,6 +1081,7 @@ h2.prices-category-title {
 .contact-social-title {
   width: fit-content;
   max-width: 100%;
+  white-space: nowrap;
   /* Pushes the following flex items onto a new line while the gradient stays fitted to the text. */
   margin: 0 100% 0 0;
   color: transparent;
