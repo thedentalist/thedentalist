@@ -993,7 +993,7 @@ h2.prices-category-title {
 
 .doctor-photo {
   width: 100%;
-  max-width: 11rem;
+  max-width: 8.5rem;
   aspect-ratio: 1 / 1;
   margin: 0 0 0 auto;
   overflow: hidden;
@@ -1007,14 +1007,14 @@ h2.prices-category-title {
   height: 100%;
   object-fit: cover;
   object-position: center 30%;
-  transform: scale(1.45);
-  transform-origin: 50% 10%;
+  transform: scale(1.5);
+  transform-origin: 50% 0%;
   touch-action: pan-x pan-y;
 }
 
 @media (max-width: 575.98px) {
   .doctor-photo {
-    max-width: 8rem;
+    max-width: 6.5rem;
   }
 }
 
