@@ -70,4 +70,11 @@ function updateLangToggle() {
 // Default language follows the page URL, so each language has a stable indexable page.
 document.addEventListener('DOMContentLoaded', () => {
   window.loadLanguage(isEnglishPage() ? "en" : "hu");
+
+  // Blocks Ctrl+wheel zoom over the doctor photo (touch pinch is blocked by CSS touch-action).
+  document.querySelectorAll('.doctor-portrait').forEach((img) => {
+    img.addEventListener('wheel', (event) => {
+      if (event.ctrlKey) event.preventDefault();
+    }, { passive: false });
+  });
 });
