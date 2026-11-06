@@ -25,7 +25,14 @@ How it works:
      the button moves and confirms the appointment in one step.
    - **Decline** (Elutasítom): the event is deleted, the slot is free again and the patient gets an email.
    - If the patient left no email address, the page reminds you to call them.
-4. Once a day, unconfirmed requests and unanswered question holds whose time has passed are deleted.
+4. Once a day (data protection, as promised in the privacy notice):
+   - unconfirmed requests and unanswered question holds are deleted once their time has passed;
+   - confirmed appointments are deleted from the calendar 30 days after the appointment
+     (treatment records belong in Flexi-Dent, not in the calendar);
+   - emails sent by the booking system are moved to the Gmail bin 30 days after sending. They are
+     recognised by their footer ("Automatikus üzenet – The Dentalist online időpontfoglalás"); patients'
+     replies and all other emails are never touched.
+   Events you add to the calendar yourself are never deleted. The period is `RETENTION_DAYS` in `Code.gs`.
 
 The website never shows booked times or full days. It lists only days with free time, and at most
 `MAX_SLOTS_SHOWN` (4) free times per day, picked at random but the same on every reload, so the
@@ -42,7 +49,7 @@ To block time (holiday, lunch break, a phone booking), add an event of any kind 
 3. Replace the contents of `Code.gs` with the file `backend/Code.gs` from this repository.
 4. Project Settings (gear icon): set **Time zone** to `(GMT+01:00) Budapest`.
 5. In the editor, select the `setup` function and click **Run**. Allow the permissions
-   it asks for (Calendar, Gmail sending, triggers). This creates the calendar
+   it asks for (Calendar, Gmail – sending and deleting the system's own old emails – and triggers). This creates the calendar
    *The Dentalist – Időpontok*, the signing secret and the daily cleanup.
 6. **Deploy → New deployment → Web app**
    - Execute as: **Me**
@@ -69,3 +76,9 @@ table on the contact pages in step with `HOURS`.
 
 The free Gmail account can send about 100 emails a day through Apps Script. Each request
 uses one to three emails, which is plenty for the clinic's volume.
+
+## Security checklist (GDPR Art. 32)
+
+- Turn on 2-Step Verification for thedentalist.hu@gmail.com (Google Account → Security).
+- Do not share the "The Dentalist – Időpontok" calendar publicly or with anyone outside the clinic staff.
+- Do not forward the notification emails: their button opens the request page without a password.

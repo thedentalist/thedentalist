@@ -28,6 +28,12 @@ const CLINIC_PHONE = '+36 30 252 5092';
 // Public address shown to patients; replies to patient emails go here (forwarded to the clinic Gmail by ImprovMX).
 const PUBLIC_EMAIL = 'info@thedentalist.hu';
 const CALENDAR_NAME = 'The Dentalist – Időpontok';
+// Data protection (GDPR storage limitation, privacy notice): online-booking calendar entries and the emails
+// this system sent are deleted this many days after the appointment / sending. Treatment records live in Flexi-Dent.
+const RETENTION_DAYS = 30;
+// Footer of every email sent by this system; also used to find those emails for automatic deletion.
+const MAIL_FOOTER_HU = 'Automatikus üzenet – The Dentalist online időpontfoglalás';
+const MAIL_FOOTER_EN = 'Automated message – The Dentalist online booking';
 
 // Opening hours, minutes from midnight, by weekday (0 = Sunday … 6 = Saturday).
 // Use null for a closed day. Keep in step with the hours table on contact.html.
@@ -208,7 +214,8 @@ function notifyClinic_(ev) {
     '<br>E-mail: ' + esc_(t('email') || '–') + '<br>Nyelv: ' + esc_(t('lang').toUpperCase()) + '</p>' +
     '<p>Az időpont a naptárban már foglalt (sárga). Visszaigazolás, másik időpont javaslata vagy elutasítás:</p>' +
     '<p><a href="' + url + '" style="background:#d9a900;color:#000;padding:10px 18px;border-radius:6px;text-decoration:none;font-weight:bold">Megnyitás</a></p>' +
-    (t('email') ? '' : '<p><i>A páciens nem adott meg e-mail-címet – kérjük, hívja vissza telefonon.</i></p>');
+    (t('email') ? '' : '<p><i>A páciens nem adott meg e-mail-címet – kérjük, hívja vissza telefonon.</i></p>') +
+    '<p style="color:#888;font-size:12px">' + MAIL_FOOTER_HU + '</p>';
   MailApp.sendEmail({
     to: clinicEmail_(),
     subject: 'Időpontkérés: ' + when_(ev, 'hu') + ' – ' + t('name'),
@@ -389,7 +396,7 @@ function respond(id, sig, answer) {
     approve_(ev, 'A PÁCIENS ELFOGADTA A KÉRDEZETT IDŐPONTOT (eredetileg kért: ' + requested + ')');
     mailPatient_(ev, 'approved');
     MailApp.sendEmail({ to: clinicEmail_(), name: 'The Dentalist weboldal', subject: '✅ Elfogadta: ' + name + ' – ' + asked,
-      body: name + ' elfogadta a kérdezett időpontot: ' + asked + ' (eredetileg kért: ' + requested + ').\nAz időpont a naptárban visszaigazolt (zöld), a páciens visszaigazoló e-mailt kapott.' });
+      body: name + ' elfogadta a kérdezett időpontot: ' + asked + ' (eredetileg kért: ' + requested + ').\nAz időpont a naptárban visszaigazolt (zöld), a páciens visszaigazoló e-mailt kapott.\n\n-- \n' + MAIL_FOOTER_HU });
     return en ? 'Thank you! Your appointment is confirmed: ' + when_(ev, 'en') + '. We have sent you a confirmation email.'
               : 'Köszönjük! Időpontja visszaigazolva: ' + asked + '. Visszaigazoló e-mailt küldtünk.';
   }
@@ -400,7 +407,7 @@ function respond(id, sig, answer) {
       htmlBody: '<p>' + esc_(name) + ' szerint a kérdezett időpont (' + esc_(asked) + ') nem felel meg. A kérdezett időpont felszabadult.</p>' +
         '<p>Az eredeti kérése (<b>' + esc_(requested) + '</b>) továbbra is függőben van. Visszaigazolhatja, másik időpontot kérdezhet, vagy elutasíthatja:</p>' +
         '<p><a href="' + reviewUrl_(ev) + '" style="background:#d9a900;color:#000;padding:10px 18px;border-radius:6px;text-decoration:none;font-weight:bold">Megnyitás</a></p>' +
-        '<p>Telefon: ' + esc_(ev.getTag('phone')) + '</p>' });
+        '<p>Telefon: ' + esc_(ev.getTag('phone')) + '</p><p style="color:#888;font-size:12px">' + MAIL_FOOTER_HU + '</p>' });
     return en ? 'Thank you for letting us know. Your request for ' + when_(ev, 'en') + ' stays open, and our team will contact you shortly. You can also call us on ' + CLINIC_PHONE + '.'
               : 'Köszönjük a visszajelzést. A ' + requested + ' időpontra vonatkozó kérése továbbra is érvényes, munkatársunk hamarosan felveszi Önnel a kapcsolatot. Hívhat minket is: ' + CLINIC_PHONE + '.';
   }
@@ -425,7 +432,7 @@ function mailPatient_(ev, kind, note) {
         'Kedves ' + name + '!\n\nKöszönjük időpontkérését (' + when + '). A kért időpontban sajnos nem biztos, hogy fogadni tudjuk. Megfelelne Önnek helyette ez az időpont?\n\n    ' + asked + extra +
         '\n\nKérjük, ezen a linken jelezze, hogy megfelel-e:\n' + respondUrl_(ev) +
         '\n\nEz csak kérdés: amíg nem válaszol, nem változtatunk semmit, a javasolt időpontot pedig addig fenntartjuk Önnek. Ha egyik időpont sem jó, válaszoljon erre a levélre, vagy hívjon minket.'],
-      sign: '\n\nÜdvözlettel:\nThe Dentalist fogászat\n' + CLINIC_PHONE
+      sign: '\n\nÜdvözlettel:\nThe Dentalist fogászat\n' + CLINIC_PHONE + '\n\n-- \n' + MAIL_FOOTER_HU
     },
     en: {
       received: ['We received your appointment request – not yet confirmed',
@@ -438,7 +445,7 @@ function mailPatient_(ev, kind, note) {
         'Dear ' + name + ',\n\nThank you for your appointment request (' + when + '). Unfortunately we may not be able to see you at that time. Would this time suit you instead?\n\n    ' + asked + extra +
         '\n\nPlease let us know here whether it suits you:\n' + respondUrl_(ev) +
         '\n\nThis is only a question: nothing changes until you answer, and we are holding the suggested time for you. If neither time works, reply to this email or call us.'],
-      sign: '\n\nKind regards,\nThe Dentalist dental clinic\n' + CLINIC_PHONE
+      sign: '\n\nKind regards,\nThe Dentalist dental clinic\n' + CLINIC_PHONE + '\n\n-- \n' + MAIL_FOOTER_EN
     }
   }[lang];
   MailApp.sendEmail({
@@ -451,13 +458,34 @@ function mailPatient_(ev, kind, note) {
 }
 
 // ---------------------------------------------------------------- housekeeping
-/** Daily: deletes requests that were never confirmed, and unanswered question holds, whose time has passed. */
+/** Daily housekeeping (run by the trigger created in setup()):
+ *  - unconfirmed requests and unanswered question holds are deleted once their time has passed;
+ *  - every other online-booking entry (confirmed appointments) is deleted RETENTION_DAYS after the appointment;
+ *  - emails sent by this system (recognised by their footer) are moved to the bin after RETENTION_DAYS.
+ *  Events the clinic added by hand (no booking tags) are never touched. */
 function dailyCleanup() {
   const cal = calendar_();
   const now = new Date();
-  cal.getEvents(new Date(now.getTime() - 60 * 86400000), now)
-    .filter(ev => ['pending', 'asked', 'hold'].indexOf(ev.getTag('status')) !== -1)
-    .forEach(ev => ev.deleteEvent());
+  const cutoff = new Date(now.getTime() - RETENTION_DAYS * 86400000);
+  cal.getEvents(new Date(now.getTime() - 400 * 86400000), now).forEach(ev => {
+    const status = ev.getTag('status');
+    if (!status) return;                                           // not created by the booking system
+    if (['pending', 'asked', 'hold'].indexOf(status) !== -1 || ev.getEndTime() < cutoff) ev.deleteEvent();
+  });
+  cleanMail_();
+}
+
+/** Moves emails this system sent (identified by the footer) to the Gmail bin after RETENTION_DAYS.
+ *  Patients' own replies are not touched. */
+function cleanMail_() {
+  const query = 'from:me older_than:' + RETENTION_DAYS + 'd ("' + MAIL_FOOTER_HU + '" OR "' + MAIL_FOOTER_EN + '")';
+  const cutoff = new Date(Date.now() - RETENTION_DAYS * 86400000);
+  const me = Session.getEffectiveUser().getEmail().toLowerCase();
+  GmailApp.search(query, 0, 200).forEach(thread => thread.getMessages().forEach(m => {
+    const body = m.getPlainBody();
+    if (m.getDate() < cutoff && m.getFrom().toLowerCase().indexOf(me) !== -1 &&
+        (body.indexOf(MAIL_FOOTER_HU) !== -1 || body.indexOf(MAIL_FOOTER_EN) !== -1)) m.moveToTrash();
+  }));
 }
 
 function json_(obj) {
