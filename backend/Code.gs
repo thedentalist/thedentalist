@@ -25,6 +25,8 @@ const MAX_REQUESTS_PER_PHONE_PER_DAY = 3;
 // The clinic's review page always sees every free slot. Use 0 to show all free times.
 const MAX_SLOTS_SHOWN = 4;
 const CLINIC_PHONE = '+36 30 252 5092';
+// Public address shown to patients; replies to patient emails go here (forwarded to the clinic Gmail by ImprovMX).
+const PUBLIC_EMAIL = 'info@thedentalist.hu';
 const CALENDAR_NAME = 'The Dentalist – Időpontok';
 
 // Opening hours, minutes from midnight, by weekday (0 = Sunday … 6 = Saturday).
@@ -444,7 +446,7 @@ function mailPatient_(ev, kind, note) {
     subject: M[kind][0],
     body: M[kind][1] + M.sign,
     name: 'The Dentalist',
-    replyTo: clinicEmail_()
+    replyTo: PUBLIC_EMAIL
   });
 }
 
