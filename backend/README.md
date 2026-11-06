@@ -10,12 +10,21 @@ How it works:
    calendar overlaps it**.
 2. When a patient sends a request, the script checks the slot again and creates a yellow
    event: `⏳ FÜGGŐBEN – <name>`. The slot is now held, so nobody else can book it.
-3. The clinic gets an email with a button. That opens a page with **Visszaigazolom**
-   (confirm) or **Elutasítom** (decline).
-   - Confirm: the event turns green (`✅ <name>`) and the patient gets a confirmation email.
-   - Decline: the event is deleted, the slot is free again and the patient gets an email.
+3. The clinic gets an email with a button. That opens a page where the doctor can:
+   - **Confirm** (Visszaigazolom): the event turns green (`✅ <name>`) and the patient gets a confirmation email.
+   - **Suggest another time** (Másik időpontot javaslok): pick a free day and time, optionally add a short
+     message. The appointment moves to the new time (orange, `🔄 JAVASOLT – <name>`), the original
+     time is freed, and the patient gets an email with a link to accept or decline. Accepting turns it
+     green and confirms it; declining deletes it. Either way the clinic gets an email.
+     If the patient left no email, agree the new time by phone first: the button then moves and confirms it in one step.
+   - **Decline** (Elutasítom): the event is deleted, the slot is free again and the patient gets an email.
    - If the patient left no email address, the page reminds you to call them.
-4. Once a day, requests that were never confirmed and whose time has passed are deleted.
+4. Once a day, requests that were never confirmed (pending or suggested) and whose time has passed are deleted.
+
+The website never shows booked times or full days. It lists only days with free time, and at most
+`MAX_SLOTS_SHOWN` (4) free times per day, picked at random but the same on every reload, so the
+diary never looks empty. The doctor's page always shows every free slot. Set `MAX_SLOTS_SHOWN = 0`
+to show all free times.
 
 To block time (holiday, lunch break, a phone booking), add an event of any kind to the
 **The Dentalist – Időpontok** calendar. You can also move or delete appointments there.

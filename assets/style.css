@@ -1487,12 +1487,6 @@ h2.prices-category-title {
   color: #c9a94d;
 }
 
-#booking .booking-day:disabled,
-#booking .booking-day.is-full {
-  opacity: 0.4;
-  cursor: not-allowed;
-}
-
 #booking .booking-hp {
   position: absolute;
   left: -9999px;

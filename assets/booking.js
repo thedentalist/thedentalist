@@ -17,7 +17,6 @@
       intro: "Válasszon egy szabad 1 órás időpontot, majd adja meg elérhetőségét. Az időpontot azonnal fenntartjuk Önnek, de akkor válik érvényessé, ha rendelőnk telefonon vagy e-mailben visszaigazolja. Munkatársunk legfeljebb 24 órán belül válaszol.",
       loading: "Szabad időpontok betöltése…",
       loadError: `Az online foglalás most nem érhető el. Kérjük, hívjon minket: <a href="tel:+36302525092">${CLINIC_PHONE}</a>, vagy írjon: <a href="mailto:${CLINIC_EMAIL}">${CLINIC_EMAIL}</a>.`,
-      full: "Betelt",
       noDays: "A következő hetekben nincs szabad online időpont. Kérjük, hívjon minket.",
       errTaken: "Ezt az időpontot közben valaki más lefoglalta. Kérjük, válasszon másikat.",
       errTooMany: "Ma már több kérést küldött erről a telefonszámról. Kérjük, hívjon minket.",
@@ -54,7 +53,6 @@
       intro: "Choose a free 1-hour slot and enter your contact details. We hold the slot for you straight away, but the appointment becomes valid only once our clinic confirms it by phone or e-mail. Our team will reply within 24 hours at the latest.",
       loading: "Loading free slots…",
       loadError: `Online booking is not available right now. Please call us on <a href="tel:+36302525092">${CLINIC_PHONE}</a> or email <a href="mailto:${CLINIC_EMAIL}">${CLINIC_EMAIL}</a>.`,
-      full: "Full",
       noDays: "There are no free online slots in the coming weeks. Please call us.",
       errTaken: "Someone else has just booked this time. Please choose another one.",
       errTooMany: "You have already sent several requests from this phone number today. Please call us.",
@@ -161,16 +159,16 @@
       return;
     }
     let lastMonth = -1;
-    daysEl.innerHTML = state.days.map(d => {
+    // Only days with free time are listed; booked times and full days are never shown.
+    daysEl.innerHTML = state.days.filter(d => d.slots.length).map(d => {
       const dt = dayDate(d.date);
-      const full = !d.slots.length;
-      const showMonth = !full && dt.getMonth() !== lastMonth;
-      if (showMonth) lastMonth = dt.getMonth();
+      const showMonth = dt.getMonth() !== lastMonth;
+      lastMonth = dt.getMonth();
       return `
-      <button type="button" class="booking-day${full ? " is-full" : ""}" data-date="${d.date}" aria-pressed="${d.date === state.date}"${full ? ` disabled aria-label="${esc(T.fmtDate(dt, T))} – ${T.full}"` : ""}>
+      <button type="button" class="booking-day" data-date="${d.date}" aria-pressed="${d.date === state.date}">
         <span class="booking-day-name">${T.daysShort[dt.getDay()]}</span>
         <span class="booking-day-num">${dt.getDate()}</span>
-        <span class="booking-day-month">${full ? T.full : showMonth ? T.months[dt.getMonth()] : "&nbsp;"}</span>
+        <span class="booking-day-month">${showMonth ? T.months[dt.getMonth()] : "&nbsp;"}</span>
       </button>`;
     }).join("");
   }
@@ -209,7 +207,7 @@
 
   daysEl.addEventListener("click", e => {
     const btn = e.target.closest(".booking-day");
-    if (!btn || btn.disabled) return;
+    if (!btn) return;
     state.date = btn.dataset.date;
     state.start = null;
     daysEl.querySelectorAll(".booking-day").forEach(b => b.setAttribute("aria-pressed", b === btn));
