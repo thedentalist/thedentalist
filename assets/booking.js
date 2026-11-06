@@ -8,7 +8,7 @@
   // Apps Script Web App URL (…/exec). Opening hours and slot length live in backend/Code.gs.
   const ENDPOINT = root.dataset.endpoint || "";
   const CLINIC_PHONE = "+36 30 252 5092";
-  const CLINIC_EMAIL = "info@thedentalist.hu";
+  const CLINIC_EMAIL = "thedentalist.hu@gmail.com";
 
   const lang = root.dataset.lang || (/\/en(?:\/|$)/.test(window.location.pathname) ? "en" : "hu");
   const T = {

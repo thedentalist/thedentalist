@@ -25,8 +25,8 @@ const MAX_REQUESTS_PER_PHONE_PER_DAY = 3;
 // The clinic's review page always sees every free slot. Use 0 to show all free times.
 const MAX_SLOTS_SHOWN = 4;
 const CLINIC_PHONE = '+36 30 252 5092';
-// Public address shown to patients; replies to patient emails go here (forwarded to the clinic Gmail by ImprovMX).
-const PUBLIC_EMAIL = 'info@thedentalist.hu';
+// Public address shown to patients; replies to patient emails go here.
+const PUBLIC_EMAIL = 'thedentalist.hu@gmail.com';
 const CALENDAR_NAME = 'The Dentalist – Időpontok';
 // Data protection (GDPR storage limitation, privacy notice): online-booking calendar entries and the emails
 // this system sent are deleted this many days after the appointment / sending. Treatment records live in Flexi-Dent.
