@@ -12,14 +12,20 @@ How it works:
    event: `⏳ FÜGGŐBEN – <name>`. The slot is now held, so nobody else can book it.
 3. The clinic gets an email with a button. That opens a page where the doctor can:
    - **Confirm** (Visszaigazolom): the event turns green (`✅ <name>`) and the patient gets a confirmation email.
-   - **Suggest another time** (Másik időpontot javaslok): pick a free day and time, optionally add a short
-     message. The appointment moves to the new time (orange, `🔄 JAVASOLT – <name>`), the original
-     time is freed, and the patient gets an email with a link to accept or decline. Accepting turns it
-     green and confirms it; declining deletes it. Either way the clinic gets an email.
-     If the patient left no email, agree the new time by phone first: the button then moves and confirms it in one step.
+   - **Ask about another time** (Másik időpontot kérdezek): pick a free day and time, optionally add a
+     short message. This is only a question: the patient's request stays exactly as it is (yellow),
+     and the asked time is held for them as a separate orange `❓ KÉRDÉS – <name>` event. The patient
+     gets an email asking "Megfelelne Önnek helyette ez az időpont?" with a link to answer:
+     - **Igen, ez megfelel**: the appointment moves to the asked time and is confirmed (green); the
+       patient gets a confirmation email and the clinic an email.
+     - **Nem felel meg**: the held time is freed and the request stays pending at the original time; the
+       clinic gets an email with a link to confirm the original, ask about another time, or decline.
+     While waiting, the clinic can still confirm the original time, ask about a different time (this
+     replaces the question), or decline. If the patient left no email, ask by phone; once they agree,
+     the button moves and confirms the appointment in one step.
    - **Decline** (Elutasítom): the event is deleted, the slot is free again and the patient gets an email.
    - If the patient left no email address, the page reminds you to call them.
-4. Once a day, requests that were never confirmed (pending or suggested) and whose time has passed are deleted.
+4. Once a day, unconfirmed requests and unanswered question holds whose time has passed are deleted.
 
 The website never shows booked times or full days. It lists only days with free time, and at most
 `MAX_SLOTS_SHOWN` (4) free times per day, picked at random but the same on every reload, so the

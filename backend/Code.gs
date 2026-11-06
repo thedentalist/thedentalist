@@ -8,8 +8,8 @@
  *
  *   GET  ?action=slots             -> free slots for the next DAYS_AHEAD days (JSON)
  *   POST {action:"book", ...}      -> holds the slot as a PENDING event, emails the clinic
- *   GET  ?action=review&id=&sig=   -> clinic page: confirm / suggest another time / decline
- *   GET  ?action=respond&id=&sig=  -> patient page: accept / decline the suggested time
+ *   GET  ?action=review&id=&sig=   -> clinic page: confirm / ask about another time / decline
+ *   GET  ?action=respond&id=&sig=  -> patient page: yes / no to the time we asked about
  *
  * Setup: see backend/README.md. Run setup() once from the editor.
  */
@@ -172,7 +172,8 @@ function book_(d) {
 }
 
 // ---------------------------------------------------------------- clinic review (confirm / suggest / decline)
-// Event statuses (event tag "status"): pending -> approved | proposed -> approved; declined requests are deleted.
+// Request statuses (event tag "status"): pending | asked (we asked about another time; the request is unchanged
+// and a separate "hold" event keeps the asked time free for the patient) | approved. Declined requests are deleted.
 function sign_(id, who) {
   const secret = PropertiesService.getScriptProperties().getProperty('SECRET');
   return Utilities.base64EncodeWebSafe(Utilities.computeHmacSha256Signature((who || 'clinic') + ':' + id, secret)).replace(/=+$/, '');
@@ -235,19 +236,22 @@ function reviewPage_(id, sig) {
   const t = k => ev.getTag(k) || '', status = t('status'), hasEmail = !!t('email');
   const J = v => JSON.stringify(v).replace(/</g, '\\u003c');
   const days = freeDays_(true).filter(d => d.slots.length);
-  let body = '<h1>The Dentalist – időpontkérés</h1><p><b>' + esc_(when_(ev, 'hu')) + '</b><br>' + esc_(t('name')) + '<br>' + esc_(t('phone')) + '<br>' + esc_(t('email') || 'nincs e-mail') + '</p>';
+  const hold = holdOf_(ev);
+  let body = '<h1>The Dentalist – időpontkérés</h1><p>Kért időpont: <b>' + esc_(when_(ev, 'hu')) + '</b><br>' + esc_(t('name')) + '<br>' + esc_(t('phone')) + '<br>' + esc_(t('email') || 'nincs e-mail') + '</p>';
   if (status === 'approved') return page_('Időpontkérés', body + '<p>✅ Ez az időpont már vissza van igazolva.</p>', 'review');
-  if (status === 'proposed') body += '<p>🔄 Másik időpontot javasoltunk, a páciens válaszára vár. Közben módosíthatja vagy elutasíthatja.</p>';
+  if (hold) body += '<p>❓ Megkérdeztük a pácienst, megfelelne-e helyette: <b>' + esc_(when_(hold, 'hu')) + '</b>. Válaszra vár – addig ezt az időpontot neki tartjuk fenn. ' +
+    'Közben visszaigazolhatja az eredeti időpontot, másik időpontot kérdezhet, vagy elutasíthatja a kérést.</p>';
   body += '<script>var ID=' + J(id) + ',SIG=' + J(sig) + ';</script><div id="btns">' +
-    (status === 'pending' ? '<button class="ok" onclick="run(ID,SIG,\'approve\',null)">✅ Visszaigazolom</button>' : '') +
+    '<button class="ok" onclick="run(ID,SIG,\'approve\',null)">✅ Visszaigazolom a kért időpontot</button>' +
     '<button class="no" onclick="run(ID,SIG,\'decline\',null)">✖ Elutasítom (az időpont felszabadul)</button>' +
-    '<h2>🔄 Másik időpontot javaslok</h2>' +
+    '<h2>❓ Másik időpontot kérdezek</h2>' +
     (days.length ? '<select id="day" onchange="fill()"></select><select id="time"></select>' +
       (hasEmail ? '<textarea id="note" rows="2" maxlength="300" placeholder="Üzenet a páciensnek (nem kötelező)"></textarea>' +
-        '<p class="note">A páciens e-mailben megkapja a javaslatot, és egy kattintással elfogadhatja vagy elutasíthatja. Az eredeti időpont felszabadul, az új időpontot neki tartjuk fenn.</p>' +
-        '<button class="ok" onclick="propose()">Javaslat elküldése</button>'
-      : '<p class="note">A páciens nem adott meg e-mailt. Telefonon egyeztessen vele, majd helyezze át az időpontot – ez egyben vissza is igazolja.</p>' +
-        '<button class="ok" onclick="propose()">Áthelyezés és visszaigazolás (telefonon egyeztettem)</button>')
+        '<p class="note">A páciens e-mailben kérdést kap, hogy megfelelne-e neki ez az időpont. A kérése addig változatlan marad, a kérdezett időpontot pedig neki tartjuk fenn. ' +
+        'Csak akkor lesz belőle visszaigazolt időpont, ha a páciens igent mond.</p>' +
+        '<button class="ok" onclick="propose()">Kérdés elküldése</button>'
+      : '<p class="note">A páciens nem adott meg e-mailt. Kérdezze meg telefonon; ha a páciens igent mondott, itt helyezze át – ez egyben vissza is igazolja.</p>' +
+        '<button class="ok" onclick="propose()">A páciens telefonon elfogadta – áthelyezés és visszaigazolás</button>')
       : '<p class="note">A következő hetekben nincs szabad időpont.</p>') +
     '</div><script>var DAYS=' + J(days) + ';var D=document.getElementById("day"),T=document.getElementById("time");' +
     'var N=["vasárnap","hétfő","kedd","szerda","csütörtök","péntek","szombat"];' +
@@ -255,6 +259,30 @@ function reviewPage_(id, sig) {
     'function fill(){var d=DAYS.filter(function(x){return x.date===D.value})[0];T.innerHTML="";d.slots.forEach(function(s){var o=document.createElement("option");o.value=o.textContent=s;T.appendChild(o)})}' +
     'function propose(){var n=document.getElementById("note");run(ID,SIG,"propose",{date:D.value,start:T.value,note:n?n.value:""})}</script>';
   return page_('Időpontkérés', body, 'review');
+}
+
+/** The "question" hold event for a request (the suggested time, kept free for this patient), or null. */
+function holdOf_(ev) {
+  const id = ev.getTag('hold');
+  return id ? calendar_().getEventById(id) : null;
+}
+
+function removeHold_(ev) {
+  const h = holdOf_(ev);
+  if (h) h.deleteEvent();
+  ev.setTag('hold', '');
+}
+
+function setRequestLine_(ev, text) {
+  ev.setDescription(ev.getDescription().replace(/^ONLINE IDŐPONTKÉRÉS – .*$/m, 'ONLINE IDŐPONTKÉRÉS – ' + text));
+}
+
+/** Back to a plain pending request (after the patient said no, or the question was replaced). */
+function backToPending_(ev, line) {
+  ev.setTitle('⏳ FÜGGŐBEN – ' + ev.getTag('name'));
+  ev.setColor(CalendarApp.EventColor.YELLOW);
+  ev.setTag('status', 'pending');
+  setRequestLine_(ev, line);
 }
 
 /** Called from the clinic review page via google.script.run. */
@@ -265,11 +293,13 @@ function review(id, sig, action, extra) {
   const name = ev.getTag('name'), email = ev.getTag('email'), phone = ev.getTag('phone');
   if (ev.getTag('status') === 'approved' && action !== 'decline') return 'Már vissza volt igazolva.';
   if (action === 'approve') {
+    removeHold_(ev);
     approve_(ev, 'VISSZAIGAZOLVA');
     if (email) { mailPatient_(ev, 'approved'); return 'Visszaigazolva. A páciens e-mailt kapott.'; }
     return 'Visszaigazolva. A páciens nem adott meg e-mailt – kérjük, hívja fel: ' + phone;
   }
   if (action === 'decline') {
+    removeHold_(ev);
     if (email) mailPatient_(ev, 'declined');
     ev.deleteEvent();
     return email ? 'Elutasítva, az időpont felszabadult. A páciens e-mailt kapott.'
@@ -277,52 +307,65 @@ function review(id, sig, action, extra) {
   }
   if (action === 'propose') {
     const date = clean_(extra && extra.date, 10), start = clean_(extra && extra.start, 5), note = clean_(extra && extra.note, 300);
+    const m = Number(start.slice(0, 2)) * 60 + Number(start.slice(3));
     const lock = LockService.getScriptLock();
     if (!lock.tryLock(15000)) throw new Error('Próbálja újra');
+    let hold;
     try {
+      removeHold_(ev);                                   // a new question replaces the previous one
       const day = freeDays_(true).filter(x => x.date === date)[0];
-      if (!day || day.slots.indexOf(start) === -1) return 'Ez az időpont közben foglalt lett – frissítse az oldalt, és válasszon másikat.';
-      const m = Number(start.slice(0, 2)) * 60 + Number(start.slice(3));
-      if (!ev.getTag('requested')) ev.setTag('requested', when_(ev, ev.getTag('lang')));
-      ev.setTime(at_(date, m), at_(date, m + SLOT_MINUTES));
+      if (!day || day.slots.indexOf(start) === -1) {
+        if (ev.getTag('status') === 'asked') backToPending_(ev, 'FÜGGŐBEN (még nincs visszaigazolva)');
+        return 'Ez az időpont közben foglalt lett – frissítse az oldalt, és válasszon másikat.';
+      }
+      if (!email) {                                      // agreed by phone: move and confirm
+        ev.setTime(at_(date, m), at_(date, m + SLOT_MINUTES));
+        approve_(ev, 'ÁTHELYEZVE ÉS VISSZAIGAZOLVA (a páciens telefonon elfogadta)');
+        return 'Áthelyezve és visszaigazolva: ' + when_(ev, 'hu') + '.';
+      }
+      hold = calendar_().createEvent('❓ KÉRDÉS – ' + name, at_(date, m), at_(date, m + SLOT_MINUTES), {
+        description: 'Megkérdeztük ' + name + ' pácienst, megfelelne-e neki ez az időpont a kért ' + when_(ev, 'hu') +
+          ' helyett. A válaszáig neki tartjuk fenn.\nTelefon: ' + phone + '\nE-mail: ' + email
+      });
+      hold.setColor(CalendarApp.EventColor.ORANGE);
+      hold.setTag('status', 'hold');
+      hold.setTag('for', ev.getId());
+      ev.setTag('hold', hold.getId());
     } finally {
       lock.releaseLock();
     }
-    if (!email) {
-      approve_(ev, 'ÁTHELYEZVE ÉS VISSZAIGAZOLVA (telefonon)');
-      return 'Áthelyezve és visszaigazolva: ' + when_(ev, 'hu') + '.';
-    }
-    ev.setTitle('🔄 JAVASOLT – ' + name);
-    ev.setColor(CalendarApp.EventColor.ORANGE);
-    ev.setTag('status', 'proposed');
-    ev.setDescription(ev.getDescription().replace(/^ONLINE IDŐPONTKÉRÉS – .*$/m, 'ONLINE IDŐPONTKÉRÉS – MÁSIK IDŐPONT JAVASOLVA, a páciens válaszára vár (kért: ' + ev.getTag('requested') + ')'));
+    ev.setTitle('⏳ FÜGGŐBEN – ' + name + ' (❓ másik időpontot kérdeztünk)');
+    ev.setTag('status', 'asked');
+    setRequestLine_(ev, 'FÜGGŐBEN, a páciens válaszára vár: megfelelne-e helyette ' + when_(hold, 'hu'));
     mailPatient_(ev, 'proposed', note);
-    return 'Javaslat elküldve: ' + when_(ev, 'hu') + '. Ha a páciens elfogadja vagy elutasítja, e-mailt kap róla.';
+    return 'Kérdés elküldve: megfelelne-e ' + when_(hold, 'hu') + '. A kért időpont változatlan; ha a páciens válaszol, e-mailt kap róla.';
   }
   throw new Error('Ismeretlen művelet');
 }
 
 function approve_(ev, label) {
   ev.setTitle('✅ ' + ev.getTag('name'));
-  ev.setDescription(ev.getDescription().replace(/^ONLINE IDŐPONTKÉRÉS – .*$/m, 'ONLINE IDŐPONTKÉRÉS – ' + label + ' ' + Utilities.formatDate(new Date(), TZ, 'yyyy-MM-dd HH:mm')));
+  setRequestLine_(ev, label + ' ' + Utilities.formatDate(new Date(), TZ, 'yyyy-MM-dd HH:mm'));
   ev.setColor(CalendarApp.EventColor.GREEN);
   ev.setTag('status', 'approved');
 }
 
-// ---------------------------------------------------------------- patient answers a suggested time
+// ---------------------------------------------------------------- patient answers the question
 function respondPage_(id, sig) {
   const ev = id && sig === sign_(id, 'patient') ? calendar_().getEventById(id) : null;
   const lang = ev && ev.getTag('lang') === 'en' ? 'en' : 'hu';
   const L = lang === 'en'
-    ? { title: 'The Dentalist – suggested appointment', gone: 'This suggestion is no longer available. Please book a new time on our website or call us on ' + CLINIC_PHONE + '.',
-        done: '✅ This appointment is already confirmed.', intro: 'Instead of the time you requested, we suggest:', yes: '✅ I accept this time', no: '✖ This time does not suit me' }
-    : { title: 'The Dentalist – javasolt időpont', gone: 'Ez a javaslat már nem érvényes. Kérjük, foglaljon új időpontot a weboldalon, vagy hívjon minket: ' + CLINIC_PHONE + '.',
-        done: '✅ Ez az időpont már vissza van igazolva.', intro: 'A kért időpont helyett ezt javasoljuk:', yes: '✅ Elfogadom ezt az időpontot', no: '✖ Ez az időpont nem jó nekem' };
+    ? { title: 'The Dentalist – another time?', gone: 'This question is no longer open. If you have any questions, please call us on ' + CLINIC_PHONE + '.',
+        done: '✅ Your appointment is confirmed:', req: 'You asked for:', q: 'Would this time suit you instead?', yes: '✅ Yes, this time suits me', no: '✖ No, it does not suit me' }
+    : { title: 'The Dentalist – megfelelne másik időpont?', gone: 'Ez a kérdés már nem aktuális. Ha kérdése van, hívjon minket: ' + CLINIC_PHONE + '.',
+        done: '✅ Időpontja visszaigazolva:', req: 'Az Ön által kért időpont:', q: 'Megfelelne Önnek helyette ez az időpont?', yes: '✅ Igen, ez megfelel', no: '✖ Nem felel meg' };
   let body = '<h1>' + L.title + '</h1>';
-  if (!ev || (ev.getTag('status') !== 'proposed' && ev.getTag('status') !== 'approved')) return page_(L.title, body + '<p>' + L.gone + '</p>', 'respond');
-  if (ev.getTag('status') === 'approved') return page_(L.title, body + '<p><b>' + esc_(when_(ev, lang)) + '</b></p><p>' + L.done + '</p>', 'respond');
+  if (ev && ev.getTag('status') === 'approved') return page_(L.title, body + '<p>' + L.done + ' <b>' + esc_(when_(ev, lang)) + '</b></p>', 'respond');
+  const hold = ev && ev.getTag('status') === 'asked' ? holdOf_(ev) : null;
+  if (!hold) return page_(L.title, body + '<p>' + L.gone + '</p>', 'respond');
   const J = v => JSON.stringify(v).replace(/</g, '\\u003c');
-  body += '<script>var ID=' + J(id) + ',SIG=' + J(sig) + ';</script><p>' + L.intro + '</p><p><b>' + esc_(when_(ev, lang)) + '</b></p><div id="btns">' +
+  body += '<script>var ID=' + J(id) + ',SIG=' + J(sig) + ';</script>' +
+    '<p class="note">' + L.req + ' ' + esc_(when_(ev, lang)) + '</p><p>' + L.q + '</p><p><b>' + esc_(when_(hold, lang)) + '</b></p><div id="btns">' +
     '<button class="ok" onclick="run(ID,SIG,\'accept\')">' + L.yes + '</button>' +
     '<button class="no" onclick="run(ID,SIG,\'reject\')">' + L.no + '</button></div>';
   return page_(L.title, body, 'respond');
@@ -333,25 +376,31 @@ function respond(id, sig, answer) {
   if (!id || sig !== sign_(id, 'patient')) throw new Error('Invalid link');
   const ev = calendar_().getEventById(id);
   const en = ev && ev.getTag('lang') === 'en';
-  if (!ev || ev.getTag('status') !== 'proposed') {
-    return en ? 'This suggestion is no longer available. Please call us on ' + CLINIC_PHONE + '.' : 'Ez a javaslat már nem érvényes. Kérjük, hívjon minket: ' + CLINIC_PHONE + '.';
+  const hold = ev && ev.getTag('status') === 'asked' ? holdOf_(ev) : null;
+  if (!hold) {
+    return en ? 'This question is no longer open. Please call us on ' + CLINIC_PHONE + '.' : 'Ez a kérdés már nem aktuális. Kérjük, hívjon minket: ' + CLINIC_PHONE + '.';
   }
-  const name = ev.getTag('name'), when = when_(ev, 'hu');
+  const name = ev.getTag('name'), asked = when_(hold, 'hu'), requested = when_(ev, 'hu');
   if (answer === 'accept') {
-    approve_(ev, 'A PÁCIENS ELFOGADTA A JAVASOLT IDŐPONTOT');
+    ev.setTime(hold.getStartTime(), hold.getEndTime());
+    removeHold_(ev);
+    approve_(ev, 'A PÁCIENS ELFOGADTA A KÉRDEZETT IDŐPONTOT (eredetileg kért: ' + requested + ')');
     mailPatient_(ev, 'approved');
-    MailApp.sendEmail({ to: clinicEmail_(), name: 'The Dentalist weboldal', subject: '✅ Elfogadta: ' + name + ' – ' + when,
-      body: name + ' elfogadta a javasolt időpontot: ' + when + '.\nAz időpont a naptárban visszaigazolt (zöld), a páciens visszaigazoló e-mailt kapott.' });
+    MailApp.sendEmail({ to: clinicEmail_(), name: 'The Dentalist weboldal', subject: '✅ Elfogadta: ' + name + ' – ' + asked,
+      body: name + ' elfogadta a kérdezett időpontot: ' + asked + ' (eredetileg kért: ' + requested + ').\nAz időpont a naptárban visszaigazolt (zöld), a páciens visszaigazoló e-mailt kapott.' });
     return en ? 'Thank you! Your appointment is confirmed: ' + when_(ev, 'en') + '. We have sent you a confirmation email.'
-              : 'Köszönjük! Időpontja visszaigazolva: ' + when + '. Visszaigazoló e-mailt küldtünk.';
+              : 'Köszönjük! Időpontja visszaigazolva: ' + asked + '. Visszaigazoló e-mailt küldtünk.';
   }
   if (answer === 'reject') {
-    const phone = ev.getTag('phone');
-    ev.deleteEvent();
-    MailApp.sendEmail({ to: clinicEmail_(), name: 'The Dentalist weboldal', subject: '✖ Nem fogadta el: ' + name + ' – ' + when,
-      body: name + ' nem fogadta el a javasolt időpontot (' + when + '). Az időpont felszabadult.\nTelefon: ' + phone });
-    return en ? 'Thank you for letting us know. Please choose another time on our website (https://thedentalist.hu/en/contact.html) or call us on ' + CLINIC_PHONE + '.'
-              : 'Köszönjük a visszajelzést. Kérjük, válasszon másik időpontot a weboldalon (https://thedentalist.hu/contact.html), vagy hívjon minket: ' + CLINIC_PHONE + '.';
+    removeHold_(ev);
+    backToPending_(ev, 'FÜGGŐBEN – a páciens szerint a kérdezett ' + asked + ' nem felel meg');
+    MailApp.sendEmail({ to: clinicEmail_(), name: 'The Dentalist weboldal', subject: '✖ Nem felel meg: ' + name + ' – ' + asked,
+      htmlBody: '<p>' + esc_(name) + ' szerint a kérdezett időpont (' + esc_(asked) + ') nem felel meg. A kérdezett időpont felszabadult.</p>' +
+        '<p>Az eredeti kérése (<b>' + esc_(requested) + '</b>) továbbra is függőben van. Visszaigazolhatja, másik időpontot kérdezhet, vagy elutasíthatja:</p>' +
+        '<p><a href="' + reviewUrl_(ev) + '" style="background:#d9a900;color:#000;padding:10px 18px;border-radius:6px;text-decoration:none;font-weight:bold">Megnyitás</a></p>' +
+        '<p>Telefon: ' + esc_(ev.getTag('phone')) + '</p>' });
+    return en ? 'Thank you for letting us know. Your request for ' + when_(ev, 'en') + ' stays open, and our team will contact you shortly. You can also call us on ' + CLINIC_PHONE + '.'
+              : 'Köszönjük a visszajelzést. A ' + requested + ' időpontra vonatkozó kérése továbbra is érvényes, munkatársunk hamarosan felveszi Önnel a kapcsolatot. Hívhat minket is: ' + CLINIC_PHONE + '.';
   }
   throw new Error('Unknown answer');
 }
@@ -360,7 +409,7 @@ function respond(id, sig, answer) {
 function mailPatient_(ev, kind, note) {
   const lang = ev.getTag('lang') === 'en' ? 'en' : 'hu';
   const name = ev.getTag('name'), when = when_(ev, lang);
-  const requested = ev.getTag('requested') || '';
+  const hold = kind === 'proposed' ? holdOf_(ev) : null, asked = hold ? when_(hold, lang) : '';
   const extra = note ? '\n\n' + (lang === 'en' ? 'Message from the clinic: ' : 'Üzenet a rendelőtől: ') + note : '';
   const M = {
     hu: {
@@ -370,10 +419,10 @@ function mailPatient_(ev, kind, note) {
         'Kedves ' + name + '!\n\nÖrömmel visszaigazoljuk időpontját: ' + when + '.\nCím: 1134 Budapest, Angyalföldi út 30-32., B lépcsőház, földszint 6. ajtó (2-es kapucsengő).\nHa mégsem tud eljönni, kérjük, jelezze minél előbb válaszlevélben vagy telefonon.'],
       declined: ['A kért időpont sajnos nem elérhető',
         'Kedves ' + name + '!\n\nSajnos a kért időpont (' + when + ') nem elérhető. Kérjük, válasszon másik időpontot a weboldalon (https://thedentalist.hu/contact.html), vagy hívjon minket.'],
-      proposed: ['Másik időpontot javaslunk: ' + when,
-        'Kedves ' + name + '!\n\nA kért időpont (' + requested + ') sajnos nem megfelelő, ezért helyette ezt javasoljuk:\n\n    ' + when + extra +
-        '\n\nAz időpontot addig fenntartjuk Önnek. Kérjük, itt fogadja el vagy utasítsa el:\n' + respondUrl_(ev) +
-        '\n\nAz időpont csak az elfogadás után válik érvényessé. Ha kérdése van, válaszoljon erre a levélre, vagy hívjon minket.'],
+      proposed: ['Megfelelne Önnek ez az időpont? ' + asked,
+        'Kedves ' + name + '!\n\nKöszönjük időpontkérését (' + when + '). A kért időpontban sajnos nem biztos, hogy fogadni tudjuk. Megfelelne Önnek helyette ez az időpont?\n\n    ' + asked + extra +
+        '\n\nKérjük, ezen a linken jelezze, hogy megfelel-e:\n' + respondUrl_(ev) +
+        '\n\nEz csak kérdés: amíg nem válaszol, nem változtatunk semmit, a javasolt időpontot pedig addig fenntartjuk Önnek. Ha egyik időpont sem jó, válaszoljon erre a levélre, vagy hívjon minket.'],
       sign: '\n\nÜdvözlettel:\nThe Dentalist fogászat\n' + CLINIC_PHONE
     },
     en: {
@@ -383,10 +432,10 @@ function mailPatient_(ev, kind, note) {
         'Dear ' + name + ',\n\nWe are happy to confirm your appointment on ' + when + '.\nAddress: 1134 Budapest, Angyalföldi út 30-32., staircase B, ground floor, door 6 (doorbell 2).\nIf you cannot come, please let us know as soon as possible by replying to this email or by phone.'],
       declined: ['Your requested time is unfortunately not available',
         'Dear ' + name + ',\n\nUnfortunately the time you requested (' + when + ') is not available. Please choose another time on our website (https://thedentalist.hu/en/contact.html) or call us.'],
-      proposed: ['We suggest another time: ' + when,
-        'Dear ' + name + ',\n\nUnfortunately the time you requested (' + requested + ') does not work for us, so we suggest this time instead:\n\n    ' + when + extra +
-        '\n\nWe are holding this time for you. Please accept or decline it here:\n' + respondUrl_(ev) +
-        '\n\nThe appointment is confirmed only once you accept it. If you have any questions, reply to this email or call us.'],
+      proposed: ['Would this time suit you? ' + asked,
+        'Dear ' + name + ',\n\nThank you for your appointment request (' + when + '). Unfortunately we may not be able to see you at that time. Would this time suit you instead?\n\n    ' + asked + extra +
+        '\n\nPlease let us know here whether it suits you:\n' + respondUrl_(ev) +
+        '\n\nThis is only a question: nothing changes until you answer, and we are holding the suggested time for you. If neither time works, reply to this email or call us.'],
       sign: '\n\nKind regards,\nThe Dentalist dental clinic\n' + CLINIC_PHONE
     }
   }[lang];
@@ -400,12 +449,12 @@ function mailPatient_(ev, kind, note) {
 }
 
 // ---------------------------------------------------------------- housekeeping
-/** Daily: deletes requests (pending or suggested) that were never confirmed and whose time has passed. */
+/** Daily: deletes requests that were never confirmed, and unanswered question holds, whose time has passed. */
 function dailyCleanup() {
   const cal = calendar_();
   const now = new Date();
   cal.getEvents(new Date(now.getTime() - 60 * 86400000), now)
-    .filter(ev => ev.getTag('status') === 'pending' || ev.getTag('status') === 'proposed')
+    .filter(ev => ['pending', 'asked', 'hold'].indexOf(ev.getTag('status')) !== -1)
     .forEach(ev => ev.deleteEvent());
 }
 
