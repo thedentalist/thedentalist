@@ -30,7 +30,8 @@ function loadTreatmentPricePreviews(lang) {
 
       previews.forEach((preview) => {
         const wantedCategories = preview.dataset.priceCategory.split(",");
-        const rows = wantedCategories.flatMap((category) => (pricesByCategory.get(category) || []).slice(0, 5));
+        const limit = Number.parseInt(preview.dataset.priceLimit || "5", 10);
+        const rows = wantedCategories.flatMap((category) => (pricesByCategory.get(category) || []).slice(0, limit));
         preview.replaceChildren();
 
         rows.forEach(({ service, price }) => {

@@ -1109,7 +1109,22 @@ h2.prices-category-title {
 }
 
 .home-treatment-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 1rem;
   margin-top: 0;
+}
+
+.home-treatment-grid > li {
+  min-width: 0;
+  margin-bottom: 0;
+}
+
+@media (max-width: 575.98px) {
+  .home-treatment-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .home-results-section {
