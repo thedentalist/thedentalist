@@ -7,6 +7,13 @@
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 
+.reviews-rating .reviews-stars {
+  background-image: linear-gradient(90deg, #d9a900 0%, #fff1a8 98%, #4b4638 98%, #4b4638 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 @font-face {
   font-family: 'Poppins';
   font-style: normal;
@@ -344,15 +351,74 @@ footer {
   margin: 1.5rem 0 0;
 }
 
+.treatment-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+  gap: 1rem;
+}
+
 .treatment-list li {
   padding: 0.9rem 0;
   border-bottom: 1px solid rgba(201, 169, 77, 0.3);
+}
+
+.treatment-grid > li {
+  display: flex;
+  min-height: 7rem;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0.65rem;
+  padding: 1rem;
+  border: 1px solid rgba(201, 169, 77, 0.3);
+  border-radius: 0.5rem;
+  background: rgba(255, 255, 255, 0.025);
+  transition: border-color 150ms ease, background-color 150ms ease;
+}
+
+.treatment-grid > li:hover {
+  border-color: rgba(201, 169, 77, 0.7);
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .treatment-list a {
   color: #e0b900;
   font-size: 1.15rem;
   text-decoration: none;
+}
+
+.treatment-grid > li > a:first-child {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.treatment-price-preview {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.treatment-price-preview > li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) max-content;
+  gap: 0.75rem;
+  padding: 0.35rem 0;
+  border-bottom: 1px solid rgba(201, 169, 77, 0.16);
+  color: #d8cdb4;
+  font-size: 0.82rem;
+  line-height: 1.4;
+}
+
+.treatment-price-preview > li > span:last-child {
+  color: #e0b900;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.treatment-grid > li > a.treatment-price-link {
+  margin-top: auto;
+  font-size: 0.75rem;
 }
 
 .treatment-list a:hover {
@@ -525,6 +591,20 @@ h2.prices-category-title {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
   max-width: 500px;
+}
+
+.home-results-section .home-before-after-grid {
+  column-gap: 3rem;
+  row-gap: 1.5rem;
+  max-width: 680px;
+}
+
+@media (max-width: 575.98px) {
+  .home-results-section .home-before-after-grid {
+    column-gap: 1rem;
+    row-gap: 0.9rem;
+    max-width: 100%;
+  }
 }
 
 .before-after-card {
@@ -774,6 +854,62 @@ h2.prices-category-title {
   box-shadow: 0 0.75rem 2rem rgba(0, 0, 0, 0.2);
 }
 
+.reviews-carousel-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.reviews-carousel-control {
+  display: grid;
+  width: 2.4rem;
+  height: 2.4rem;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid rgba(201, 169, 77, 0.55);
+  border-radius: 50%;
+  background: transparent;
+  color: #e4c86e;
+  font-size: 1.6rem;
+  line-height: 1;
+  transition: background-color 180ms ease, color 180ms ease;
+}
+
+.reviews-carousel-control:hover,
+.reviews-carousel-control:focus-visible {
+  background: #c9a94d;
+  color: #111;
+}
+
+.reviews-carousel-control:focus-visible {
+  outline: 2px solid #e4c86e;
+  outline-offset: 3px;
+}
+
+.reviews-carousel-indicators {
+  position: static;
+  display: flex;
+  gap: 0.55rem;
+  margin: 0;
+}
+
+.reviews-carousel-indicators [data-bs-target] {
+  width: 0.55rem;
+  height: 0.55rem;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #c9a94d;
+  opacity: 0.45;
+}
+
+.reviews-carousel-indicators .active {
+  opacity: 1;
+}
+
 .review-source {
   font-size: 0.68rem;
   letter-spacing: 0.08em;
@@ -792,6 +928,253 @@ h2.prices-category-title {
 
 .reviews-link {
   white-space: normal;
+}
+
+.home-hero {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(115deg, #090909 0%, #111 54%, #080808 100%);
+  border-bottom: 1px solid rgba(201, 169, 77, 0.2);
+}
+
+.home-hero .display-5 {
+  max-width: 24ch;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  font-size: clamp(1.7rem, calc(1.4rem + 1.4vw), 2.5rem);
+  font-weight: 500;
+  letter-spacing: normal;
+  line-height: 1.2;
+}
+
+.home-hero .lead {
+  max-width: 38rem;
+  color: #c8c4b8;
+}
+
+.home-eyebrow {
+  margin-bottom: 0.65rem;
+  color: #d9a900;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.home-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.btn-outline-gold {
+  border: 1px solid rgba(217, 169, 0, 0.7);
+  color: #f0d26a;
+  font-weight: 500;
+}
+
+.btn-outline-gold:hover,
+.btn-outline-gold:focus-visible {
+  border-color: #e0b900;
+  background: rgba(217, 169, 0, 0.12);
+  color: #fff1a8;
+}
+
+.home-hero .home-doctor-photo {
+  width: 100%;
+  max-width: 28rem;
+  aspect-ratio: 2.4 / 1;
+  margin-inline: auto;
+  border: 1px solid rgba(201, 169, 77, 0.35);
+  border-radius: 0.85rem;
+}
+
+.home-hero .home-doctor-photo .doctor-portrait {
+  object-position: center top;
+  transform: none;
+}
+
+.home-highlights-section {
+  padding-block: 1.25rem;
+  background: #080808;
+}
+
+.home-highlights {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.home-highlight-card,
+.home-technology-card,
+.home-location-card {
+  border: 1px solid rgba(201, 169, 77, 0.2);
+  border-radius: 0.75rem;
+  background: linear-gradient(145deg, #111 0%, #090909 100%);
+}
+
+.home-highlight-card {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-content: center;
+  align-items: center;
+  gap: 0.35rem 0.75rem;
+  min-height: 6rem;
+  padding: 1rem;
+}
+
+.home-highlight-mark {
+  grid-row: span 2;
+  display: grid;
+  width: 2.35rem;
+  height: 2.35rem;
+  place-items: center;
+  border: 1px solid rgba(217, 169, 0, 0.45);
+  border-radius: 0.55rem;
+  color: #e7c84b;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.home-highlight-card h2,
+.home-technology-card h3,
+.home-location-card h3 {
+  margin: 0;
+  color: #f2e7c0;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 600;
+  line-height: 1.4;
+  -webkit-text-fill-color: currentColor;
+}
+
+.home-highlight-card p {
+  margin: 0;
+  color: #aaa69b;
+  font-size: 0.75rem;
+  line-height: 1.4;
+}
+
+.home-technology-section {
+  background: linear-gradient(180deg, #090909 0%, #101010 100%);
+}
+
+.home-technology-section > .container > .section-title,
+.home-prices-section .section-title,
+.home-results-section .section-title,
+.home-clinic-section .section-title,
+.home-location-section .section-title {
+  margin-bottom: 1.5rem;
+}
+
+.home-technology-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.home-technology-card {
+  padding: 1.25rem;
+}
+
+.home-technology-card h3 {
+  margin-bottom: 0.55rem;
+  color: #e9ca54;
+  font-size: 1rem;
+}
+
+.home-technology-card p {
+  margin: 0;
+  color: #c8c4b8;
+  font-size: 0.9rem;
+}
+
+.home-prices-section {
+  background: #080808;
+  border-block: 1px solid rgba(201, 169, 77, 0.18);
+}
+
+.home-section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.home-section-heading .section-title {
+  margin-bottom: 0;
+}
+
+.home-treatment-grid {
+  margin-top: 0;
+}
+
+.home-results-section {
+  background: linear-gradient(180deg, #090909 0%, #111 50%, #090909 100%);
+}
+
+.home-results-warning {
+  max-width: 58rem;
+  margin: 0 0 1.5rem;
+  padding: 0.85rem 1rem;
+  border-left: 3px solid #d9a900;
+  border-radius: 0.25rem;
+  background: rgba(217, 169, 0, 0.08);
+  color: #ddd4bd;
+  font-size: 0.88rem;
+}
+
+.home-clinic-section {
+  background: #080808;
+  border-block: 1px solid rgba(201, 169, 77, 0.18);
+}
+
+.home-clinic-photo {
+  display: block;
+  width: 100%;
+  max-height: 28rem;
+  border: 1px solid rgba(201, 169, 77, 0.3);
+  border-radius: 0.8rem;
+  object-fit: cover;
+  object-position: center 45%;
+}
+
+.home-clinic-section p:not(.home-eyebrow) {
+  max-width: 38rem;
+  color: #c8c4b8;
+}
+
+.home-location-heading {
+  margin-bottom: 1.5rem;
+}
+
+.home-location-card {
+  padding: 1.25rem;
+}
+
+.home-location-card h3 {
+  margin-bottom: 0.45rem;
+  color: #e9ca54;
+}
+
+.home-location-card p {
+  margin-bottom: 1.15rem;
+  color: #c8c4b8;
+  font-size: 0.9rem;
+}
+
+.home-location-card .btn {
+  white-space: normal;
+}
+
+.home-clinic-map .map-zoom {
+  border-color: rgba(201, 169, 77, 0.3);
+}
+
+.home-clinic-map .map-notice {
+  text-align: left;
 }
 
 [data-i18n="index-intro-title"] {
@@ -1208,6 +1591,81 @@ h2.prices-category-title {
   justify-content: space-evenly;
   max-width: 52rem;
   margin-inline: auto !important;
+}
+
+@media (max-width: 991.98px) {
+  .home-highlights {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+@media (max-width: 767.98px) {
+  .home-technology-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-hero .home-doctor-photo {
+    max-width: 34rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .home-page .navbar .container {
+    gap: 0.2rem;
+  }
+
+  .home-page .navbar-brand {
+    flex: 0 0 1.5rem;
+  }
+
+  .home-page .navbar-nav {
+    column-gap: 0.15rem;
+  }
+
+  .home-page .navbar-nav .nav-link {
+    padding-inline: 0.12rem;
+    font-size: clamp(0.62rem, 2vw, 0.75rem);
+    letter-spacing: 0;
+  }
+
+  .home-page .navbar .navbar-collapse {
+    gap: 0.2rem;
+  }
+
+  .home-page .navbar .lang-btn {
+    flex: 0 0 20px;
+    width: 20px;
+  }
+
+  .home-section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .home-highlights {
+    gap: 0.6rem;
+  }
+
+  .home-highlight-card {
+    grid-template-columns: 1fr;
+    justify-items: start;
+    min-height: 7rem;
+    padding: 0.75rem;
+  }
+
+  .home-highlight-mark {
+    grid-row: auto;
+  }
+
+  .home-highlight-card h2 {
+    font-size: 0.8rem;
+  }
+
+  .home-highlight-card p {
+    font-size: 0.7rem;
+  }
+
 }
 
 /* Clinic map picture with enlarge-on-click */

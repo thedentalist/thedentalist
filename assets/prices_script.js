@@ -10,6 +10,111 @@ function loadPrices(lang) {
     });
 }
 
+function loadTreatmentPricePreviews(lang) {
+  const previews = document.querySelectorAll(".treatment-price-preview");
+  if (!previews.length) return;
+
+  const assetsPath = /\/en\//.test(window.location.pathname) ? "../assets" : "assets";
+  fetch(`${assetsPath}/pricelist_${lang}.csv`, { cache: "no-cache" })
+    .then((response) => {
+      if (!response.ok) throw new Error(`Price list request failed: ${response.status}`);
+      return response.text();
+    })
+    .then((data) => {
+      const pricesByCategory = new Map();
+      parsePriceRows(data).forEach(({ category, service, price }) => {
+        const categoryNumber = category.split(".")[0];
+        if (!pricesByCategory.has(categoryNumber)) pricesByCategory.set(categoryNumber, []);
+        pricesByCategory.get(categoryNumber).push({ service, price });
+      });
+
+      previews.forEach((preview) => {
+        const wantedCategories = preview.dataset.priceCategory.split(",");
+        const rows = wantedCategories.flatMap((category) => (pricesByCategory.get(category) || []).slice(0, 5));
+        preview.replaceChildren();
+
+        rows.forEach(({ service, price }) => {
+          const item = document.createElement("li");
+          const serviceName = document.createElement("span");
+          const servicePrice = document.createElement("span");
+          serviceName.textContent = service;
+          servicePrice.textContent = price;
+          item.append(serviceName, servicePrice);
+          preview.appendChild(item);
+        });
+
+        if (!rows.length) {
+          const item = document.createElement("li");
+          item.textContent = lang === "en" ? "Prices are unavailable." : "Az árak nem érhetők el.";
+          preview.appendChild(item);
+        }
+      });
+    })
+    .catch((error) => {
+      console.error("Unable to load treatment price previews.", error);
+      previews.forEach((preview) => {
+        preview.textContent = lang === "en" ? "Prices could not be loaded." : "Az árakat nem sikerült betölteni.";
+      });
+    });
+}
+
+function loadHomepagePriceCards(lang) {
+  const cards = document.querySelectorAll(".home-price-list");
+  if (!cards.length) return;
+
+  const assetsPath = /\/en\//.test(window.location.pathname) ? "../assets" : "assets";
+  fetch(`${assetsPath}/pricelist_${lang}.csv`, { cache: "no-cache" })
+    .then((response) => {
+      if (!response.ok) throw new Error(`Price list request failed: ${response.status}`);
+      return response.text();
+    })
+    .then((data) => {
+      const pricesByCategory = new Map();
+      parsePriceRows(data).forEach(({ category, service, price }) => {
+        const categoryNumber = category.split(".")[0];
+        if (!pricesByCategory.has(categoryNumber)) pricesByCategory.set(categoryNumber, []);
+        pricesByCategory.get(categoryNumber).push({ service, price });
+      });
+
+      cards.forEach((card) => {
+        const category = card.dataset.homePriceCategory;
+        const limit = Number.parseInt(card.dataset.homePriceLimit || "2", 10);
+        const rows = (pricesByCategory.get(category) || []).slice(0, limit);
+        card.replaceChildren();
+
+        rows.forEach(({ service, price }) => {
+          const item = document.createElement("li");
+          const serviceName = document.createElement("span");
+          const servicePrice = document.createElement("span");
+          serviceName.textContent = service;
+          servicePrice.textContent = price;
+          item.append(serviceName, servicePrice);
+          card.appendChild(item);
+        });
+
+        if (!rows.length) {
+          const item = document.createElement("li");
+          item.textContent = lang === "en" ? "Prices are unavailable." : "Az árak nem érhetők el.";
+          card.appendChild(item);
+        }
+      });
+    })
+    .catch((error) => {
+      console.error("Unable to load homepage price cards.", error);
+      cards.forEach((card) => {
+        card.textContent = lang === "en" ? "Prices could not be loaded." : "Az árakat nem sikerült betölteni.";
+      });
+    });
+}
+
+function parsePriceRows(csv) {
+  return csv.trim().split(/\r?\n/).slice(1).map((line) => {
+    const [category, service, price] = line.split(";").map((cell) => cell.trim());
+    if (!category || !service || !price) return null;
+    return { category, service, price };
+  }).filter(Boolean);
+}
+
 // Parse CSV and generate HTML tables
 function parseCSVtoTables(csv, containerId) {
   const lines = csv.trim().split("\n");

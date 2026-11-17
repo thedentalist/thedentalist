@@ -28,9 +28,19 @@ window.loadLanguage = function (lang) {
         const key = el.getAttribute("data-i18n");
         el.textContent = translations[key] || "";
       });
+      document.querySelectorAll("[data-i18n-aria-label]").forEach(el => {
+        const key = el.getAttribute("data-i18n-aria-label");
+        el.setAttribute("aria-label", translations[key] || "");
+      });
       // Load prices if on prices page
       if (typeof loadPrices === "function" && document.getElementById("price-tables")) {
         loadPrices(lang);
+      }
+      if (typeof loadTreatmentPricePreviews === "function") {
+        loadTreatmentPricePreviews(lang);
+      }
+      if (typeof loadHomepagePriceCards === "function") {
+        loadHomepagePriceCards(lang);
       }
       // Update language toggle button 
       updateLangToggle();

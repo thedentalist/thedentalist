@@ -2,14 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://thedentalist.hu/</loc>
-    <lastmod>2026-10-27</lastmod>
+    <lastmod>2026-11-17</lastmod>
     <xhtml:link rel="alternate" hreflang="hu" href="https://thedentalist.hu/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://thedentalist.hu/en/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://thedentalist.hu/"/>
+    <image:image><image:loc>https://thedentalist.hu/assets/Best-1200.jpg</image:loc><image:caption>Dr. Morhaf, dentist at The Dentalist in Budapest District 13</image:caption></image:image>
   </url>
   <url>
     <loc>https://thedentalist.hu/gallery.html</loc>
-    <lastmod>2026-10-27</lastmod>
+    <lastmod>2026-11-17</lastmod>
     <xhtml:link rel="alternate" hreflang="hu" href="https://thedentalist.hu/gallery.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://thedentalist.hu/en/gallery.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://thedentalist.hu/gallery.html"/>
@@ -19,20 +20,6 @@
     <image:image><image:loc>https://thedentalist.hu/assets/instagram/4-900.jpg</image:loc><image:caption>Fogászati képalkotó berendezés a rendelőben</image:caption></image:image>
     <image:image><image:loc>https://thedentalist.hu/assets/instagram/7-clean.jpg</image:loc><image:caption>Fogorvos a CBCT röntgenfelvételt mutatja a kezelőszékben ülő páciensnek</image:caption></image:image>
     <image:image><image:loc>https://thedentalist.hu/assets/instagram/8-900.jpg</image:loc><image:caption>A The Dentalist rendelő bejárata cégtáblával az Angyalföldi úton</image:caption></image:image>
-  </url>
-  <url>
-    <loc>https://thedentalist.hu/before-after.html</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://thedentalist.hu/before-after.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://thedentalist.hu/en/before-after.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://thedentalist.hu/before-after.html"/>
-  </url>
-  <url>
-    <loc>https://thedentalist.hu/en/before-after.html</loc>
-    <lastmod>2026-10-27</lastmod>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://thedentalist.hu/before-after.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://thedentalist.hu/en/before-after.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://thedentalist.hu/before-after.html"/>
   </url>
   <url>
     <loc>https://thedentalist.hu/gyermekfogaszat.html</loc>
@@ -65,28 +52,29 @@
   </url>
   <url>
     <loc>https://thedentalist.hu/adatkezelesi-tajekoztato.html</loc>
-    <lastmod>2026-10-27</lastmod>
+    <lastmod>2026-11-17</lastmod>
     <xhtml:link rel="alternate" hreflang="hu" href="https://thedentalist.hu/adatkezelesi-tajekoztato.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://thedentalist.hu/en/privacy-notice.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://thedentalist.hu/adatkezelesi-tajekoztato.html"/>
   </url>
   <url>
     <loc>https://thedentalist.hu/en/privacy-notice.html</loc>
-    <lastmod>2026-10-27</lastmod>
+    <lastmod>2026-11-17</lastmod>
     <xhtml:link rel="alternate" hreflang="hu" href="https://thedentalist.hu/adatkezelesi-tajekoztato.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://thedentalist.hu/en/privacy-notice.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://thedentalist.hu/adatkezelesi-tajekoztato.html"/>
   </url>
   <url>
     <loc>https://thedentalist.hu/en/</loc>
-    <lastmod>2026-10-27</lastmod>
+    <lastmod>2026-11-17</lastmod>
     <xhtml:link rel="alternate" hreflang="hu" href="https://thedentalist.hu/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://thedentalist.hu/en/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://thedentalist.hu/"/>
+    <image:image><image:loc>https://thedentalist.hu/assets/Best-1200.jpg</image:loc><image:caption>Dr. Morhaf, dentist at The Dentalist in Budapest District 13</image:caption></image:image>
   </url>
   <url>
     <loc>https://thedentalist.hu/en/gallery.html</loc>
-    <lastmod>2026-10-27</lastmod>
+    <lastmod>2026-11-17</lastmod>
     <xhtml:link rel="alternate" hreflang="hu" href="https://thedentalist.hu/gallery.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://thedentalist.hu/en/gallery.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://thedentalist.hu/gallery.html"/>
@@ -112,8 +100,8 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://thedentalist.hu/contact.html"/>
     <image:image><image:loc>https://thedentalist.hu/assets/clinic-map-1280.jpg</image:loc><image:caption>Map showing The Dentalist clinic at Angyalföldi út 30-32B, Budapest 13th district</image:caption></image:image>
   </url>
-  <url><loc>https://thedentalist.hu/kezelesek.html</loc><lastmod>2026-10-23</lastmod><xhtml:link rel="alternate" hreflang="hu" href="https://thedentalist.hu/kezelesek.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thedentalist.hu/en/treatments.html"/><xhtml:link rel="alternate" hreflang="x-default" href="https://thedentalist.hu/kezelesek.html"/></url>
-  <url><loc>https://thedentalist.hu/en/treatments.html</loc><lastmod>2026-10-27</lastmod><xhtml:link rel="alternate" hreflang="hu" href="https://thedentalist.hu/kezelesek.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thedentalist.hu/en/treatments.html"/><xhtml:link rel="alternate" hreflang="x-default" href="https://thedentalist.hu/kezelesek.html"/></url>
+  <url><loc>https://thedentalist.hu/kezelesek.html</loc><lastmod>2026-11-17</lastmod><xhtml:link rel="alternate" hreflang="hu" href="https://thedentalist.hu/kezelesek.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thedentalist.hu/en/treatments.html"/><xhtml:link rel="alternate" hreflang="x-default" href="https://thedentalist.hu/kezelesek.html"/></url>
+  <url><loc>https://thedentalist.hu/en/treatments.html</loc><lastmod>2026-11-17</lastmod><xhtml:link rel="alternate" hreflang="hu" href="https://thedentalist.hu/kezelesek.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thedentalist.hu/en/treatments.html"/><xhtml:link rel="alternate" hreflang="x-default" href="https://thedentalist.hu/kezelesek.html"/></url>
   <url><loc>https://thedentalist.hu/diagnosztika.html</loc><lastmod>2026-10-24</lastmod><xhtml:link rel="alternate" hreflang="hu" href="https://thedentalist.hu/diagnosztika.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thedentalist.hu/en/diagnostics.html"/><xhtml:link rel="alternate" hreflang="x-default" href="https://thedentalist.hu/diagnosztika.html"/></url>
   <url><loc>https://thedentalist.hu/en/diagnostics.html</loc><lastmod>2026-10-27</lastmod><xhtml:link rel="alternate" hreflang="hu" href="https://thedentalist.hu/diagnosztika.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thedentalist.hu/en/diagnostics.html"/><xhtml:link rel="alternate" hreflang="x-default" href="https://thedentalist.hu/diagnosztika.html"/></url>
   <url><loc>https://thedentalist.hu/konzervalo-fogaszat.html</loc><lastmod>2026-10-24</lastmod><xhtml:link rel="alternate" hreflang="hu" href="https://thedentalist.hu/konzervalo-fogaszat.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thedentalist.hu/en/conservative-dentistry.html"/><xhtml:link rel="alternate" hreflang="x-default" href="https://thedentalist.hu/konzervalo-fogaszat.html"/></url>
