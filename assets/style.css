@@ -982,15 +982,16 @@ h2.prices-category-title {
 
 .home-hero .home-doctor-photo {
   width: 100%;
-  max-width: 28rem;
-  aspect-ratio: 2.4 / 1;
+  max-width: 14rem;
+  aspect-ratio: 1 / 1;
   margin-inline: auto;
   border: 1px solid rgba(201, 169, 77, 0.35);
-  border-radius: 0.85rem;
+  border-radius: 1rem;
+  overflow: hidden;
 }
 
 .home-hero .home-doctor-photo .doctor-portrait {
-  object-position: center top;
+  object-position: center 30%;
   transform: none;
 }
 
@@ -1606,7 +1607,7 @@ h2.prices-category-title {
   }
 
   .home-hero .home-doctor-photo {
-    max-width: 34rem;
+    max-width: 11rem;
   }
 }
 
