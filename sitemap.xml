@@ -6,13 +6,13 @@
     <xhtml:link rel="alternate" hreflang="hu" href="https://thedentalist.hu/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://thedentalist.hu/en/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://thedentalist.hu/"/>
-    <image:image><image:loc>https://thedentalist.hu/assets/dr-morhaf-fogorvos-the-dentalist-budapest.jpg</image:loc><image:caption>Dr. Morhaf, a The Dentalist fogorvosa, Budapest 13. kerület</image:caption></image:image>
-    <image:image><image:loc>https://thedentalist.hu/assets/rendelo/fogaszati-kezeloszek-the-dentalist-budapest-13.jpg</image:loc><image:caption>Modern fogászati kezelőszék és digitális képalkotó eszköz a rendelőben</image:caption></image:image>
-    <image:image><image:loc>https://thedentalist.hu/assets/elotte-utana/kopott-fogak-esztetikai-helyreallitasa-elotte-utana.jpg</image:loc><image:caption>Kopott, egyenetlen fogak esztétikai helyreállítása – előtte és utána, The Dentalist Budapest</image:caption></image:image>
-    <image:image><image:loc>https://thedentalist.hu/assets/elotte-utana/teljes-mosoly-helyreallitasa-fogpotlassal-elotte-utana.jpg</image:loc><image:caption>Sérült fogak helyreállítása fogpótlással, teljes mosoly – előtte és utána, The Dentalist Budapest</image:caption></image:image>
-    <image:image><image:loc>https://thedentalist.hu/assets/elotte-utana/hianyzo-frontfog-potlasa-elotte-utana.jpg</image:loc><image:caption>Hiányzó frontfog pótlása – előtte és utána, The Dentalist Budapest</image:caption></image:image>
-    <image:image><image:loc>https://thedentalist.hu/assets/elotte-utana/nyelvtisztitas-szajhigienia-elotte-utana.jpg</image:loc><image:caption>Lepedékes nyelv szájhigiéniai kezelés előtt és után a The Dentalistnél</image:caption></image:image>
-    <image:image><image:loc>https://thedentalist.hu/assets/the-dentalist-terkep-angyalfoldi-ut-budapest-1280.jpg</image:loc><image:caption>Térkép: a The Dentalist rendelő az Angyalföldi út 30-32B szám alatt, Budapest 13. kerület</image:caption></image:image>
+    <image:image><image:loc>https://thedentalist.hu/assets/dr-morhaf-fogorvos.jpg</image:loc><image:caption>Dr. Morhaf, a The Dentalist fogorvosa, Budapest 13. kerület</image:caption></image:image>
+    <image:image><image:loc>https://thedentalist.hu/assets/rendelo/fogaszati-kezeloszek.jpg</image:loc><image:caption>Modern fogászati kezelőszék és digitális képalkotó eszköz a rendelőben</image:caption></image:image>
+    <image:image><image:loc>https://thedentalist.hu/assets/elotte-utana/kopott-fogak-helyreallitasa-elotte-utana.jpg</image:loc><image:caption>Kopott, egyenetlen fogak esztétikai helyreállítása – előtte és utána, The Dentalist Budapest</image:caption></image:image>
+    <image:image><image:loc>https://thedentalist.hu/assets/elotte-utana/teljes-mosoly-fogpotlassal-elotte-utana.jpg</image:loc><image:caption>Sérült fogak helyreállítása fogpótlással, teljes mosoly – előtte és utána, The Dentalist Budapest</image:caption></image:image>
+    <image:image><image:loc>https://thedentalist.hu/assets/elotte-utana/frontfog-potlas-elotte-utana.jpg</image:loc><image:caption>Hiányzó frontfog pótlása – előtte és utána, The Dentalist Budapest</image:caption></image:image>
+    <image:image><image:loc>https://thedentalist.hu/assets/elotte-utana/nyelvtisztitas-elotte-utana.jpg</image:loc><image:caption>Lepedékes nyelv szájhigiéniai kezelés előtt és után a The Dentalistnél</image:caption></image:image>
+    <image:image><image:loc>https://thedentalist.hu/assets/terkep-angyalfoldi-ut-1280.jpg</image:loc><image:caption>Térkép: a The Dentalist rendelő az Angyalföldi út 30-32B szám alatt, Budapest 13. kerület</image:caption></image:image>
   </url>
   <url>
     <loc>https://thedentalist.hu/gallery.html</loc>
@@ -20,12 +20,12 @@
     <xhtml:link rel="alternate" hreflang="hu" href="https://thedentalist.hu/gallery.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://thedentalist.hu/en/gallery.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://thedentalist.hu/gallery.html"/>
-    <image:image><image:loc>https://thedentalist.hu/assets/rendelo/fogaszati-kezeloszek-the-dentalist-budapest-13.jpg</image:loc><image:caption>Modern fogászati kezelőszék és digitális képalkotó eszköz a rendelőben</image:caption></image:image>
-    <image:image><image:loc>https://thedentalist.hu/assets/rendelo/fogaszati-kezelohelyiseg-the-dentalist-budapest.jpg</image:loc><image:caption>A The Dentalist korszerű, világos fogászati kezelőhelyisége</image:caption></image:image>
-    <image:image><image:loc>https://thedentalist.hu/assets/rendelo/varoterem-the-dentalist-fogaszat-budapest.jpg</image:loc><image:caption>Világos váróterem fekete fotelekkel a The Dentalist rendelőben, Budapest 13. kerület</image:caption></image:image>
-    <image:image><image:loc>https://thedentalist.hu/assets/rendelo/panorama-cbct-rontgen-keszulek-fogaszat-budapest.jpg</image:loc><image:caption>Panoráma- és 3D CBCT röntgenkészülék a The Dentalist rendelőben, Budapest 13. kerület</image:caption></image:image>
-    <image:image><image:loc>https://thedentalist.hu/assets/rendelo/fogorvos-cbct-felvetel-konzultacio-the-dentalist.jpg</image:loc><image:caption>Fogorvos a CBCT röntgenfelvételt mutatja a kezelőszékben ülő páciensnek</image:caption></image:image>
-    <image:image><image:loc>https://thedentalist.hu/assets/rendelo/the-dentalist-rendelo-bejarat-angyalfoldi-ut-budapest.jpg</image:loc><image:caption>A The Dentalist rendelő bejárata cégtáblával az Angyalföldi úton</image:caption></image:image>
+    <image:image><image:loc>https://thedentalist.hu/assets/rendelo/fogaszati-kezeloszek.jpg</image:loc><image:caption>Modern fogászati kezelőszék és digitális képalkotó eszköz a rendelőben</image:caption></image:image>
+    <image:image><image:loc>https://thedentalist.hu/assets/rendelo/kezelohelyiseg.jpg</image:loc><image:caption>A The Dentalist korszerű, világos fogászati kezelőhelyisége</image:caption></image:image>
+    <image:image><image:loc>https://thedentalist.hu/assets/rendelo/varoterem.jpg</image:loc><image:caption>Világos váróterem fekete fotelekkel a The Dentalist rendelőben, Budapest 13. kerület</image:caption></image:image>
+    <image:image><image:loc>https://thedentalist.hu/assets/rendelo/cbct-rontgen.jpg</image:loc><image:caption>Panoráma- és 3D CBCT röntgenkészülék a The Dentalist rendelőben, Budapest 13. kerület</image:caption></image:image>
+    <image:image><image:loc>https://thedentalist.hu/assets/rendelo/cbct-konzultacio.jpg</image:loc><image:caption>Fogorvos a CBCT röntgenfelvételt mutatja a kezelőszékben ülő páciensnek</image:caption></image:image>
+    <image:image><image:loc>https://thedentalist.hu/assets/rendelo/bejarat-angyalfoldi-ut.jpg</image:loc><image:caption>A The Dentalist rendelő bejárata cégtáblával az Angyalföldi úton</image:caption></image:image>
   </url>
   <url>
     <loc>https://thedentalist.hu/gyermekfogaszat.html</loc>
@@ -40,7 +40,7 @@
     <xhtml:link rel="alternate" hreflang="hu" href="https://thedentalist.hu/contact.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://thedentalist.hu/en/contact.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://thedentalist.hu/contact.html"/>
-    <image:image><image:loc>https://thedentalist.hu/assets/the-dentalist-terkep-angyalfoldi-ut-budapest-1280.jpg</image:loc><image:caption>Térkép: a The Dentalist rendelő az Angyalföldi út 30-32B szám alatt, Budapest 13. kerület</image:caption></image:image>
+    <image:image><image:loc>https://thedentalist.hu/assets/terkep-angyalfoldi-ut-1280.jpg</image:loc><image:caption>Térkép: a The Dentalist rendelő az Angyalföldi út 30-32B szám alatt, Budapest 13. kerület</image:caption></image:image>
   </url>
   <url>
     <loc>https://thedentalist.hu/impresszum.html</loc>
@@ -76,13 +76,13 @@
     <xhtml:link rel="alternate" hreflang="hu" href="https://thedentalist.hu/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://thedentalist.hu/en/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://thedentalist.hu/"/>
-    <image:image><image:loc>https://thedentalist.hu/assets/dr-morhaf-fogorvos-the-dentalist-budapest.jpg</image:loc><image:caption>Dr. Morhaf, dentist at The Dentalist in Budapest District 13</image:caption></image:image>
-    <image:image><image:loc>https://thedentalist.hu/assets/rendelo/fogaszati-kezeloszek-the-dentalist-budapest-13.jpg</image:loc><image:caption>Modern dental chair and digital imaging equipment in the clinic</image:caption></image:image>
-    <image:image><image:loc>https://thedentalist.hu/assets/elotte-utana/kopott-fogak-esztetikai-helyreallitasa-elotte-utana.jpg</image:loc><image:caption>Aesthetic restoration of worn, uneven teeth – before and after, The Dentalist Budapest</image:caption></image:image>
-    <image:image><image:loc>https://thedentalist.hu/assets/elotte-utana/teljes-mosoly-helyreallitasa-fogpotlassal-elotte-utana.jpg</image:loc><image:caption>Damaged teeth restored with dental prosthetics for a full smile – before and after, The Dentalist Budapest</image:caption></image:image>
-    <image:image><image:loc>https://thedentalist.hu/assets/elotte-utana/hianyzo-frontfog-potlasa-elotte-utana.jpg</image:loc><image:caption>Missing front tooth replaced – before and after, The Dentalist Budapest</image:caption></image:image>
-    <image:image><image:loc>https://thedentalist.hu/assets/elotte-utana/nyelvtisztitas-szajhigienia-elotte-utana.jpg</image:loc><image:caption>Coated tongue before and after oral hygiene treatment at The Dentalist</image:caption></image:image>
-    <image:image><image:loc>https://thedentalist.hu/assets/the-dentalist-terkep-angyalfoldi-ut-budapest-1280.jpg</image:loc><image:caption>Map showing The Dentalist clinic at Angyalföldi út 30-32B, Budapest District 13</image:caption></image:image>
+    <image:image><image:loc>https://thedentalist.hu/assets/dr-morhaf-fogorvos.jpg</image:loc><image:caption>Dr. Morhaf, dentist at The Dentalist in Budapest District 13</image:caption></image:image>
+    <image:image><image:loc>https://thedentalist.hu/assets/rendelo/fogaszati-kezeloszek.jpg</image:loc><image:caption>Modern dental chair and digital imaging equipment in the clinic</image:caption></image:image>
+    <image:image><image:loc>https://thedentalist.hu/assets/elotte-utana/kopott-fogak-helyreallitasa-elotte-utana.jpg</image:loc><image:caption>Aesthetic restoration of worn, uneven teeth – before and after, The Dentalist Budapest</image:caption></image:image>
+    <image:image><image:loc>https://thedentalist.hu/assets/elotte-utana/teljes-mosoly-fogpotlassal-elotte-utana.jpg</image:loc><image:caption>Damaged teeth restored with dental prosthetics for a full smile – before and after, The Dentalist Budapest</image:caption></image:image>
+    <image:image><image:loc>https://thedentalist.hu/assets/elotte-utana/frontfog-potlas-elotte-utana.jpg</image:loc><image:caption>Missing front tooth replaced – before and after, The Dentalist Budapest</image:caption></image:image>
+    <image:image><image:loc>https://thedentalist.hu/assets/elotte-utana/nyelvtisztitas-elotte-utana.jpg</image:loc><image:caption>Coated tongue before and after oral hygiene treatment at The Dentalist</image:caption></image:image>
+    <image:image><image:loc>https://thedentalist.hu/assets/terkep-angyalfoldi-ut-1280.jpg</image:loc><image:caption>Map showing The Dentalist clinic at Angyalföldi út 30-32B, Budapest District 13</image:caption></image:image>
   </url>
   <url>
     <loc>https://thedentalist.hu/en/gallery.html</loc>
@@ -90,12 +90,12 @@
     <xhtml:link rel="alternate" hreflang="hu" href="https://thedentalist.hu/gallery.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://thedentalist.hu/en/gallery.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://thedentalist.hu/gallery.html"/>
-    <image:image><image:loc>https://thedentalist.hu/assets/rendelo/fogaszati-kezeloszek-the-dentalist-budapest-13.jpg</image:loc><image:caption>Modern dental chair and digital imaging equipment in the clinic</image:caption></image:image>
-    <image:image><image:loc>https://thedentalist.hu/assets/rendelo/fogaszati-kezelohelyiseg-the-dentalist-budapest.jpg</image:loc><image:caption>Bright, modern treatment room at The Dentalist</image:caption></image:image>
-    <image:image><image:loc>https://thedentalist.hu/assets/rendelo/varoterem-the-dentalist-fogaszat-budapest.jpg</image:loc><image:caption>Bright waiting room with black armchairs at The Dentalist clinic, Budapest District 13</image:caption></image:image>
-    <image:image><image:loc>https://thedentalist.hu/assets/rendelo/panorama-cbct-rontgen-keszulek-fogaszat-budapest.jpg</image:loc><image:caption>Panoramic and 3D CBCT X-ray machine at The Dentalist clinic, Budapest District 13</image:caption></image:image>
-    <image:image><image:loc>https://thedentalist.hu/assets/rendelo/fogorvos-cbct-felvetel-konzultacio-the-dentalist.jpg</image:loc><image:caption>Dentist showing a CBCT X-ray scan to a patient in the treatment chair</image:caption></image:image>
-    <image:image><image:loc>https://thedentalist.hu/assets/rendelo/the-dentalist-rendelo-bejarat-angyalfoldi-ut-budapest.jpg</image:loc><image:caption>The Dentalist clinic entrance with signage on Angyalföldi út</image:caption></image:image>
+    <image:image><image:loc>https://thedentalist.hu/assets/rendelo/fogaszati-kezeloszek.jpg</image:loc><image:caption>Modern dental chair and digital imaging equipment in the clinic</image:caption></image:image>
+    <image:image><image:loc>https://thedentalist.hu/assets/rendelo/kezelohelyiseg.jpg</image:loc><image:caption>Bright, modern treatment room at The Dentalist</image:caption></image:image>
+    <image:image><image:loc>https://thedentalist.hu/assets/rendelo/varoterem.jpg</image:loc><image:caption>Bright waiting room with black armchairs at The Dentalist clinic, Budapest District 13</image:caption></image:image>
+    <image:image><image:loc>https://thedentalist.hu/assets/rendelo/cbct-rontgen.jpg</image:loc><image:caption>Panoramic and 3D CBCT X-ray machine at The Dentalist clinic, Budapest District 13</image:caption></image:image>
+    <image:image><image:loc>https://thedentalist.hu/assets/rendelo/cbct-konzultacio.jpg</image:loc><image:caption>Dentist showing a CBCT X-ray scan to a patient in the treatment chair</image:caption></image:image>
+    <image:image><image:loc>https://thedentalist.hu/assets/rendelo/bejarat-angyalfoldi-ut.jpg</image:loc><image:caption>The Dentalist clinic entrance with signage on Angyalföldi út</image:caption></image:image>
   </url>
   <url>
     <loc>https://thedentalist.hu/en/pediatric-dentistry.html</loc>
@@ -110,7 +110,7 @@
     <xhtml:link rel="alternate" hreflang="hu" href="https://thedentalist.hu/contact.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://thedentalist.hu/en/contact.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://thedentalist.hu/contact.html"/>
-    <image:image><image:loc>https://thedentalist.hu/assets/the-dentalist-terkep-angyalfoldi-ut-budapest-1280.jpg</image:loc><image:caption>Map showing The Dentalist clinic at Angyalföldi út 30-32B, Budapest 13th district</image:caption></image:image>
+    <image:image><image:loc>https://thedentalist.hu/assets/terkep-angyalfoldi-ut-1280.jpg</image:loc><image:caption>Map showing The Dentalist clinic at Angyalföldi út 30-32B, Budapest 13th district</image:caption></image:image>
   </url>
   <url><loc>https://thedentalist.hu/kezelesek.html</loc><lastmod>2026-11-18</lastmod><xhtml:link rel="alternate" hreflang="hu" href="https://thedentalist.hu/kezelesek.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thedentalist.hu/en/treatments.html"/><xhtml:link rel="alternate" hreflang="x-default" href="https://thedentalist.hu/kezelesek.html"/></url>
   <url><loc>https://thedentalist.hu/en/treatments.html</loc><lastmod>2026-11-18</lastmod><xhtml:link rel="alternate" hreflang="hu" href="https://thedentalist.hu/kezelesek.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thedentalist.hu/en/treatments.html"/><xhtml:link rel="alternate" hreflang="x-default" href="https://thedentalist.hu/kezelesek.html"/></url>
